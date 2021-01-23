@@ -1,0 +1,13 @@
+---
+layout: page
+---
+{{ content }}
+{{ site.posts.size }}篇博文
+<ul>
+  {% for post in site.posts %}
+  <li>
+    <small>{{ post.date | date_to_string }}</small>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
