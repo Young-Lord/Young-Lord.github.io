@@ -282,7 +282,7 @@ post:
         src: /public/image/alipay.jpg
 
 valine:
-  enable: true
+  enable: false
   autoloader: /public/js/valine.js
   src: //cdn.jsdelivr.net/npm/valine
   #appId: 9hABRddSuEkTgqLrt1VSK5B1-gzGzoHsz
