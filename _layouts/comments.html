@@ -2,6 +2,19 @@
 layout: page
 ---
 {{ content }}
-{% if site.valine.enable %}
-<script src="{{ site.valine.autoloader }}"></script>
-{% endif %}
+<div id="ArtalkComments"></div>
+  <!-- ... -->
+  <script src="https://github.com/ArtalkJS/Artalk/blob/master/dist/Artalk.js"></script>
+  <script>
+  new Artalk({
+    el: '#ArtalkComments', // 元素选择
+    placeholder: '来啊，快活啊 ( ゜- ゜)', // 占位符
+    noComment: '快来成为第一个评论的人吧~', // 无评论时显示
+    pageKey: 'a-simple-test-page-233ihwq',
+    serverUrl: 'http://lepov39051.gearhostpreview.com/index.php',
+    readMore: { // 阅读更多配置
+      pageSize: 15, // 每次请求获取评论数
+      autoLoad: true // 滚动到底部自动加载
+    }
+  });
+  </script>
