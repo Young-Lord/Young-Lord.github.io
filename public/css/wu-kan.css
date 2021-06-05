@@ -19,10 +19,10 @@ pre {
   overflow: auto;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  font-family: monospace;
 }
 .wrap {
-  font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  font-family: monospace;
   background-color: rgba(255,255,255,.7);
 }
 .masthead {
@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
   border-width: 0px;
 }
 .sidebar {
-  font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  font-family: monospace;
 }
 .sidebar-social {
   text-align: center;
