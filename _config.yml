@@ -111,12 +111,6 @@ head: # 删改前确定知道自己在做什么
   - key: rel
     value: stylesheet
   - key: href
-    value: /public/css/younglord.css
-- tag: link
-  var:
-  - key: rel
-    value: stylesheet
-  - key: href
     value: //cdn.jsdelivr.net/npm/prismjs/themes/prism.min.css
 - tag: link
   var:
@@ -130,6 +124,12 @@ head: # 删改前确定知道自己在做什么
     value: stylesheet
   - key: href
     value: //cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.css
+- tag: link
+  var:
+  - key: rel
+    value: stylesheet
+  - key: href
+    value: /public/css/younglord.css
 #- tag: link
 #  var:
 #  - key: rel
