@@ -165,6 +165,9 @@ script: # 需要在正文前调用的脚本或者插件的autoloader
 - var:
   - key: src
     value: //cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@latest/public/js/prism.min.js
+- var:
+  - key: src
+    value: //cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@latest/public/js/OVERRIDE_CSS.min.js
 #- var: mathjax
 #  - key: src
 #    value: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
@@ -179,9 +182,9 @@ script: # 需要在正文前调用的脚本或者插件的autoloader
     value: //cdn.jsdelivr.net/npm/katex/dist/katex.min.css
   - key: delimiters  # 开启行内公式$\KaTeX$支持
     value: true
-- var:
-  - key: src
-    value: //cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@latest/public/js/baidu_push.min.js
+#- var:
+#  - key: src
+#    value: //cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@latest/public/js/baidu_push.min.js
 
 sidebar:
   avatar: # 侧边栏显示的头像
@@ -193,15 +196,8 @@ sidebar:
   - title: rss
     href: /atom.xml
     class: 'fas fa-rss'
-  - title: example@example.com # email
-    href: mailto:example@example.com
-    class: 'fas fa-envelope'
-  - title: 100000 # qq
-    class: 'fab fa-qq'
-  - title: example # weixin
-    class: 'fab fa-weixin'
   - title: HitGub
-    href: //github.com/example
+    href: //github.com/Young-Lord
     class: 'fab fa-github'
   nav:
   - title: '<i class="fas fa-home fa-fw"></i> 首页'
