@@ -38,8 +38,9 @@ function loadStyle(url) {
   })();
   loadJs('//cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js')
     .then(function () {
-      loadStyle('//cdn.jsdelivr.net/npm/prismjs/themes/prism.min.css'); //在https://github.com/PrismJS/prism/tree/master/themes 内查看可用主题，或者也可以搜一些第三方主题
-      loadStyle('//cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css');
+      //loadStyle('//cdn.jsdelivr.net/npm/prismjs/themes/prism.min.css'); //在https://github.com/PrismJS/prism/tree/master/themes 内查看可用主题，或者也可以搜一些第三方主题
+      //loadStyle('//cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css');
+      //move to _config.yml
       document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0, x = document.getElementsByTagName("pre"); i < x.length; i++)
           x[i].classList.add('line-numbers');
@@ -52,7 +53,8 @@ function loadStyle(url) {
 
       loadJs('//cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.js')
         .then(function () {
-          loadStyle('//cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.css');
+          //loadStyle('//cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.css');
+          //move to _config.yml
           Prism.plugins.toolbar.registerButton('select-code', function (env) {
             var button = document.createElement('button');
             button.innerHTML = 'select this ' + env.language;

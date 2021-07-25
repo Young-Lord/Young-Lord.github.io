@@ -112,6 +112,24 @@ head: # 删改前确定知道自己在做什么
     value: stylesheet
   - key: href
     value: /public/css/younglord.css
+- tag: link
+  var:
+  - key: rel
+    value: stylesheet
+  - key: href
+    value: //cdn.jsdelivr.net/npm/prismjs/themes/prism.min.css
+- tag: link
+  var:
+  - key: rel
+    value: stylesheet
+  - key: href
+    value: //cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css
+- tag: link
+  var:
+  - key: rel
+    value: stylesheet
+  - key: href
+    value: //cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.css
 #- tag: link
 #  var:
 #  - key: rel
@@ -165,9 +183,6 @@ script: # 需要在正文前调用的脚本或者插件的autoloader
 - var:
   - key: src
     value: //cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@latest/public/js/prism.min.js
-- var:
-  - key: src
-    value: //cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@latest/public/js/OVERRIDE_CSS.min.js
 #- var: mathjax
 #  - key: src
 #    value: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
