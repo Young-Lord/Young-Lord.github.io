@@ -38,7 +38,7 @@ blockquote {
 }
 .wrap {
 	font-family: monospace;
-	background-color: rgba(255,255,255,.7);
+	background-color: rgba(255,255,255,.3);
 }
 .sidebar {
 	font-family: monospace;
