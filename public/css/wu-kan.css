@@ -1,6 +1,6 @@
 @media (min-width: 70em) {
   body {
-    background-image: url(//cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@latest/public/image/sol_rue.png);
+    background-image: url(//cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@2.4.0/public/image/win10_background_1366x768.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -19,11 +19,11 @@ pre {
   overflow: auto;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: monospace;
+  font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
 }
 .wrap {
-  font-family: monospace;
-  background-color: rgba(255,255,255,.3);
+  font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  background-color: rgba(255,255,255,.7);
 }
 .masthead {
   margin-bottom: 0rem;
@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
   border-width: 0px;
 }
 .sidebar {
-  font-family: monospace;
+  font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
 }
 .sidebar-social {
   text-align: center;

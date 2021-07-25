@@ -1,28 +1,32 @@
+@media (min-width: 70em) {
+	body {
+		background-image: url(//cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@latest/public/image/Niko_and_Rue.jpg);
+   }
+}
 .masthead-title {
-    color: #000000;
+	color: #000000;
 }
 h1, h2, h3, h4, h5, h6 {
 	color: #000000;
-  }
-  body {
+	font-family: monospace;
+}
+body {
 	color: #181818;
-  }
-  strong {
-    color: #181818;
-  }
-  blockquote {
+}
+strong {
+	color: #181818;
+}
+blockquote {
 	color: #252525;
 	border-left: .3rem solid #1a1a1a;
-  }
-  .post-date {
-    color: #223333;
-	}
-	.theme-base-0d .container a,
-.theme-base-0d .sidebar-toggle,
-.theme-base-0d .related-posts li a:hover {
-  font-size: 85%;
-  text-decoration: underline;
-  color: #268bd2;
+}
+.post-date {
+	color: #223333;
+}
+.theme-base-0d .container a, .theme-base-0d .sidebar-toggle, .theme-base-0d .related-posts li a:hover {
+	font-size: 85%;
+	text-decoration: underline;
+	color: #268bd2;
 }
 :not(pre) > code[class*="language-"] {
 	color: #c92c2c;
@@ -31,4 +35,11 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: rgba(255,255,255,.3);
 	padding: 2px 4px;
 	font-size: 90%;
+}
+.wrap {
+	font-family: monospace;
+	background-color: rgba(255,255,255,.7);
+}
+.sidebar {
+	font-family: monospace;
 }
