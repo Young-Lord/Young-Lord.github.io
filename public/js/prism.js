@@ -38,7 +38,7 @@ function loadStyle(url) {
   })();
   loadJs('//cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js')
     .then(function () {
-      loadStyle('//cdn.jsdelivr.net/npm/prismjs/themes/prism-coy.min.css'); //在https://github.com/PrismJS/prism/tree/master/themes 内查看可用主题，或者也可以搜一些第三方主题
+      loadStyle('//cdn.jsdelivr.net/npm/prismjs/themes/prism.min.css'); //在https://github.com/PrismJS/prism/tree/master/themes 内查看可用主题，或者也可以搜一些第三方主题
       loadStyle('//cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css');
       document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0, x = document.getElementsByTagName("pre"); i < x.length; i++)
