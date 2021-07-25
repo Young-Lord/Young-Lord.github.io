@@ -1,0 +1,34 @@
+.masthead-title {
+    color: #000000;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #000000;
+  }
+  body {
+	color: #181818;
+  }
+  strong {
+    color: #181818;
+  }
+  blockquote {
+	color: #252525;
+	border-left: .3rem solid #1a1a1a;
+  }
+  .post-date {
+    color: #223333;
+	}
+	.theme-base-0d .container a,
+.theme-base-0d .sidebar-toggle,
+.theme-base-0d .related-posts li a:hover {
+  font-size: 85%;
+  text-decoration: underline;
+  color: #268bd2;
+}
+:not(pre) > code[class*="language-"] {
+	color: #c92c2c;
+	border: none;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	background-color: rgba(255,255,255,.3);
+	padding: 2px 4px;
+	font-size: 90%;
+}

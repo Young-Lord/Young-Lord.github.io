@@ -106,6 +106,12 @@ head: # 删改前确定知道自己在做什么
     value: stylesheet
   - key: href
     value: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css # 在https://fontawesome.com/icons 查看支持的图标
+- tag: link
+  var:
+  - key: rel
+    value: stylesheet
+  - key: href
+    value: /public/css/younglord.css
 #- tag: link
 #  var:
 #  - key: rel
