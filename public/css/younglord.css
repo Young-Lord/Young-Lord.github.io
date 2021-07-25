@@ -29,12 +29,13 @@ blockquote {
 	color: #268bd2;
 }
 :not(pre) > code[class*="language-"] {
-	color: #c92c2c;
+	color: #c7254e;
 	border: none;
 	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 	background-color: rgba(255,255,255,.3);
 	padding: 2px 4px;
-	font-size: 90%;
+	font-size: 80%;
+	text-shadow: none;
 }
 .wrap {
 	font-family: monospace;
