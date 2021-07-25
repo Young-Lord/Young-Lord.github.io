@@ -173,7 +173,7 @@ script: # 需要在正文前调用的脚本或者插件的autoloader
     value: //cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.min.js # live2d
 - var:
   - key: src
-    value: //cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@latest/public/js/mermaid.min.js
+    value: /public/js/mermaid.min.js
   - key: js
     value: //cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
   - key: stylesheet
@@ -182,7 +182,7 @@ script: # 需要在正文前调用的脚本或者插件的autoloader
     value: true
 - var:
   - key: src
-    value: //cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@latest/public/js/prism.min.js
+    value: /public/js/prism.min.js
 #- var: mathjax
 #  - key: src
 #    value: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
@@ -199,7 +199,7 @@ script: # 需要在正文前调用的脚本或者插件的autoloader
     value: true
 #- var:
 #  - key: src
-#    value: //cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@latest/public/js/baidu_push.min.js
+#    value: public/js/baidu_push.min.js
 
 sidebar:
   avatar: # 侧边栏显示的头像
@@ -228,13 +228,13 @@ sidebar:
   simple_jekyll_search:
     enable: true
     autoloader: /public/simple-jekyll-search/autoloader.js
-    stylesheet: //cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@latest/public/simple-jekyll-search/search_box.min.css
+    stylesheet: /public/simple-jekyll-search/search_box.min.css
     src: //cdn.jsdelivr.net/npm/simple-jekyll-search/dest/simple-jekyll-search.min.js
     placeholder: 搜索博文
     json: /public/simple-jekyll-search/search.json
   jekyll_table_of_contents:
     enable: true
-    autoloader: //cdn.jsdelivr.net/gh/Young-Lord/Young-Lord.github.io@latest/public/js/jekyll_table_of_contents.min.js
+    autoloader: /public/js/jekyll_table_of_contents.min.js
   busuanzi:
     enable: true
     src: //cdn.jsdelivr.net/npm/busuanzi/bsz.pure.mini.min.js
