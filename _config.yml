@@ -248,7 +248,7 @@ sidebar:
 
 index:
   showtag:
-  - 照片
+  - Arcaea
 
 post:
   meta:
@@ -272,8 +272,6 @@ post:
     enable: false
     text: 如果我的博客帮助到你，可以请我喝一杯咖啡~
     img: # 万一真的有人打赏呢~
-      - id: wechat
-        src: /public/image/wechatpay.png
       - id: wechatappreciate
         src: /public/image/wechatappreciate.png
       - id: qq
