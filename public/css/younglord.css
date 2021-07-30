@@ -1,6 +1,6 @@
 @media (min-width: 70em) {
 	body {
-		background-image: url(/public/image/Niko_and_Rue.jpg);
+		background-image: url(/public/image/b.jpg);
    }
 }
 .masthead-title {
@@ -39,7 +39,8 @@ blockquote {
 }
 .wrap {
 	font-family: monospace;
-	background-color: rgba(255,255,255,.3);
+	background-color: rgba(255,255,255,.4);
+	backdrop-filter: blur(2.5px);
 }
 .sidebar {
 	font-family: monospace;
