@@ -44,7 +44,7 @@ Live2D来自于[stevenjoezhang/live2d-widget](https://github.com/stevenjoezhang/
 
 头像翻转效果来自于[leopardpan/leopardpan.github.io](https://github.com/leopardpan/leopardpan.github.io)，感谢。
 
-背景来源于Microsoft，感谢。
+背景来源于Pixiv，感谢。
 
 ## Feature/Todo
 
