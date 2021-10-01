@@ -208,6 +208,9 @@ sidebar:
     info: <br/>Niko Forever # 头像背后的信息
   #description: '<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=210 src="//music.163.com/outchain/player?type=0&id=932740311&auto=0&height=430"></iframe>'
   social:
+  - title: Mail
+    href: mailto:ly-niko@qq.com
+    class: 'fas fa-envelope'
   - title: rss
     href: /atom.xml
     class: 'fas fa-rss'
