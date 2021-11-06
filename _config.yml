@@ -262,6 +262,9 @@ sidebar:
     hour: 时
     minute: 分
     second: 秒
+  moe_icp:
+    enable: true
+    text: '<a href="https://icp.gov.moe/?keyword=20213444" target="_blank">萌ICP备20213444号</a>'
   copyright:
     enable: true
     text: '<script async defer src="https://buttons.github.io/buttons.js"></script><a class="github-button" aria-label="Star Young-Lord/Young-Lord.github.io on GitHub" href="https://github.com/Young-Lord/Young-Lord.github.io" data-icon="octicon-star" data-show-count="true">Star</a>'
