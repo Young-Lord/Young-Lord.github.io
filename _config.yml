@@ -287,7 +287,7 @@ post:
     visitor: # 需要开启valine的visitor选项使之开始计数; 可能会和busuanzi统计的有出入
       enable: true
       unit: 次
-    copyright: '<i class="fab fa-creative-commons"></i> <a rel="license" href="//creativecommons.org/licenses/by-sa/4.0/deed.zh">BY-SA 4.0</a>（除特别声明或转载文章外）'
+    copyright: '<i class="fab fa-creative-commons"></i> <a rel="license" href="//creativecommons.org/licenses/by-sa/4.0/deed.zh">BY-SA 4.0</a>（除特别声明或转载文章外）（禁止转载至CSDN或简书）'
   related:
     enable: false
     title: 相关博文
