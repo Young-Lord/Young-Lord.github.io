@@ -4,10 +4,10 @@ kramdown:
   math_engine: katex # 防止行间公式渲染错误
 #redcarpet:
 #    extensions: [ "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
-permalink: /posts/:categories/:title # 博文目录
+permalink: /posts/:title # 博文目录
 baseurl: "" # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/public`前也要加，即`/your_baseurl/public`。这一项结尾不要有'/'
 
-title: 捞羊的博客
+title: LY的博客
 url: https://Young-Lord.github.io
 author: LY
 
