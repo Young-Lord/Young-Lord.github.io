@@ -318,3 +318,5 @@ page404:
     charset: utf-8
     homePageUrl: '/'
     homePageName: 回到我的主页
+
+timezone: Asia/Shanghai # 修正时区为东八区
