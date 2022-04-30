@@ -36,12 +36,6 @@ head: # 删改前确定知道自己在做什么
     value: google-site-verification
   - key: content
     value: YIKi1rBnyUaS-DMYiluseI5kZzTwjCkTFmKkSkMZDJk
-- tag: meta # baidu站点验证
-  var:
-  - key: name
-    value: baidu-site-verification
-  - key: content
-    value: bEFDJ1LvXb
 - tag: meta # yandex站点验证
   var:
   - key: name
@@ -319,8 +313,10 @@ valine:
 
 page404:
   search_children: # 腾讯公益
-    enable: true
+    enable: false
     src: //qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js
     charset: utf-8
     homePageUrl: '/'
     homePageName: 回到我的主页
+
+timezone: Asia/Shanghai # 修正时区为东八区

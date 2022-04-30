@@ -1,4 +1,4 @@
 ---
 layout: index
-title: MC Forever!
+title: 
 ---
