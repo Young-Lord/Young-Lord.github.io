@@ -1,4 +1,4 @@
-7---
+---
 layout: comments
 title: 留言
 ---
