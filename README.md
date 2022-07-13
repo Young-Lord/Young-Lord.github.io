@@ -51,7 +51,7 @@ Live2D来自于[stevenjoezhang/live2d-widget](https://github.com/stevenjoezhang/
 博客评论系统为 [Cusdis](https://cusdis.com)，感谢。
 
 ## Feature/Todo
-- [ ] 加入评论系统
+- [x] 加入评论系统
 - [x] 不蒜子统计
 - [x] [<i class="fab fa-font-awesome"></i>fontawesome-free](https://fontawesome.com/)
 - [x] 全站搜索
