@@ -1,4 +1,4 @@
----
+7---
 layout: comments
 title: 留言
 ---
@@ -8,5 +8,5 @@ title: 留言
 - [西城飘雪的博客](https://blog.hoshi.tech/)：逆向聚聚！
 - [wlt233的博客](https://tqlwsl.moe/index.php/)：逆向引路人
 - [Benpigchu](https://benpigchu.com/)：BEMANI Programming Crew
-- [湖精姐](https://awa.moe)：空页面
+- [湖精](https://blog.awa.moe)：Atmosphere - IN PURSUIT OF FREEDOM
 - [某猫](https://qmqaq.top)：Aw.Cat
