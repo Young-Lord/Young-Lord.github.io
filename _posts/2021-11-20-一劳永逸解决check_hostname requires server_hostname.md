@@ -5,9 +5,9 @@ date: 2021-11-20 15:00
 
 ## 缘起
 
-想必任何一个开着代理用pip的windows用户都见过以下画面：
+想必任何一个开着代理用 pip 的 Windows 用户都见过以下画面：
 
-![image-20211120151401427](https://i.loli.net/2021/11/20/5BMCkKNAuhYvE43.png)
+![下载包时出现异常](https://i.loli.net/2021/11/20/5BMCkKNAuhYvE43.png)
 
 ![搜索结果](https://i.loli.net/2021/11/20/CUHBjOkQPqTdXo6.png)
 
@@ -15,13 +15,13 @@ date: 2021-11-20 15:00
 
 **关 闭 代 理**
 
-不是，你TM不会每次用pip就关代理关完再开吧？？？真有人这么傻？
+不是，你TM不会每次用 pip 就关代理关完再开吧？？？真有人这么傻？
 
-好在python是解释性语言，改了代码就能跑，所以——
+好在 Python 是解释性语言，改了代码就能跑，所以——
 
 ## 开干
 
-**警告：以下内容涉及到更改python基础库的操作，可能导致包括但不限于设备爆炸在内的问题，如不想继续请自行退出**
+**警告：以下内容涉及到更改 Python 基础库的操作，可能导致包括但不限于设备爆炸在内的问题，如不想继续请自行退出**
 
 上一步里，我们看到`raise ValueError`，那就定位到`C:\users\%USERNAME%\appdata\local\programs\python\python38\lib\ssl.py`的`997行`：
 
@@ -42,7 +42,7 @@ date: 2021-11-20 15:00
 
 ![报错](https://i.loli.net/2021/11/20/MlhRBILQ7mpqyrn.png)
 
-这一次，是`ProxyError`。去网上一查，你就发现，只有http类型的代理才能正常运行。也就是说，你要把你的代理设置改成这样：
+这一次，是`ProxyError`。去网上一查，你就发现，只有 http 类型的代理才能正常运行。也就是说，你要把你的代理设置改成这样：
 
 ![在代理地址前添加http](https://i.loli.net/2021/11/20/21KSixgUTeJyWLv.png)
 
@@ -64,7 +64,7 @@ proxy_url = proxy_url.replace("https://", "http://")
 
 ![成功](https://i.loli.net/2021/11/20/hov3ViZl2AMCPWm.png)
 
-至此，你终于享受到了一个开着代理也能使用pip的体验。
+至此，你终于享受到了一个开着代理也能使用 pip 的体验。
 
 这就是标题中的，“一劳永逸”。
 
@@ -72,6 +72,4 @@ proxy_url = proxy_url.replace("https://", "http://")
 
 ## 彩蛋
 
-正当我为了写这篇blog而去重现bug的时候，我发现了，就算把`ssl.py`中的修改移除也不会出现问题，所以只用执行`poolmanager.py`中的修改，就能解决问题了。
-
-因此，这看起来单纯是因为https或没有指定协议的代理带来的锅，希望urllib那边早日修好吧。
+正当我为了写这篇 blog 去复现 bug 的时候，我发现不更改`ssl.py`也不会出现问题，所以只用修改`poolmanager.py`就可以了。
