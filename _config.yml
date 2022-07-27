@@ -199,7 +199,7 @@ sidebar:
   avatar: # 侧边栏显示的头像
     enable: true
     img: /public/image/iconSize600.png # 头像的地址
-    info: '<br/>Young-Lord 仅为一个名字，<br/>不含任何意义。<br/>LY 与它无关。<br/>头像为《蔷薇少女》中的翠星石，<br/>Pixiv ID: 65149795<br/>配色炸掉了🤯' # 头像背后的信息
+    info: '</br>'
   #description: '<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=210 src="//music.163.com/outchain/player?type=0&id=932740311&auto=0&height=430"></iframe>'
   social:
   - title: Mail
@@ -214,9 +214,9 @@ sidebar:
   nav:
   - title: '<i class="fas fa-home fa-fw"></i> 首页'
     href: /
-  - title: '<i class="fab fa-readme fa-fw"></i> 关于'
-    href: /about
-  - title: '<i class="fas fa-comments fa-fw"></i> 留言'
+#  - title: '<i class="fab fa-readme fa-fw"></i> 关于'
+#    href: /about
+  - title: '<i class="fas fa-comments fa-fw"></i> 留言/友链'
     href: /comments
   - title: '<i class="fas fa-tags fa-fw"></i> 标签'
     href: /tags
