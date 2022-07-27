@@ -7,7 +7,7 @@ kramdown:
 permalink: /posts/:title # 博文目录
 baseurl: "" # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/public`前也要加，即`/your_baseurl/public`。这一项结尾不要有'/'
 
-title: LY的博客
+title: LY 的博客
 url: https://Young-Lord.github.io
 author: LY
 
@@ -162,9 +162,9 @@ script: # 需要在正文前调用的脚本或者插件的autoloader
 #    value: "-1"
 #  - key: src
 #    value: //cdn.jsdelivr.net/npm/canvas-nest.js/dist/canvas-nest.js
-- var:
-  - key: src
-    value: //cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.min.js # live2d
+# - var:
+#   - key: src
+#     value: //cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.min.js # live2d
 - var:
   - key: src
     value: /public/js/mermaid.js
@@ -199,13 +199,13 @@ sidebar:
   avatar: # 侧边栏显示的头像
     enable: true
     img: /public/image/iconSize600.png # 头像的地址
-    info: <br/>Niko Forever # 头像背后的信息
+    info: '<br/>Young-Lord 仅为一个名字，<br/>不含任何意义。<br/>LY 与它无关。<br/>头像为《蔷薇少女》中的翠星石，<br/>Pixiv ID: 65149795<br/>配色炸掉了🤯' # 头像背后的信息
   #description: '<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=210 src="//music.163.com/outchain/player?type=0&id=932740311&auto=0&height=430"></iframe>'
   social:
   - title: Mail
     href: mailto:ly-niko@qq.com
     class: 'fas fa-envelope'
-  - title: rss
+  - title: RSS
     href: /atom.xml
     class: 'fas fa-rss'
   - title: HitGub
