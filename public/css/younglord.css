@@ -8,7 +8,7 @@
 }
 h1, h2, h3, h4, h5, h6 {
 	color: #000000;
-	font-family: monospace;
+  font-family: "Source Sans Pro","Hiragino Sans GB","Microsoft Yahei",SimSun,Helvetica,Arial,Sans-serif,monospace;/*Font list from blog.hoshi.tech*/
 }
 body {
 	color: #181818;
@@ -26,7 +26,8 @@ blockquote {
 .theme-base-0d .container a, .theme-base-0d .sidebar-toggle, .theme-base-0d .related-posts li a:hover {
 	font-size: 85%;
 	text-decoration: underline;
-	/*color: rgb(119,240,255);*/
+  /*here is css for hyperlink*/
+	color: #eee;
 }
 :not(pre) > code[class*="language-"] {
 	color: #c7254e;
@@ -38,12 +39,12 @@ blockquote {
 	text-shadow: none;
 }
 .wrap {
-	font-family: monospace;
+  font-family: "Source Sans Pro","Hiragino Sans GB","Microsoft Yahei",SimSun,Helvetica,Arial,Sans-serif,monospace;/*Font list from blog.hoshi.tech*/
 	background-color: rgba(255,255,255,.4);
 	backdrop-filter: blur(2.5px);
 }
 .sidebar {
-	font-family: monospace;
+  font-family: "Source Sans Pro","Hiragino Sans GB","Microsoft Yahei",SimSun,Helvetica,Arial,Sans-serif,monospace;/*Font list from blog.hoshi.tech*/
 }
 td, th {
 	background-color: rgba(255,255,255,0.4);
