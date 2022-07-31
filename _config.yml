@@ -225,7 +225,7 @@ sidebar:
   simple_jekyll_search:
     enable: true
     autoloader: /public/simple-jekyll-search/autoloader.js
-    stylesheet: /public/simple-jekyll-search/search_box.min.css
+    stylesheet: /public/simple-jekyll-search/search_box.css
     src: //cdn.jsdelivr.net/npm/simple-jekyll-search/dest/simple-jekyll-search.min.js
     placeholder: 搜索博文
     json: /public/simple-jekyll-search/search.json
