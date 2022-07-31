@@ -26,7 +26,7 @@ blockquote {
 .theme-base-0d .container a, .theme-base-0d .sidebar-toggle, .theme-base-0d .related-posts li a:hover {
 	font-size: 85%;
 	text-decoration: underline;
-	color: rgb(119,240,255);
+	/*color: rgb(119,240,255);*/
 }
 :not(pre) > code[class*="language-"] {
 	color: #c7254e;
