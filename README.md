@@ -1,15 +1,6 @@
----
-layout: page
-title: 关于
-permalink: /about
----
-
 ## 开始
 
-1. Fork [Young-Lord/young-lord.github.io](https://github.com/Young-Lord/young-lord.github.io/fork)到你的仓库，并在设置里开启gh-pages
-2. 修改`_config.yml`为你自己的信息
-3. 删除`_post/`下的博文和`public/image/`文件夹下的图片，开始写你自己的文章
-4. 详细配置可以参见[这篇博文](https://wu-kan.github.io/posts/博客搭建/基于Jekyll搭建个人博客)
+1. 摆了，自己看[官方教程](https://tianqi.name/jekyll-TeXt-theme/docs/zh/quick-start)吧
 5. 欢迎<a class="github-button" aria-label="Star Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io" data-icon="octicon-star" data-show-count="true">Star</a> <a class="github-button" aria-label="Fork Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/fork" data-icon="octicon-repo-forked" data-show-count="true">Fork</a> <a class="github-button" aria-label="Issue Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/issues" data-icon="octicon-issue-opened" data-show-count="true">Issue</a>
 
 ## 声明
@@ -28,9 +19,11 @@ permalink: /about
 
 CDN 加速服务来自于 [jsdelivr](https://www.jsdelivr.com/)，感谢。
 
-博客主题基于 [poole/lanyon](https://github.com/poole/lanyon)，感谢。
+新的博客主题（北京时间2022/08/01正午起）来自[TeXt](https://tianqi.name/jekyll-TeXt-theme/)，感谢！
 
-博客界面 Fork 自 [wu-kan/wu-kan.github.io](https://github.com/wu-kan/wu-kan.github.io)，感谢！
+旧的博客主题基于 [poole/lanyon](https://github.com/poole/lanyon)，感谢。
+
+旧的博客界面（北京时间2022/08/01正午前） Fork 自 [wu-kan/wu-kan.github.io](https://github.com/wu-kan/wu-kan.github.io)，感谢！
 
 图标库来自于 [<i class="fab fa-font-awesome"></i>fontawesome-free](https://fontawesome.com/)，感谢。
 
@@ -49,18 +42,3 @@ Live2D 来自于 [stevenjoezhang/live2d-widget](https://github.com/stevenjoezhan
 背景来源于 [NightMargin](https://tieba.baidu.com/p/6683972695)，感谢。
 
 博客评论系统为 [Cusdis](https://cusdis.com)，感谢。
-
-## Feature/Todo
-- [x] 加入评论系统
-- [x] 不蒜子统计
-- [x] [<i class="fab fa-font-awesome"></i>fontawesome-free](https://fontawesome.com/)
-- [x] 全站搜索
-- [x] [ribbon动态背景](https://github.com/hustcc/ribbon.js)
-- [x] 调整代码块风格，并加上代码选中按钮
-- [x] 加入可以自动展开、标号的目录
-  - [x] 目录标号
-  - [ ] 自动展开
-- [x] mermaid
-  - [x] Markdown代码扩展
-- [x] $\KaTeX$
-- [x] Live2D
