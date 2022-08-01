@@ -52,6 +52,8 @@
 #sidebar{
     font-family: inherit;
     font-size: inherit;
+    color: inherit;
+    background-color: inherit;
 }
 
 .sidebar-toggle {/*调节侧边栏开关到顶部的距离，防止移动端无法显示搜索按钮*/

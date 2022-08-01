@@ -1,7 +1,6 @@
 /*From https://github.com/wu-kan/wu-kan.github.io , shared by MIT License*/
 @media (min-width: 70em) {
   body {
-    background-image: url(about:blank);
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
