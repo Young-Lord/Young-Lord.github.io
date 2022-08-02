@@ -1,0 +1,12 @@
+{%- if page.id and site.comments.cusdis.app-id -%}
+<!--特殊界面只有手动设置才有id-->
+<div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="{{ site.comments.cusdis.app-id }}"
+  data-page-id="{{ page.id }}"
+  data-page-url="{{ site.url }}{{ page.baseurl }}{{ page.url }}"
+  data-page-title="{{ page.title }}"
+></div>
+<script defer src="https://cusdis.com/js/widget/lang/zh-cn.js"></script>
+<script defer src="https://cusdis.com/js/cusdis.es.js"></script>
+{%- endif -%}

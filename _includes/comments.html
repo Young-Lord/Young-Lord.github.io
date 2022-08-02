@@ -1,5 +1,7 @@
 {%- if jekyll.environment != 'development-IJUSTWANTIT!' -%}
-  {%- if site.comments.provider == 'disqus' -%}
+  {%- if site.comments.provider == 'cusdis' -%}
+    {%- include comments-providers/cusdis.html -%}
+  {%- elsif site.comments.provider == 'disqus' -%}
     {%- include comments-providers/disqus.html -%}
   {%- elsif site.comments.provider == 'gitalk' -%}
     {%- include comments-providers/gitalk.html -%}
