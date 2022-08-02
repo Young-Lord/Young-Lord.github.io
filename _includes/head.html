@@ -14,11 +14,11 @@
 
 {%- include head/favicon.html -%}
 
+{%- include head/custom.html -%}
+<!--降CSS优先级-->
+
 {%- include snippets/prepend-baseurl.html path='/assets/css/main.css' -%}
 <link rel="stylesheet" href="{{ __return }}">
-
-{%- include head/custom.html -%}
-<!--降优先级-->
 
 {%- include snippets/get-sources.html -%}
 {%- assign _sources = __return -%}
