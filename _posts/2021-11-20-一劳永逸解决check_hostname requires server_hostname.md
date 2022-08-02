@@ -53,7 +53,7 @@ title: 一劳永逸解决check_hostname requires server_hostname
 
 既然这个只支持`http`，那就改呗：
 
-![image-20211120160908365](https://i.loli.net/2021/11/20/PE39FLv8W6Zszeo.png)
+![修改代码的截图](https://i.loli.net/2021/11/20/PE39FLv8W6Zszeo.png)
 
 也就是，在`proxy = parse_url(proxy_url)`前添加这段代码：
 
