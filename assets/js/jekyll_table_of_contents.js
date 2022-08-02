@@ -1,4 +1,3 @@
-document.write('<div id="toc"></div>');
 (function () {
     var SOURCES = window.TEXT_VARIABLES.sources;
     window.Lazyload.js(SOURCES.jquery, function () {
