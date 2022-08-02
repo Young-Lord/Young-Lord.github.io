@@ -35,7 +35,7 @@
         {%- if paginator.previous_page -%}
           {%- include snippets/prepend-baseurl.html path=paginator.previous_page_path -%}
           {%- assign _href = __return -%}
-          <li><a class="button button--secondary button--circle" href="{{ _href }}">
+          <li><a class="button button--secondary button--circle" title="上一页" href="{{ _href }}">
             <i class="fas fa-angle-left"></i>
           </a></li>
         {%- else -%}
@@ -47,7 +47,7 @@
         {%- for page in (1.._length) -%}
           {%- if page == _cur -%}
             <li>
-              <div class="button button--primary button--circle focus"><span>{{ page }}</span></div>
+              <div class="button button--primary button--circle focus" title="当前页面，第{{page}}页"><span>{{ page }}</span></div>
             </li>
 
           {%- elsif page == 1 -%}
@@ -55,7 +55,7 @@
             {%- include snippets/prepend-baseurl.html path=_home_path -%}
             {%- assign _href = __return -%}
             <li>
-              <a class="button button--secondary button--circle" href="{{ _href }}"><span>{{ page }}</span></a>
+              <a class="button button--secondary button--circle" href="{{ _href }}" title="第{{page}}页"><span>{{ page }}</span></a>
             </li>
 
           {%- else -%}
@@ -68,14 +68,14 @@
                 {%- include snippets/prepend-baseurl.html path=site.paginate_path -%}
                 {%- assign _href = __return -%}
                 <li>
-                  <a class="button button--secondary button--circle" href="{{ _href | replace: ':num', page }}"><span>{{ page }}</span></a>
+                  <a class="button button--secondary button--circle" href="{{ _href | replace: ':num', page }}" title="第{{page}}页"><span>{{ page }}</span></a>
                 </li>
               {%- endif -%}
             {%- else -%}
               {%- include snippets/prepend-baseurl.html path=site.paginate_path -%}
               {%- assign _href = __return -%}
               <li>
-                <a class="button button--secondary button--circle" href="{{ _href | replace: ':num', page }}"><span>{{ page }}</span></a>
+                <a class="button button--secondary button--circle" href="{{ _href | replace: ':num', page }}" title="第{{page}}页"><span>{{ page }}</span></a>
               </li>
             {%- endif -%}
           {%- endif -%}
@@ -84,7 +84,7 @@
         {%- if paginator.next_page -%}
           {%- include snippets/prepend-baseurl.html path=paginator.next_page_path -%}
           {%- assign _href = __return -%}
-          <li><a class="button button--secondary button--circle" href="{{ _href }}">
+          <li><a class="button button--secondary button--circle" href="{{ _href }}" title="下一页">
             <i class="fas fa-angle-right"></i>
           </a></li>
         {%- else -%}
