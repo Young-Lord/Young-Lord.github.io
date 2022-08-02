@@ -1,35 +1,77 @@
 /*哈哈，多半要出事*/
 
 /*复制的，rss图标显示*/
-.author-links > ul > li > .rss-button { -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
+.author-links>ul>li>.rss-button {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
 
-.author-links > ul > li > .rss-button svg path { -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
+.author-links>ul>li>.rss-button svg path {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
 
-.author-links > ul > li > .rss-button, .author-links > ul > li > .rss-button:link, .author-links > ul > li > .rss-button:visited { color: #fff; background-color: orange; }
+.author-links>ul>li>.rss-button,
+.author-links>ul>li>.rss-button:link,
+.author-links>ul>li>.rss-button:visited {
+    color: #fff;
+    background-color: orange;
+}
 
-.author-links > ul > li > .rss-button svg path, .author-links > ul > li > .rss-button:link svg path, .author-links > ul > li > .rss-button:visited svg path { fill: #fff; }
+.author-links>ul>li>.rss-button svg path,
+.author-links>ul>li>.rss-button:link svg path,
+.author-links>ul>li>.rss-button:visited svg path {
+    fill: #fff;
+}
 
-.root[data-is-touch="false"] .author-links > ul > li > .rss-button:hover { color: #ffffff; background-color: #dd9000; }
+.root[data-is-touch="false"] .author-links>ul>li>.rss-button:hover {
+    color: #ffffff;
+    background-color: #dd9000;
+}
 
-.root[data-is-touch="false"] .author-links > ul > li > .rss-button:hover svg path { fill: #fff; }
+.root[data-is-touch="false"] .author-links>ul>li>.rss-button:hover svg path {
+    fill: #fff;
+}
 
-.root[data-is-touch] .author-links > ul > li > .rss-button.active, .root[data-is-touch] .author-links > ul > li > .rss-button:active { color: #fff; background-color: #575757; }
+.root[data-is-touch] .author-links>ul>li>.rss-button.active,
+.root[data-is-touch] .author-links>ul>li>.rss-button:active {
+    color: #fff;
+    background-color: #575757;
+}
 
-.root[data-is-touch] .author-links > ul > li > .rss-button.active svg path, .root[data-is-touch] .author-links > ul > li > .rss-button:active svg path { fill: #fff; }
+.root[data-is-touch] .author-links>ul>li>.rss-button.active svg path,
+.root[data-is-touch] .author-links>ul>li>.rss-button:active svg path {
+    fill: #fff;
+}
 
-.root[data-is-touch] .author-links > ul > li > .rss-button.focus { color: default; background-color: #2e2e2e; box-shadow: 0 0 0 2px rgba(46, 46, 46, 0.4); }
+.root[data-is-touch] .author-links>ul>li>.rss-button.focus {
+    color: default;
+    background-color: #2e2e2e;
+    box-shadow: 0 0 0 2px rgba(46, 46, 46, 0.4);
+}
 
-.root[data-is-touch] .author-links > ul > li > .rss-button.focus svg path { fill: default; }
+.root[data-is-touch] .author-links>ul>li>.rss-button.focus svg path {
+    fill: default;
+}
 
-.author-links > ul > li > .rss-button.disabled, .author-links > ul > li > .rss-button:disabled { color: rgba(255, 255, 255, 0.4) !important; background-color: #000 !important; }
+.author-links>ul>li>.rss-button.disabled,
+.author-links>ul>li>.rss-button:disabled {
+    color: rgba(255, 255, 255, 0.4) !important;
+    background-color: #000 !important;
+}
 
-.author-links > ul > li > .rss-button.disabled svg path, .author-links > ul > li > .rss-button:disabled svg path { fill: rgba(255, 255, 255, 0.4) !important; }
+.author-links>ul>li>.rss-button.disabled svg path,
+.author-links>ul>li>.rss-button:disabled svg path {
+    fill: rgba(255, 255, 255, 0.4) !important;
+}
 
-.header__brand {/*使头像紧密贴边*/
+.header__brand {
+    /*使头像紧密贴边*/
     height: 100%;
 }
 
-#LY_page_logo {/*圆角，去除间隔*/
+#LY_page_logo {
+    /*圆角，去除间隔*/
     border-radius: 10%;
     margin: unset;
 }
@@ -40,23 +82,38 @@
     transition-delay: 0.5s;
     transition-property: all;
     transition-duration: 30s;
-    transition-timing-function: cubic-bezier(.34,0,.84,1);
+    transition-timing-function: cubic-bezier(.34, 0, .84, 1);
 }
 
-.container {/*内容去除两侧空白*/
+.container {
+    /*内容去除两侧空白*/
     max-width: none;
     padding-left: unset;
     padding-right: unset;
 }
 
-#sidebar{
+#sidebar {
     font-family: inherit;
     font-size: inherit;
     color: inherit;
     background-color: inherit;
 }
 
-.sidebar-toggle {/*调节侧边栏开关到顶部的距离，防止移动端无法显示搜索按钮*/
-  position: absolute;
-  top:  3rem;
+.sidebar-toggle {
+    /*调节侧边栏开关到顶部的距离，防止移动端无法显示搜索按钮*/
+    position: absolute;
+    top: 3rem;
+}
+
+/*重载下字体（来自 Typecho）*/
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Source Sans Pro", "Hiragino Sans GB", "Microsoft Yahei", SimSun, Helvetica, Arial, Sans-serif, monospace;
+}
+
+.wrap {
+    font-family: "Source Sans Pro", "Hiragino Sans GB", "Microsoft Yahei", SimSun, Helvetica, Arial, Sans-serif, monospace;
+}
+
+.sidebar {
+    font-family: "Source Sans Pro", "Hiragino Sans GB", "Microsoft Yahei", SimSun, Helvetica, Arial, Sans-serif, monospace;
 }
