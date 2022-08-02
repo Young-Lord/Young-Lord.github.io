@@ -1,3 +1,21 @@
+## 简介
+
+这是 LY 的博客，有以下特性：
+
+- 基于 [TeXt](https://tianqi.name/jekyll-TeXt-theme) 的简洁主题
+
+- 侧边栏
+
+- 基于 Cusdis 的免登录评论系统
+
+- 基于不蒜子的阅读量统计
+
+- 深色模式自动切换
+
+- 无障碍支持（亲自测试与适配）
+
+- <del>头像（悬停或点击后）旋转</del>
+
 ## 开始
 
 1. 摆了，自己看[官方教程](https://tianqi.name/jekyll-TeXt-theme/docs/zh/quick-start)吧
