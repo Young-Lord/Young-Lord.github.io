@@ -108,7 +108,7 @@ sharing:
 ## => Comments
 ##############################
 comments:
-  provider: custom # false (default), "disqus", "gitalk", "valine", "custom"
+  provider: cusdis # false (default), "disqus", "gitalk", "valine", "custom", "cusdis"
   cusdis:
     app-id: "f9fae777-b249-44e5-b3b9-c4e6747a54b0"
     # Change app-id to your own.
