@@ -23,9 +23,11 @@ id: page-memories
 - 对于**一代与二代**、**第一季与第二季**等，在名字后以不加粗的如`[1,2,SP]`形式的字样表示
 - “原名字/备注”栏使用`，`或`；`分隔
 
+点击特定列可以进行排序。
+
 | 名字                                  | 原名字/备注                                                  | 类别      | 评分 | 点评                                   | 时间       |
 | ------------------------------------- | ------------------------------------------------------------ | --------- | ---- | -------------------------------------- | ---------- |
-| **蔷薇少女**[1,2,3]                   | 日语：**ローゼンメイデン**；英语：**Rozen Maiden**           | 漫画/动画 | 9    |                                        | 2022/7     |
+| **蔷薇少女**[1,2,3]                   | 日语：**ローゼンメイデン**；英语：**Rozen Maiden**           | 动画/漫画 | 9    |                                        | 2022/7     |
 | **Trancer Doll\'s**                    | 由 Lapis 制作的《蔷薇少女》同人专辑                          | 音乐      | 10   |                                        | 2022       |
 | **Euphoria**                          | 汉语：**乐园**                                               | 游戏      | 8    |                                        | 2022/7     |
 | **主播女孩重度依赖**                  | 英语：***NEEDY GIRL OVERDOSE***                              | 游戏      | 7    |                                        | 2022/7     |
@@ -69,6 +71,60 @@ id: page-memories
 | **侠盗猎车手：圣安地列斯**            | 英语：**Grand Theft Auto: San Andreas**，简称：**GTA: SA**   | 游戏      | 8    |                                        | 201x       |
 | **侠盗猎车手：罪恶都市**              | 英语：**Grand Theft Auto: Vice City**，简称：**GTA: VC**     | 游戏      | 8    |                                        | 201x       |
 | **死期将至**                          | 英语：**Sometimes You Die**                                  | 游戏      | 6    |                                        | 201x       |
-| **传说之下**&**三角符文**             | 英语：**UNDERTALE**&**DELTARUNE**                            | 游戏      | 9    |                                        | 201x       |
+| **传说之下**&**三角符文**             | 英语：**UNDERTALE**&**DELTARUNE**                            | 游戏      | 8   |                                        | 201x       |
 | **我的世界**                          | 英语：**Minecraft**                                          | 游戏      | 10   |                                        | 201[3-6]   |
+
+<script>
+//来自 https://blog.csdn.net/chunyuan314/article/details/81211217
+var elem = undefined;
+var table_heads = document.getElementsByTagName("th");
+var need_sort = [];
+for(var i=0;i<table_heads.length;i+=1){
+    if(["评分","名字","类别"].indexOf(table_heads[i].innerText)!==-1){need_sort.push(table_heads[i]);}//不能重复加载，可以修但不修了
+}
+function sortTable() {
+      var compFunc = function($td1, $td2, isAsc) {
+        var v1 = $.trim($td1.text()).replace(/,|\s+|%/g, '');
+        var v2 = $.trim($td2.text()).replace(/,|\s+|%/g, '');
+        var pattern = /^\d+(\.\d*)?$/;
+        if (pattern.test(v1) && pattern.test(v2)) {
+          v1 = parseFloat(v1);
+          v2 = parseFloat(v2);
+        }
+        return isAsc ? v1 > v2 : v1 < v2;
+      };
+      var doSort = function($tbody, index, compFunc, isAsc)
+      {
+        var $trList = $tbody.find("tr");
+        var len = $trList.length;
+        for(var i=0; i<len-1; i++) {
+          for(var j=0; j<len-i-1; j++) {
+            var $td1 = $trList.eq(j).find("td").eq(index);
+            var $td2 = $trList.eq(j+1).find("td").eq(index);
+            if (compFunc($td1, $td2, isAsc)) {
+              var t = $trList.eq(j+1);
+              $trList.eq(j).insertAfter(t);
+              $trList = $tbody.find("tr");
+            }
+          }
+        }
+      }
+      var init = function(elem) {
+        var $th = $(elem);
+        this.$table = $th.closest("table");
+        var that = this;
+        $th.click(function(){
+          var index = $(this).index();
+          var asc = $(this).attr('data-asc');
+          isAsc = asc === undefined ? true : (asc > 0 ? true : false);
+          doSort(that.$table.find("tbody"), index, compFunc, isAsc);
+          $(this).attr('data-asc', 1 - (isAsc ? 1 : 0));
+        });
+        $th.css({'cursor': 'pointer'})
+           .attr('title', '点击以'+elem.innerText+'为依据排序');
+      };
+      need_sort.forEach(function(item){init(item)});
+    }
+window.Lazyload.js(window.TEXT_VARIABLES.sources.jquery, function(){sortTable();})
+</script>
 
