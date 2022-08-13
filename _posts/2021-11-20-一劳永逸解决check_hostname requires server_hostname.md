@@ -1,7 +1,7 @@
 ---
 tags: [Python]
 date: 2021-11-20 15:00
-title: 一劳永逸解决check_hostname requires server_hostname
+title: 一劳永逸解决 check_hostname requires server_hostname
 ---
 
 ## 缘起
