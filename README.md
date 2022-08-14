@@ -35,8 +35,6 @@
 
 博客引擎来自于 [jekyll](https://github.com/jekyll/jekyll)，感谢。
 
-CDN 加速服务来自于 [jsdelivr](https://www.jsdelivr.com/)，感谢。
-
 新的博客主题（北京时间2022/08/01正午起）来自[TeXt](https://tianqi.name/jekyll-TeXt-theme/)，感谢！
 
 旧的博客主题基于 [poole/lanyon](https://github.com/poole/lanyon)，感谢。
@@ -47,16 +45,24 @@ CDN 加速服务来自于 [jsdelivr](https://www.jsdelivr.com/)，感谢。
 
 页面统计来自于[不蒜子](http://busuanzi.ibruce.info/)，感谢。
 
-博文目录插件来自于 [ghiculescu/jekyll-table-of-contents](https://github.com/ghiculescu/jekyll-table-of-contents)，感谢。
+侧边栏博文目录插件来自于 [ghiculescu/jekyll-table-of-contents](https://github.com/ghiculescu/jekyll-table-of-contents)，感谢。
 
-博客搜索插件来自于 [christian-fei/Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)，感谢。
+侧边栏博客搜索插件来自于 [christian-fei/Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)，感谢。
 
-代码高亮及插件来自于 [PrismJS](https://prismjs.com/)，感谢。
-
-Live2D 来自于 [stevenjoezhang/live2d-widget](https://github.com/stevenjoezhang/live2d-widget)，感谢。
-
-头像翻转效果来自于 [leopardpan/leopardpan.github.io](https://github.com/leopardpan/leopardpan.github.io)，感谢。
-
-背景来源于 [NightMargin](https://tieba.baidu.com/p/6683972695)，感谢。
+<!--背景来源于 [NightMargin](https://tieba.baidu.com/p/6683972695)，感谢。-->
 
 博客评论系统为 [Cusdis](https://cusdis.com)，感谢。
+
+## 一些规范
+
+一切博文相关的 commit 名必须满足以下规范：
+
+```
+修改形式：标题名：具体描述（可选）
+```
+
+如，以下 commit 名均符合规范
+```
+新增博文：使用 Tool
+更新博文：对 GE 的修改：完善安装教程
+```
