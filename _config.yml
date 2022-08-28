@@ -69,7 +69,6 @@ excerpt_separator: <!--more-->
 
 ## license
 license: CC-BY-SA-4.0 # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
-# _includes/article/footer/license.html里也要改
 
 ## TOC（目录）
 toc:
