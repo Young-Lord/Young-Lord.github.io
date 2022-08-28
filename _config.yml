@@ -69,6 +69,8 @@ excerpt_separator: <!--more-->
 
 ## license
 license: CC-BY-SA-4.0 # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
+# _includes/article/footer/license.html 里也要改，
+# 原因是 _data/licenses.yml 里的协议名太长了，我不喜欢
 
 ## TOC（目录）
 toc:
