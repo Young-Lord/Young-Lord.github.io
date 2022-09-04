@@ -41,16 +41,16 @@ zh-Hans: &ZH_HANS
   LAST_UPDATED            : "更新于"
   PREVIOUS                : "上篇"
   NEXT                    : "下篇"
-  ARTICLE_DATE_FORMAT     : "%Y年%m月%d日"
-  ARTICLE_LIST_DATE_FORMAT: "%m月%d日"
+  ARTICLE_DATE_FORMAT     : "%Y 年 %-m 月 %-d 日"
+  ARTICLE_LIST_DATE_FORMAT: "%-m 月 %-d 日"
   STATISTICS              : "共计 [POST_COUNT] 篇文章，[PAGE_COUNT] 页。"
   LICENSE_ANNOUNCE        : "本文遵守 [LICENSE] 许可协议。"
-  POST_ON_GITHUB          : "在 Github 上修改"
+  POST_ON_GITHUB          : "在 GitHub 上修改"
   FOLLOW_ME               : "在 [NAME] 上关注我。"
   FOLLOW_US               : "在 [NAME] 上关注我们。"
   EMAIL_ME                : "给我发邮件。"
   EMAIL_US                : "给我们发邮件。"
-  COPYRIGHT_DATES         : "2021"
+  COPYRIGHT_DATES         : "2022"
 
 zh:
   <<: *ZH_HANS
