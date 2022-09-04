@@ -41,7 +41,7 @@ zh-Hans: &ZH_HANS
   LAST_UPDATED            : "更新于"
   PREVIOUS                : "上篇"
   NEXT                    : "下篇"
-  ARTICLE_DATE_FORMAT     : "%Y年 %m月%d日"
+  ARTICLE_DATE_FORMAT     : "%Y年%m月%d日"
   ARTICLE_LIST_DATE_FORMAT: "%m月%d日"
   STATISTICS              : "共计 [POST_COUNT] 篇文章，[PAGE_COUNT] 页。"
   LICENSE_ANNOUNCE        : "本文遵守 [LICENSE] 许可协议。"
