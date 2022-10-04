@@ -19,7 +19,7 @@
 ## 开始
 
 1. 摆了，自己看[官方教程](https://tianqi.name/jekyll-TeXt-theme/docs/zh/quick-start)吧
-5. 欢迎<a class="github-button" aria-label="Star Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io" data-icon="octicon-star" data-show-count="true">Star</a> <a class="github-button" aria-label="Fork Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/fork" data-icon="octicon-repo-forked" data-show-count="true">Fork</a> <a class="github-button" aria-label="Issue Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/issues" data-icon="octicon-issue-opened" data-show-count="true">Issue</a>
+2. 欢迎<a class="github-button" aria-label="Star Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io" data-icon="octicon-star" data-show-count="true">Star</a> <a class="github-button" aria-label="Fork Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/fork" data-icon="octicon-repo-forked" data-show-count="true">Fork</a> <a class="github-button" aria-label="Issue Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/issues" data-icon="octicon-issue-opened" data-show-count="true">Issue</a>
 
 ## 声明
 
@@ -27,7 +27,7 @@
 
 特别的，博客内的文章**严禁**转载至CSDN或简书，无论是否署名。
 
-博客基于[MIT License](https://github.com/Young-Lord/young-lord.github.io/blob/master/LICENSE.md)开源于[GitHub](https://github.com/Young-Lord/young-lord.github.io)。
+博客基于 [MIT License](https://github.com/Young-Lord/young-lord.github.io/blob/master/LICENSE.md) 开源于 [GitHub](https://github.com/Young-Lord/young-lord.github.io)。
 
 ## 致谢
 
@@ -58,7 +58,7 @@
 一切博文相关的 commit 名必须满足以下规范：
 
 ```
-修改形式：标题名：具体描述（可选）
+修改形式：标题名（可包含空格）：具体描述（可选）
 ```
 
 如，以下 commit 名均符合规范
@@ -66,3 +66,5 @@
 新增博文：使用 Tool
 更新博文：对 GE 的修改：完善安装教程
 ```
+
+文件名中**不能**包含空格，如果非常必要的应用`_`替代；每篇博文必须指定适当使用空格的`title`属性
