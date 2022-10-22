@@ -5,6 +5,16 @@
 {%- else -%}
   <header class="header" {%- if include.background -%} style="background: {{ include.background }};" {%- endif -%}>
 {%- endif -%}
+
+  {%- include snippets/assign.html
+    target=site.data.variables.default.page.pan_gu_zhi_bai
+    source0=layout.pan_gu_zhi_bai source1=page.pan_gu_zhi_bai -%}
+  {%- assign _pan_gu_zhi_bai = __return -%}
+  {%- if _pan_gu_zhi_bai -%}
+  <div>
+    <script src="/assets/js/text_autospace_include.js"></script>
+  </div>
+  {%- endif -%}
     <div class="main">
       <div class="header__title">
         <div class="header__brand">

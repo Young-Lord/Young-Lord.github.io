@@ -40,7 +40,7 @@ author:
   url       : https://github.com/Young-Lord
   avatar    : https://avatars.githubusercontent.com/Young-Lord # path or url of avatar image (square)
   bio       : ""
-  email     : ly-niko@qq.com
+  email     : ly-niko@qq.com # 下面 sidebar 那里还有一个要改
   github    : Young-Lord
 
 
@@ -170,6 +170,7 @@ defaults:
       show_edit_on_github: true
       show_subscribe: false
       pageview: true
+      pan_gu_zhi_bai: ture # 中英文自动添加空白
 
 
 ## => Plugins

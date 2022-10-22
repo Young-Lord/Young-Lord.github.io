@@ -38,6 +38,7 @@ default:
     license: false
     pageview: false
     search: default
+    pan_gu_zhi_bai: true
 
 sources:
   bootcdn:
