@@ -4,11 +4,11 @@
 
 - 基于 [TeXt](https://tianqi.name/jekyll-TeXt-theme) 的简洁主题
 
-- 侧边栏
+- [侧边栏](https://wu-kan.cn/)
 
-- 基于 Cusdis 的免登录评论系统
+- 基于 [Cusdis](https://cusdis.com/) 的免登录评论系统
 
-- 基于不蒜子的阅读量统计
+- 基于[不蒜子](https://busuanzi.ibruce.info/)的阅读量统计
 
 - 深色模式自动切换
 
@@ -16,16 +16,18 @@
 
 - <del>头像（悬停或点击后）旋转</del>
 
+- 可[自由开关](https://github.com/Young-Lord/Young-Lord.github.io/blob/master/about.md?plain=1#L6)的[盘古之白](https://github.com/mastermay/text-autospace.js)（即中英文间的**空白**）
+
 ## 开始
 
 1. 摆了，自己看[官方教程](https://tianqi.name/jekyll-TeXt-theme/docs/zh/quick-start)吧
-2. 欢迎<a class="github-button" aria-label="Star Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io" data-icon="octicon-star" data-show-count="true">Star</a> <a class="github-button" aria-label="Fork Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/fork" data-icon="octicon-repo-forked" data-show-count="true">Fork</a> <a class="github-button" aria-label="Issue Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/issues" data-icon="octicon-issue-opened" data-show-count="true">Issue</a>
+2. 欢迎 <a class="github-button" aria-label="Star Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io" data-icon="octicon-star" data-show-count="true">Star</a> <a class="github-button" aria-label="Fork Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/fork" data-icon="octicon-repo-forked" data-show-count="true">Fork</a> <a class="github-button" aria-label="Issue Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/issues" data-icon="octicon-issue-opened" data-show-count="true">Issue</a>
 
 ## 声明
 
-除特别声明或转载外，所有博文采用[署名-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)协议进行许可。
+除特别声明或转载外，所有博文采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh) 协议进行许可。
 
-特别的，博客内的文章**严禁**转载至CSDN或简书，无论是否署名。
+特别的，博客内的文章**严禁**转载至 CSDN 或简书，无论是否署名。
 
 博客基于 [MIT License](https://github.com/Young-Lord/young-lord.github.io/blob/master/LICENSE.md) 开源于 [GitHub](https://github.com/Young-Lord/young-lord.github.io)。
 
@@ -33,9 +35,9 @@
 
 托管于 [Github Pages](https://pages.github.com/)，感谢。
 
-博客引擎来自于 [jekyll](https://github.com/jekyll/jekyll)，感谢。
+博客引擎来自于 [Jekyll](https://github.com/jekyll/jekyll)，感谢。
 
-新的博客主题（北京时间2022/08/01正午起）来自[TeXt](https://tianqi.name/jekyll-TeXt-theme/)，感谢！
+新的博客主题（北京时间2022/08/01正午起）来自 [TeXt](https://tianqi.name/jekyll-TeXt-theme/)，感谢！
 
 旧的博客主题基于 [poole/lanyon](https://github.com/poole/lanyon)，感谢。
 
@@ -58,13 +60,13 @@
 一切博文相关的 commit 名必须满足以下规范：
 
 ```
-修改形式：标题名（可包含空格）：具体描述（可选）
+修改形式：标题名（包含空格）：具体描述（可选）
 ```
 
 如，以下 commit 名均符合规范
 ```
-新增博文：使用 Tool
-更新博文：对 GE 的修改：完善安装教程
+新增博文：VS 简明使用教程
+更新博文：浅谈 Python 3.10 新特性：联合类型
 ```
 
-文件名中**不能**包含空格，如果非常必要的应用`_`替代；每篇博文必须指定适当使用空格的`title`属性
+文件名中**不能**包含空格，如果非常必要的应用`_`替代；每篇博文**必须**指定适当使用空格的`title`属性
