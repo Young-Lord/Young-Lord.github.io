@@ -7,6 +7,8 @@ id: page-about
 
 ## 碎碎念
 
+> 自疏濯淖污泥之中，蝉蜕于浊秽，以浮游尘埃之外，不获世之滋垢，皭然泥而不滓者也。
+
 Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。
 
 头像为《蔷薇少女》中的翠星石，Pixiv ID: [65149795](https://www.pixiv.net/artworks/65149795)。*（感谢 [SHIKI](https://www.bilibili.com/video/BV1Bh411Y7gX)！）* *翠星石超可爱的说！*
