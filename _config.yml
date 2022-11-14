@@ -137,7 +137,7 @@ analytics:
 ##############################
 markdown    : kramdown
 kramdown:
-  smart_quotes: apos,apos,quot,quot
+  smart_quotes: apos,apos,quot,quot # 禁用自动转全角引号，默认值：lsquo,rsquo,ldquo,rdquo；参考：https://kramdown.gettalong.org/options.html#:~:text=by%3A%20RemoveHtmlTags%20converter-,smart_quotes,-Defines%20the%20HTML
 highlighter : rouge
 permalink   : /posts/:title
 
