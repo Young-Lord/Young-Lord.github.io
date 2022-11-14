@@ -136,6 +136,8 @@ analytics:
 ## => Build
 ##############################
 markdown    : kramdown
+kramdown:
+  smart_quotes: apos,apos,quot,quot
 highlighter : rouge
 permalink   : /posts/:title
 
