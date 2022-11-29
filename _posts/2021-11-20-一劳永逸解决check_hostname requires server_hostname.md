@@ -4,6 +4,27 @@ date: 2021-11-20 15:00
 title: 一劳永逸解决 check_hostname requires server_hostname
 ---
 
+## 注意
+
+对于`urllib3`等包，`pip`内自己存了一份，所以以下两个文件可能均需更改：
+
+```
+C:\Users\%USERNAME%\AppData\Local\Programs\Python\Python310\Lib\site-packages\pip\_vendor\urllib3\poolmanager.py
+C:\Users\%USERNAME%\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\poolmanager.py
+```
+
+## TLDR
+
+找到`urllib3/poolmanager.py`的第`477`行，如下更改。
+
+![修改代码的截图](https://i.loli.net/2021/11/20/PE39FLv8W6Zszeo.png)
+
+也就是，在`proxy = parse_url(proxy_url)`前添加这段代码：
+
+```python
+proxy_url = proxy_url.replace("https://", "http://")
+```
+
 ## 缘起
 
 想必任何一个开着代理用 pip 的 Windows 用户都见过以下画面：
@@ -24,7 +45,7 @@ title: 一劳永逸解决 check_hostname requires server_hostname
 
 **警告：以下内容涉及到更改 Python 基础库的操作，可能导致包括但不限于设备爆炸在内的问题，如不想继续请自行退出**
 
-上一步里，我们看到`raise ValueError`，那就定位到`C:\users\%USERNAME%\appdata\local\programs\python\python38\lib\ssl.py`的`997行`：
+上一步里，我们看到`raise ValueError`，那就定位到`C:\Users\%USERNAME%\appdata\local\programs\python\python38\lib\ssl.py`的`997行`：
 
 ![代码截图](https://i.loli.net/2021/11/20/hEYJlZM9KFfaAoR.png)
 
