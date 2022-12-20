@@ -1,0 +1,184 @@
+diff --git a/libselinux/src/Makefile b/libselinux/src/Makefile
+index 04bf4f2..b656718 100644
+--- a/libselinux/src/Makefile
++++ b/libselinux/src/Makefile
+@@ -86,8 +86,8 @@ CFLAGS ?= -O -Wall -W -Wundef -Wformat-y2k -Wformat-security -Winit-self -Wmissi
+           -Wno-missing-field-initializers -Wno-sign-compare \
+           -Wno-format-nonliteral -Wframe-larger-than=$(MAX_STACK_SIZE) \
+           -fstack-protector-all --param=ssp-buffer-size=4 -fexceptions \
+-          -fasynchronous-unwind-tables -fdiagnostics-show-option -funit-at-a-time \
+-          -Werror -Wno-aggregate-return -Wno-redundant-decls \
++          -fasynchronous-unwind-tables -fdiagnostics-show-option \
++          -Wno-aggregate-return -Wno-redundant-decls -Wno-int-conversion -fPIC \
+           $(EXTRA_CFLAGS)
+ 
+ LD_SONAME_FLAGS=-soname,$(LIBSO),--version-script=libselinux.map,-z,defs,-z,relro
+@@ -174,8 +174,8 @@ $(SWIGRUBYCOUT): $(SWIGRUBYIF)
+ install: all 
+ 	test -d $(DESTDIR)$(LIBDIR) || install -m 755 -d $(DESTDIR)$(LIBDIR)
+ 	install -m 644 $(LIBA) $(DESTDIR)$(LIBDIR)
+-	test -d $(DESTDIR)$(SHLIBDIR) || install -m 755 -d $(DESTDIR)$(SHLIBDIR)
+-	install -m 755 $(LIBSO) $(DESTDIR)$(SHLIBDIR)
++#	test -d $(DESTDIR)$(SHLIBDIR) || install -m 755 -d $(DESTDIR)$(SHLIBDIR)
++#	install -m 755 $(LIBSO) $(DESTDIR)$(SHLIBDIR)
+ 	test -d $(DESTDIR)$(LIBDIR)/pkgconfig || install -m 755 -d $(DESTDIR)$(LIBDIR)/pkgconfig
+ 	install -m 644 $(LIBPC) $(DESTDIR)$(LIBDIR)/pkgconfig
+ 	ln -sf --relative $(DESTDIR)$(SHLIBDIR)/$(LIBSO) $(DESTDIR)$(LIBDIR)/$(TARGET)
+diff --git a/libselinux/src/selinux_restorecon.c b/libselinux/src/selinux_restorecon.c
+index 9dd6be8..3486ce1 100644
+--- a/libselinux/src/selinux_restorecon.c
++++ b/libselinux/src/selinux_restorecon.c
+@@ -6,6 +6,7 @@
+  * See selinux_restorecon(3) for details.
+  */
+ 
++#include "strverscmp.c"
+ #include <unistd.h>
+ #include <string.h>
+ #include <stdio.h>
+diff --git a/libselinux/src/strverscmp.c b/libselinux/src/strverscmp.c
+new file mode 100644
+index 0000000..34fecff
+--- /dev/null
++++ b/libselinux/src/strverscmp.c
+@@ -0,0 +1,112 @@
++/* Compare strings while treating digits characters numerically.
++   Copyright (C) 1997-2022 Free Software Foundation, Inc.
++   This file is part of the libiberty library.
++   Contributed by Jean-François Bignolles <bignolle@ecoledoc.ibp.fr>, 1997.
++
++   Libiberty is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   Libiberty is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library; if not, write to the Free
++   Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
++   02110-1301 USA.  */
++
++
++/* states: S_N: normal, S_I: comparing integral part, S_F: comparing
++           fractional parts, S_Z: idem but with leading Zeroes only */
++#define  S_N    0x0
++#define  S_I    0x4
++#define  S_F    0x8
++#define  S_Z    0xC
++
++/* result_type: CMP: return diff; LEN: compare using len_diff/diff */
++#define  CMP    2
++#define  LEN    3
++
++
++/* Compare S1 and S2 as strings holding indices/version numbers,
++   returning less than, equal to or greater than zero if S1 is less than,
++   equal to or greater than S2 (for more info, see the Glibc texinfo doc).  */
++
++static int ISDIGIT(const char c1){
++/*IT RUNS AND THATS ENOUGH*/
++if('0'<=c1 && c1<='9'){return 0;}
++return 1;
++}
++
++static int
++strverscmp (const char *s1, const char *s2)
++{
++  const unsigned char *p1 = (const unsigned char *) s1;
++  const unsigned char *p2 = (const unsigned char *) s2;
++  unsigned char c1, c2;
++  int state;
++  int diff;
++
++  /* Symbol(s)    0       [1-9]   others  (padding)
++     Transition   (10) 0  (01) d  (00) x  (11) -   */
++  static const unsigned int next_state[] =
++    {
++      /* state    x    d    0    - */
++      /* S_N */  S_N, S_I, S_Z, S_N,
++      /* S_I */  S_N, S_I, S_I, S_I,
++      /* S_F */  S_N, S_F, S_F, S_F,
++      /* S_Z */  S_N, S_F, S_Z, S_Z
++    };
++
++  static const int result_type[] =
++    {
++      /* state   x/x  x/d  x/0  x/-  d/x  d/d  d/0  d/-
++                 0/x  0/d  0/0  0/-  -/x  -/d  -/0  -/- */
++
++      /* S_N */  CMP, CMP, CMP, CMP, CMP, LEN, CMP, CMP,
++                 CMP, CMP, CMP, CMP, CMP, CMP, CMP, CMP,
++      /* S_I */  CMP, -1,  -1,  CMP, +1,  LEN, LEN, CMP,
++                 +1,  LEN, LEN, CMP, CMP, CMP, CMP, CMP,
++      /* S_F */  CMP, CMP, CMP, CMP, CMP, LEN, CMP, CMP,
++                 CMP, CMP, CMP, CMP, CMP, CMP, CMP, CMP,
++      /* S_Z */  CMP, +1,  +1,  CMP, -1,  CMP, CMP, CMP,
++                 -1,  CMP, CMP, CMP
++    };
++
++  if (p1 == p2)
++    return 0;
++
++  c1 = *p1++;
++  c2 = *p2++;
++  /* Hint: '0' is a digit too.  */
++  state = S_N | ((c1 == '0') + (ISDIGIT (c1) != 0));
++
++  while ((diff = c1 - c2) == 0 && c1 != '\0')
++    {
++      state = next_state[state];
++      c1 = *p1++;
++      c2 = *p2++;
++      state |= (c1 == '0') + (ISDIGIT (c1) != 0);
++    }
++
++  state = result_type[state << 2 | (((c2 == '0') + (ISDIGIT (c2) != 0)))];
++
++  switch (state)
++    {
++    case CMP:
++      return diff;
++      
++    case LEN:
++      while (ISDIGIT (*p1++))
++	if (!ISDIGIT (*p2++))
++	  return 1;
++      
++      return ISDIGIT (*p2) ? -1 : diff;
++      
++    default:
++      return state;
++    }
++}
+diff --git a/libselinux/utils/Makefile b/libselinux/utils/Makefile
+index 801066c..f3cedc1 100644
+--- a/libselinux/utils/Makefile
++++ b/libselinux/utils/Makefile
+@@ -32,7 +32,7 @@ CFLAGS ?= -O -Wall -W -Wundef -Wformat-y2k -Wformat-security -Winit-self -Wmissi
+           -Wno-missing-field-initializers -Wno-sign-compare \
+           -Wno-format-nonliteral -Wframe-larger-than=$(MAX_STACK_SIZE) -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 \
+           -fstack-protector-all --param=ssp-buffer-size=4 -fexceptions \
+-          -fasynchronous-unwind-tables -fdiagnostics-show-option -funit-at-a-time \
++          -fasynchronous-unwind-tables -fdiagnostics-show-option \
+           -Werror -Wno-aggregate-return -Wno-redundant-decls -Wstrict-overflow=5 \
+           $(EXTRA_CFLAGS)
+ 
+diff --git a/libsepol/src/Makefile b/libsepol/src/Makefile
+index 13410c6..4a49511 100644
+--- a/libsepol/src/Makefile
++++ b/libsepol/src/Makefile
+@@ -87,8 +87,8 @@ endif
+ install: all
+ 	test -d $(DESTDIR)$(LIBDIR) || install -m 755 -d $(DESTDIR)$(LIBDIR)
+ 	install -m 644 $(LIBA) $(DESTDIR)$(LIBDIR)
+-	test -d $(DESTDIR)$(SHLIBDIR) || install -m 755 -d $(DESTDIR)$(SHLIBDIR)
+-	install -m 755 $(LIBSO) $(DESTDIR)$(SHLIBDIR)
++#	test -d $(DESTDIR)$(SHLIBDIR) || install -m 755 -d $(DESTDIR)$(SHLIBDIR)
++#	install -m 755 $(LIBSO) $(DESTDIR)$(SHLIBDIR)
+ 	test -d $(DESTDIR)$(LIBDIR)/pkgconfig || install -m 755 -d $(DESTDIR)$(LIBDIR)/pkgconfig
+ 	install -m 644 $(LIBPC) $(DESTDIR)$(LIBDIR)/pkgconfig
+ 	$(LN) -sf --relative $(DESTDIR)$(SHLIBDIR)/$(LIBSO) $(DESTDIR)$(LIBDIR)/$(TARGET)
