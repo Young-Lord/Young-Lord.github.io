@@ -37,3 +37,4 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。
 - [Benpigchu](https://benpigchu.com/)：BEMANI Programming Crew
 - [湖精](https://blog.awa.moe)：Atmosphere - IN PURSUIT OF FREEDOM
 - [某猫](https://qmqaq.top)：Aw.Cat
+- [Yang-Blog](https://bakayang.moe/)：一只笨蛋的Blog
