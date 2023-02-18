@@ -25,5 +25,5 @@ jobs:
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           branch: ${{ github.ref }}
-          repository: https://github.com/Young-Lord-Blogs/Blog-eu.org
+          repository: Young-Lord-Blogs/Blog-eu.org
           force: true
