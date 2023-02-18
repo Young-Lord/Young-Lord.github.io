@@ -8,9 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     name: mirror
     steps:
-      - name: mirror
-        id: mirror
-        uses: bridgelightcloud/github-mirror-action@v1
-        with:
-          origin: 'Young-Lord-Blogs/Blog-eu.org'
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 'Checkout'
+        uses: actions/checkout@v3
+      - run: |
+          rm .github/workflows/mirror-to-euorg.yml
+          echo "blog.lyniko.eu.org" > CNAME
+          git config user.name github-actions-sync
+          git config user.email github-actions-sync@github.com
+          git add .
+          git commit --amend --no-edit
+          git remote set-url origin https://github.com/Young-Lord-Blogs/Blog-eu.org
+          git push -f
