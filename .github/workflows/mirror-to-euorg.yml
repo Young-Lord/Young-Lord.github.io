@@ -10,12 +10,20 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v3
-      - run: |
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+      - name: 'Modify'
+        run: |
           rm .github/workflows/mirror-to-euorg.yml
           echo "blog.lyniko.eu.org" > CNAME
           git config user.name github-actions-sync
           git config user.email github-actions-sync@github.com
           git add .
           git commit --amend --no-edit
-          git remote set-url origin https://github.com/Young-Lord-Blogs/Blog-eu.org
-          git push -f
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          branch: ${{ github.ref }}
+          repository: https://github.com/Young-Lord-Blogs/Blog-eu.org
+          force: true
