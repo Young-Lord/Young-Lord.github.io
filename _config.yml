@@ -20,6 +20,7 @@
 text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
 highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : https://blog.lyniko.eu.org # the base hostname & protocol for your site e.g. https://www.someone.com
+permament_url: https://young-lord.github.io # 目前用于在多域名间共享评论区
 baseurl :  # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/public`前也要加，即`/your_baseurl/public`。这一项结尾不要有'/'
 title   : LY 的博客
 description: "" # > # this means to ignore newlines until "Language & timezone"
@@ -68,7 +69,7 @@ feed:
 excerpt_separator: <!--more-->
 
 ## license
-license: CC-BY-SA-4.0 # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
+license: CC-BY-NC-SA-4.0 # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0", "CC-BY-NC-SA-4.0"
 # 更多自定义可以去改这两个文件：
 # _includes/article/footer/license.html
 # _data/licenses.yml

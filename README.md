@@ -20,14 +20,14 @@
 
 ## 开始
 
-1. 摆了，自己看[官方教程](https://tianqi.name/jekyll-TeXt-theme/docs/zh/quick-start)吧
+1. 摆了，自己看[官方教程](https://tianqi.name/jekyll-TeXt-theme/docs/zh/quick-start)
 2. 欢迎 <a class="github-button" aria-label="Star Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io" data-icon="octicon-star" data-show-count="true">Star</a> <a class="github-button" aria-label="Fork Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/fork" data-icon="octicon-repo-forked" data-show-count="true">Fork</a> <a class="github-button" aria-label="Issue Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/issues" data-icon="octicon-issue-opened" data-show-count="true">Issue</a>
 
 ## 声明
 
-除特别声明或转载外，所有博文采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh) 协议进行许可。
+除特别声明外，所有博文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议进行许可。
 
-特别的，博客内的文章**严禁**转载至 CSDN 或简书，无论是否署名。
+由于插入大量商业性质的广告，CSDN 与简书被认为违反了“非商业性使用”原则，因此博客内的文章**严禁**转载至 CSDN 或简书，无论是否署名。
 
 博客基于 [MIT License](https://github.com/Young-Lord/young-lord.github.io/blob/master/LICENSE.md) 开源于 [GitHub](https://github.com/Young-Lord/young-lord.github.io)。
 
