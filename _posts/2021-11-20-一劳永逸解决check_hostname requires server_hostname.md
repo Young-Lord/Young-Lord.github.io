@@ -4,6 +4,10 @@ date: 2021-11-20 15:00
 title: 一劳永逸解决 check_hostname requires server_hostname
 ---
 
+## 结束
+
+新版的`pip`已经修复此bug。
+
 ## 注意
 
 对于`urllib3`等包，`pip`内自己存了一份，所以以下两个文件可能均需更改：
@@ -95,3 +99,7 @@ proxy_url = proxy_url.replace("https://", "http://")
 ## 彩蛋
 
 正当我为了写这篇 blog 去复现 bug 的时候，我发现不更改`ssl.py`也不会出现问题，所以只用修改`poolmanager.py`就可以了。
+
+## 参考资料
+
+[Python 遭遇 ProxyError 问题记录](https://www.cnblogs.com/davyyy/p/14388623.html)
