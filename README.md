@@ -25,11 +25,13 @@
 
 ## 声明
 
-除特别声明外，所有博文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议进行许可。
+除特别声明外，所有博文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议进行许可。该部分不属于 WTFPL 适用范围。
 
 由于插入大量商业性质的广告，CSDN 与简书被认为违反了“非商业性使用”原则，因此博客内的文章**严禁**转载至 CSDN 或简书，无论是否署名。
 
-博客基于 [MIT License](https://github.com/Young-Lord/young-lord.github.io/blob/master/LICENSE.md) 开源于 [GitHub](https://github.com/Young-Lord/young-lord.github.io)。
+博客原始代码来自 [TeXt](https://tianqi.name/jekyll-TeXt-theme)，根据 MIT License 使用。该部分不属于 WTFPL 适用范围。
+
+在此基础上修改的代码基于 [WTFPL](https://github.com/Young-Lord/young-lord.github.io/blob/master/LICENSE.md) 开源于 [GitHub](https://github.com/Young-Lord/young-lord.github.io)。
 
 ## 致谢
 
