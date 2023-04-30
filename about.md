@@ -38,3 +38,21 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。
 - [湖精](https://blog.awa.moe)：Atmosphere - IN PURSUIT OF FREEDOM
 - [某猫](https://qmqaq.top)：Aw.Cat
 - [Yang-Blog](https://bakayang.moe/)：一只笨蛋的Blog
+
+## 打钱
+
+如果我的博文帮到了你，欢迎给我打钱！
+
+![微信赞赏码](/assets/images/donate/wechat.png)
+
+BTC (SegWit): `bc1qskd2qxwglhgcet39u6axpy2zy27gkmeyzwy7rd`
+
+BTC (Legacy): `18gZhX9C5VCxRRK2HMSQzCPKqeeLoBcFEQ`
+
+ETH: `0x3A5De5d6B6958F73315D3b536c9D027e1079a4EE`
+
+DOGE: `D7CkqdwySeeZZAXoDr9zmUzkNDcktmhJWi`
+
+XMR: `43NB6wcfVqTJBhTcRktTMKbnW5UWK7bDC6JVb5qhmWSvJZ71qr7qS4bSoARWMqwozUJPkSp2QBRZBW2sjw887yMcDiz2Y7h`
+
+（更多付款方式可以给我发邮件）
