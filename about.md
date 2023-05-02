@@ -28,6 +28,16 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。
 
 ## 友情链接🔗
 
+本人友链信息：
+
+```
+名字：LY 的博客（别的什么也行）
+网址：https://Young-Lord.github.io （大小写随意）
+头像：https://avatars.githubusercontent.com/u/51789698?v=4 （或者 https://young-lord.github.io/assets/images/logo/logo-latest.webp
+简介：自疏濯淖污泥之中，蝉蜕于浊秽，以浮游尘埃之外。 （不写或随你喜好写更好）
+邮箱：ly-niko #at# qq.com
+```
+
 交换友链可以在评论区留言~
 
 - [wu-kan](https://wu-kan.github.io)：原先的博客模板原作者
@@ -38,6 +48,9 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。
 - [湖精](https://blog.awa.moe)：Atmosphere - IN PURSUIT OF FREEDOM
 - [某猫](https://qmqaq.top)：Aw.Cat
 - [Yang-Blog](https://bakayang.moe/)：一只笨蛋的Blog
+- [NekoHouse](https://blog.amu.moe/)：Inari Aimu - Touching Fish
+- [Akula::Blog](https://blog.akula.moe)：悟已往之不谏，知来者之可追
+- [BsBlog](https://sorabs.cc/): bs在摸鱼还是睡觉呢zzz
 
 ## 打钱
 
