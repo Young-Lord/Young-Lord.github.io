@@ -26,6 +26,11 @@ title   : LY 的博客
 description: "" # > # this means to ignore newlines until "Language & timezone"
  # Write sth here!
 
+webmaster_verifications: # <https://jekyll.github.io/jekyll-seo-tag/usage/>
+  google: jzW0S1BoNl_qNI4hmL8Gp6b5JuxqDu_G4gw6w0z1Ytc
+  bing: 7352B9B70D905E86EB77F868689762ED
+  baidu: codeva-W6wVZqZpGo
+
 
 ## => Language and Timezone
 ##############################
@@ -184,6 +189,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
+  - jekyll-seo-tag
 
 ## wu-kan的侧边栏
 body: # 这个用不了，建议直接修改base.html
