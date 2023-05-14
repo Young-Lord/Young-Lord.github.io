@@ -70,8 +70,6 @@ XMR: `43NB6wcfVqTJBhTcRktTMKbnW5UWK7bDC6JVb5qhmWSvJZ71qr7qS4bSoARWMqwozUJPkSp2QB
 
 （更多付款方式可以给我发邮件）
 
-你也可以选择手动开关本站的 Google AdSense 广告！
-
 <script>
 function storageAvailable(type) {
     var storage;
@@ -101,11 +99,12 @@ function storageAvailable(type) {
 var ad_key = 'ad_enabled';
 function ad_switch() {
 	if(!storageAvailable('localStorage')) { alert("localStorage 不可用！"); return; }
-	if(localStorage.getItem(ad_key) === null || localStorage.getItem(ad_key) === "0") { localStorage.setItem(ad_key, "1");alert("广告已开启，感谢支持~"); }
-	else { localStorage.setItem(ad_key, "0");alert("广告已关闭。"); }
+	if(localStorage.getItem(ad_key) === null || localStorage.getItem(ad_key) === "0") { localStorage.setItem(ad_key, "1");document.getElementById("ad_switch").innerText = "（广告已开启，感谢支持~）"; }
+	else { localStorage.setItem(ad_key, "0");document.getElementById("ad_switch").innerText = "（广告已关闭。）"; }
 }
-document.write('<button name="ad_switch" onclick="ad_switch()">（点我切换广告开启状态）</button>');
 </script>
+
+你也可以选择手动开启本站的 Google AdSense 广告！<a id="ad_switch" href="javascript:void(0)" onclick="ad_switch()">（点我切换广告开启状态）</a>
 
 ## 隐私政策
 
