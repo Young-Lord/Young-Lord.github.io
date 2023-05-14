@@ -38,4 +38,4 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 gemspec
 # gem "jekyll-text-theme"
 
-gem 'jekyll-seo-tag', git: 'git://github.com/Young-Lord/jekyll-seo-tag.git', branch: 'master'
+gem 'jekyll-seo-tag', git: 'https://github.com/Young-Lord/jekyll-seo-tag', branch: 'master'
