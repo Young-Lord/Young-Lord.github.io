@@ -60,6 +60,7 @@ layout: none
       {% endif %}
       {% if site.sidebar.run_time.enable %}
       <div>
+        {{ site.sidebar.run_time.alert }} <span id="run_time"></span>
         <script src="{{ site.sidebar.run_time.src }}"></script>
       </div>
       {% endif %}
