@@ -69,3 +69,44 @@ DOGE: `D7CkqdwySeeZZAXoDr9zmUzkNDcktmhJWi`
 XMR: `43NB6wcfVqTJBhTcRktTMKbnW5UWK7bDC6JVb5qhmWSvJZ71qr7qS4bSoARWMqwozUJPkSp2QBRZBW2sjw887yMcDiz2Y7h`
 
 （更多付款方式可以给我发邮件）
+
+你也可以选择手动开关本站的 Google AdSense 广告！
+
+<script>
+function storageAvailable(type) {
+    var storage;
+    try {
+        storage = window[type];
+        var x = '__storage_test__';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    }
+    catch(e) {
+        return e instanceof DOMException && (
+            // everything except Firefox
+            e.code === 22 ||
+            // Firefox
+            e.code === 1014 ||
+            // test name field too, because code might not be present
+            // everything except Firefox
+            e.name === 'QuotaExceededError' ||
+            // Firefox
+            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+            // acknowledge QuotaExceededError only if there's something already stored
+            (storage && storage.length !== 0);
+    }
+}
+
+var ad_key = 'ad_enabled';
+function ad_switch() {
+	if(!storageAvailable('localStorage')) { alert("localStorage 不可用！"); return; }
+	if(localStorage.getItem(ad_key) === null || localStorage.getItem(ad_key) === "0") { localStorage.setItem(ad_key, "1");alert("广告已开启，感谢支持~"); }
+	else { localStorage.setItem(ad_key, "0");alert("广告已关闭。"); }
+}
+document.write('<button name="ad_switch" onclick="ad_switch()">（点我切换广告开启状态）</button>');
+</script>
+
+## 隐私政策
+
+根据相关法律法规，本站不对欧盟地区用户、美国加利福尼亚州用户提供服务。
