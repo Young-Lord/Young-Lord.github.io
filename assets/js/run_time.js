@@ -22,5 +22,5 @@
     seconds = setzero(Math.floor((e_minsold - minsold) * 60));
     document.getElementById('run_time').innerHTML = daysold + "{{ site.sidebar.run_time.day }}" + hrsold + "{{ site.sidebar.run_time.hour }}" + minsold + "{{ site.sidebar.run_time.minute }}" + seconds + "{{ site.sidebar.run_time.second }}";
   }
-  window.setInterval("run_time()", 1000);
-}
+  window.setInterval(run_time, 1000);
+})();

@@ -70,6 +70,7 @@ XMR: `43NB6wcfVqTJBhTcRktTMKbnW5UWK7bDC6JVb5qhmWSvJZ71qr7qS4bSoARWMqwozUJPkSp2QB
 
 （更多付款方式可以给我发邮件）
 
+<!--
 <script>
 function storageAvailable(type) {
     var storage;
@@ -105,6 +106,7 @@ function ad_switch() {
 </script>
 
 你也可以选择手动开启本站的 Google AdSense 广告！<a id="ad_switch" href="javascript:void(0)" onclick="ad_switch()">（点我切换广告开启状态）</a>
+-->
 
 ## 隐私政策
 
