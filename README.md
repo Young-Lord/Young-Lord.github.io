@@ -6,6 +6,10 @@
 
 [Vercel + eu.org](https://bl0g.lyniko.eu.org)
 
+[Cloudflare Pages](https://ly-blog.pages.dev)
+
+[Cloudflare Pages + eu.org](https://b1og.lyniko.eu.org)
+
 ## 简介
 
 这是 LY 的博客，有以下特性：
