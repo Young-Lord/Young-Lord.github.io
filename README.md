@@ -1,3 +1,11 @@
+## 访问域名
+
+[GitHub Pages](https://young-lord.github.io)
+
+[GitHub Pages + Cloudflare + eu.org](https://blog.lyniko.eu.org)
+
+[Vercel + eu.org](https://bl0g.lyniko.eu.org)
+
 ## 简介
 
 这是 LY 的博客，有以下特性：
