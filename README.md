@@ -4,6 +4,8 @@
 
 [GitHub Pages + Cloudflare + eu.org](https://blog.lyniko.eu.org)
 
+[Vercel](https://ly-blog.vercel.app)
+
 [Vercel + eu.org](https://bl0g.lyniko.eu.org)
 
 [Cloudflare Pages](https://ly-blog.pages.dev)
