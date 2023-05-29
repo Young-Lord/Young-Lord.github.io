@@ -16,7 +16,6 @@ jobs:
         run: |
           rm .github/workflows/mirror-to-euorg.yml
           echo "blog.lyniko.eu.org" > CNAME
-          sed -i 's|^url     : https://young-lord.github.io|^url     : https://blog.lyniko.eu.org|'
           git config user.name github-actions-sync
           git config user.email github-actions-sync@github.com
           git add .
