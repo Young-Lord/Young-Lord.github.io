@@ -41,3 +41,4 @@ gemspec
 # gem "jekyll-text-theme"
 
 gem 'jekyll-seo-tag', git: 'https://github.com/Young-Lord/jekyll-seo-tag', branch: 'master'
+gem 'jekyll-sitemap', git: 'https://github.com/jekyll/jekyll-sitemap', branch: 'master'
