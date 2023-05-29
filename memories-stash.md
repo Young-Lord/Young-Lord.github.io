@@ -28,6 +28,7 @@ id: page-memories-stash
 | Life is a game | 游戏 | / | / |
 | 生老病死 / And Everything started to fall | 游戏 | / | / |
 | 饥荒 / Don't Starve | 游戏 | / | / |
+| 阿甘正传 / Forrest Gump | 电影 | / | / |
 
 <script>
 //来自 https://blog.csdn.net/chunyuan314/article/details/81211217 ，用于为表格排序
