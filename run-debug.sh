@@ -1,5 +1,5 @@
 #!/bin/sh
-bundle exec jekyll serve --host=0.0.0.0
+bundle exec jekyll serve
 exit 0
 
 # 以下是一些环境配置的记录

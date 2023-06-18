@@ -4,10 +4,10 @@ ul.toc {
   color: $text-color;
   list-style-type: none;
   & > li {
-    margin: map-get($spacers, 1) / 2 0;
+    margin: map-get($spacers, 1) * 0.5 0;
     a {
       display: inline-block;
-      margin: map-get($spacers, 1) / 4 0;
+      margin: map-get($spacers, 1) * 0.25 0;
       text-decoration: none !important;
     }
   }
