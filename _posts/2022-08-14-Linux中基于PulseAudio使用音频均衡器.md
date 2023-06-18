@@ -1,6 +1,5 @@
 ---
 tags: [Linux,Deepin,PulseAudio,音频]
-date: 2022-8-14 16:00
 title: Linux 中基于 PulseAudio 使用音频均衡器
 ---
 

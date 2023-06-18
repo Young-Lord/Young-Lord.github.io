@@ -1,12 +1,12 @@
 ---
 tags: [Python]
-date: 2021-11-20 15:00
 title: 一劳永逸解决 check_hostname requires server_hostname
+last_modified_at: 2023-3-14
 ---
 
 ## 结束
 
-新版的`pip`已经修复此bug。
+新版的`pip`已经修复此 bug。
 
 ## 注意
 
@@ -41,7 +41,7 @@ proxy_url = proxy_url.replace("https://", "http://")
 
 **关 闭 代 理**
 
-不是，你TM不会每次用 pip 就关代理关完再开吧？？？真有人这么傻？
+不是，你 TM 不会每次用 pip 就关代理关完再开吧？？？真有人这么傻？
 
 好在 Python 是解释性语言，改了代码就能跑，所以——
 
@@ -53,7 +53,7 @@ proxy_url = proxy_url.replace("https://", "http://")
 
 ![代码截图](https://i.loli.net/2021/11/20/hEYJlZM9KFfaAoR.png)
 
-很明显，`check_hostname`导致了这个问题，那么就把这个if改成：
+很明显，`check_hostname`导致了这个问题，那么就把这个 if 改成：
 
 （**注意：各位先不用更改此处，具体原因看后文**）
 
@@ -94,7 +94,7 @@ proxy_url = proxy_url.replace("https://", "http://")
 
 这就是标题中的，“一劳永逸”。
 
-希望CSDN，简书等垃圾平台少一些抄袭，多一些真材实料，不要只会说“关了代理就’解决‘了”，这才不是科技圈应有的样子。
+希望 CSDN，简书等垃圾平台少一些抄袭，多一些真材实料，不要只会说“关了代理就’解决‘了”，这才不是科技圈应有的样子。
 
 ## 彩蛋
 

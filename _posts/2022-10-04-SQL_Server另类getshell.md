@@ -1,7 +1,7 @@
 ---
 tags: [SQL Server,网络安全]
-date: 2022-10-4 13:45
 title: SQL Server 另类 getshell
+last_modified_at: 2023-5-4
 ---
 
 ## 目标环境
