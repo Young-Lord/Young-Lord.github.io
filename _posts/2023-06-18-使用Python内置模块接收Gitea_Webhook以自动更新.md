@@ -2,6 +2,7 @@
 tags: [Gitea, Webhook, Python]
 title: 使用 Python 内置模块接收 Gitea Webhook 以自动更新
 slug: python-gitea-webhook
+last_modified_at: 2023-6-20
 ---
 
 ## 动机
@@ -12,14 +13,22 @@ slug: python-gitea-webhook
 
 以下假设你的生产服务器地址为`192.168.33.44`。
 
+### 配置文件
+
+> [Webhook 配置文件文档](https://docs.gitea.com/administration/config-cheat-sheet#%EF%B8%8F%E6%97%B6%E6%95%88%E6%80%A7%E8%AD%A6%E5%91%8A%EF%B8%8F:~:text=for%20shooting%20webhooks.-,ALLOWED_HOST_LIST,-%3A%20external%3A%20Webhook)，包括对`loopback`等特殊取值的说明
+
 跑Gitea的服务端要改一下`custom/conf/app.ini`，最后加上以下这一段内容，然后重启Gitea
 
-（loopback指的是跑Gitea的服务器自己）
+（`loopback`指的是跑Gitea的服务器自己，一般不建议添加）
 
 ```ini
 [webhook]
 ALLOWED_HOST_LIST = 192.168.33.44,loopback
 ```
+
+### Webhook 设置
+
+> [Webhook 配置文档](https://docs.gitea.com/zh-cn/usage/webhooks)
 
 `设置`->`Web 钩子`->`添加 Web 钩子`->`Gitea`，`HTTP 方法`选`POST`，目标 URL 写`http://192.168.33.44:53100/gitea-update`，密钥文本写`TESTPASSWORD123`
 
