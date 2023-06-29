@@ -2,7 +2,7 @@
 tags: [Gitea, Webhook, Python]
 title: 使用 Python 内置模块接收 Gitea Webhook 以自动更新
 slug: python-gitea-webhook
-last_modified_at: 2023-6-20
+last_modified_at: 2023-7-1
 ---
 
 ## 动机
@@ -36,64 +36,99 @@ ALLOWED_HOST_LIST = 192.168.33.44,loopback
 
 Git要配置好，可以直接从Gitea拉仓库那种
 
-首先你需要装一个[NSSM](https://nssm.cc/download)，这里用稳定版（`nssm 2.24 (2014-08-31)`）就行
+首先你需要装一个[NSSM](https://nssm.cc/download)，这里用稳定版（`nssm 2.24 (2014-08-31)`）就行。记得要用你配置好了`Git`的系统账户（而非`SYSTEM`）运行服务！
 
 `nssm install service_name`把你的程序加一个服务，`nssm install "service_name updater"`把你的更新器加一个服务，记得设置好工作目录
 
-`updater.py`直接丢代码，不解释了，自己看吧。
+`updater.py`直接丢代码，不解释了，自己看吧。代码可以任意使用。
 
 ```python
+"""
+监听 Gitea webhook 以自动更新
+"""
 import hmac
 from http.server import HTTPServer, BaseHTTPRequestHandler
-from traceback import format_exc
-import os
+import json
 
-IP = '192.168.33.44'
-PORT = 53100
-SECRET_KEY = b'TESTPASSWORD123'
+# from traceback import format_exc
+import os
+from threading import Thread, Lock
+
+IP: str = "192.168.33.44"
+PORT: int = 53100
+SECRET_KEY: bytes = b'TESTPASSWORD123'
+# MIN_UPDATE_INTERVAL: float = 10.0  # 最小更新间隔，防止频繁更新
+TARGET_BRANCH: str = "master"  # 需要监听的分支
+UPDATEING_LOCK: Lock = Lock()  # 更新锁，防止同时更新
+
+
+def do_update() -> list:
+    """
+    执行更新
+    """
+    with UPDATEING_LOCK:
+        ret: list = []
+        ret.append(os.system("nssm stop gh-bgs"))
+        ret.append(
+            os.system("git pull")
+        )  # git fetch --all # git reset --hard origin/master
+        ret.append(os.system("nssm start gh-bgs"))
+    return ret
+
 
 class Handler(BaseHTTPRequestHandler):
+    """
+    处理 HTTP 请求
+    """
+
     def log_message(self, *args, **kwargs):
         pass
+
     def do_POST(self):
+        """
+        处理 POST 请求
+        """
         if not self.path.startswith("/gitea-update"):
             self.send_response(404)
             self.end_headers()
             return
-        header_signature = self.headers.get('X-Gitea-Signature', '')
+        header_signature = self.headers.get("X-Gitea-Signature", "")
         if not header_signature:
             self.send_response(403)
             self.end_headers()
-            self.wfile.write(b"header signature missing")
+            self.wfile.write(b"Header signature missing")
             return
-        if not self.headers.get('Content-Length', False):
+        if not self.headers.get("Content-Length", False):
             self.send_response(403)
             self.end_headers()
-            self.wfile.write(b"content length missing")
+            self.wfile.write(b"Content-Length missing")
             return
-        payload = self.rfile.read(int(self.headers.get('Content-Length', 0)))
-        payload_signature = hmac.new(key=SECRET_KEY, msg=payload, digestmod='sha256').hexdigest()
+        payload = self.rfile.read(int(self.headers.get("Content-Length", 0)))
+        payload_signature = hmac.new(
+            key=SECRET_KEY, msg=payload, digestmod="sha256"
+        ).hexdigest()
         if header_signature != payload_signature:
             self.send_response(403)
             self.end_headers()
-            self.wfile.write(b"payload signature verify failed")
+            self.wfile.write(b"Payload signature verify failed")
             print(payload_signature, header_signature)
             return
-        try:
-            ret = os.system("nssm stop service_name")
-            ret = os.system("git pull")
-            assert not ret
-            ret = os.system("nssm start service_name")
-            assert not ret
-        except AssertionError:
-            self.send_response(502)
-            self.end_headers()
-            self.wfile.write(bytes(format_exc(), "utf8"))
-        else:
+        payload_dict = json.loads(payload.decode("utf-8"))
+        if payload_dict["ref"] != f"refs/heads/{TARGET_BRANCH}":
             self.send_response(200)
             self.end_headers()
-            self.wfile.write(b"success")
+            self.wfile.write(
+                b"Not target branch " + TARGET_BRANCH.encode("utf-8") + ", ignored."
+            )
+            return
+        update_thread = Thread(target=do_update)
+        update_thread.start()
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"Success")
+
 
 with HTTPServer((IP, PORT), Handler) as httpd:
     httpd.serve_forever()
+
 ```
