@@ -6,7 +6,7 @@
   {%-assign _license_name = '<a itemprop="license" rel="license" href="[URL]">[NAME]</a>' | replace: "[URL]", include.license.url | replace: "[NAME]", include.license.name -%}
   <div class="license">
     <p>{{ _license_announce | replace: "[LICENSE]", _license_name }}<a href="https://github.com/Young-Lord/Young-Lord.github.io/blob/master/README.md#%E5%A3%B0%E6%98%8E">（不允许转载至简书或 CSDN）</a>
-      <a rel="license" href="{{ include.license.url }}">
+      <a rel="license" aria-label="详细了解协议内容" href="{{ include.license.url }}">
 <!--        <img alt="{{ include.license.name }}" src="{{ include.license.image }}" />-->
       </a>
     </p>
