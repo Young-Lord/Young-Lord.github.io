@@ -22,21 +22,21 @@ last_modified_at: 2023-7-2
 </div>
 
 <div class="alert alert-primary d-flex align-items-center" role="alert" markdown='1'>
-  <i class="fas fa-info"></i> An example notice alert with an icon
+  <i class="fa-fw fas fa-info"></i> An example notice alert with an icon
 </div>
 <div class="alert alert-primary d-flex align-items-center" role="alert" markdown='1'>
-  <i class="fas fa-question"></i> An example notice question with an icon
+  <i class="fa-fw fas fa-question"></i> An example notice question with an icon
 </div>
 <div class="alert alert-danger d-flex align-items-center" role="alert" markdown='1'>
-  <i class="fas fa-exclamation"></i> An example danger alert with an icon
+  <i class="fa-fw fas fa-exclamation"></i> An example danger alert with an icon
 </div>
 <div class="alert alert-warning d-flex align-items-center" role="alert" markdown='1'>
-  <i class="fas fa-times"></i> An example error alert with an icon 
+  <i class="fa-fw fas fa-times"></i> An example error alert with an icon 
 </div>
 
 ```html
 <div class="alert alert-success" role="alert" markdown='1'>
-  <h3 class="alert-heading"><i class="fas fa-check"></i> Well done!</h3>
+  <h3 class="alert-heading"><i class="fa-fw fas fa-check"></i> Well done!</h3>
   
   *Great!* Here comes [a link](#).
 

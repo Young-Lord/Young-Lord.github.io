@@ -14,7 +14,7 @@
       });
       $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
         $this = $(this);
-        $this.append($('<a class="anchor d-print-none" aria-hidden="true" href="javascript:void(0);"></a>').html('<i class="fas fa-anchor"></i>'));
+        $this.append($('<button type="button" class="anchor d-print-none" aria-hidden="true"></button>').html('<i class="fas fa-anchor"></i>'));
       });
       $articleContent.on('click', '.anchor', function() {
         $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);

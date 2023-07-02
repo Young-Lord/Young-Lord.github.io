@@ -169,3 +169,12 @@ hr {
 .alert > p {
     margin: 0 !important;
 }
+
+.page__search-modal {
+    /* 修复 Bootstrap 导致搜索框不显示的问题*/
+    display: block;
+}
+
+.search-box__icon-clear > button {
+    color: #fff;
+}

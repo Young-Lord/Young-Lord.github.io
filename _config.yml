@@ -23,8 +23,8 @@ url     : https://young-lord.github.io # the base hostname & protocol for your s
 permanent_url: https://young-lord.github.io # 目前用于在多域名间共享评论区
 baseurl : "" # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/public`前也要加，即`/your_baseurl/public`。这一项结尾不要有'/'
 title   : LY 的博客
-description: "" # > # this means to ignore newlines until "Language & timezone"
- # Write sth here!
+title_description: ""
+website_meta_description: "LY 的博客 - 首页"
 
 webmaster_verifications: # <https://jekyll.github.io/jekyll-seo-tag/usage/>
   google: jzW0S1BoNl_qNI4hmL8Gp6b5JuxqDu_G4gw6w0z1Ytc
@@ -44,10 +44,11 @@ timezone: Asia/Shanghai # see https://en.wikipedia.org/wiki/List_of_tz_database_
 author:
   type      : person # "person" (default), "organization"
   name      : LY
-  url       : https://github.com/Young-Lord
-  avatar    : https://avatars.githubusercontent.com/Young-Lord # path or url of avatar image (square)
+  url       : &github_profile_url https://github.com/Young-Lord
+#  avatar    : https://avatars.githubusercontent.com/Young-Lord # path or url of avatar image (square)
   bio       : ""
-  email     : ly-niko@qq.com # 下面 sidebar 那里还有一个要改
+  email     : ly-niko@qq.com
+  email_url : &mailto_url mailto:ly-niko@qq.com
   github    : Young-Lord
 
 
@@ -62,12 +63,11 @@ repository_tree: master
 paths: # 注意，这里改了是没有用的，这里只是做一个标识
   root    : "/"                  # title link url, "/" (default)
   home    : "/"                  # home layout url, "/" (default)
-  archive : "/archive.html"      # "/archive.html" (default)
-  rss     : "/feed.xml"          # rss feed link , "/feed.xml" (default)
+  archive : &archive_path "/archive"      # "/archive.html" (default)
+  rss     : &feed_path "/feed.xml"          # rss feed link , "/feed.xml" (default)
 
 feed:
-  path: "/feed.xml"
-
+  path: *feed_path
 
 ## => Post
 ##############################
@@ -205,13 +205,13 @@ sidebar:
   #description: '<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=210 src="//music.163.com/outchain/player?type=0&id=932740311&auto=0&height=430"></iframe>'
   social:
   - title: Mail
-    href: mailto:ly-niko@qq.com
+    href: *mailto_url
     class: 'fas fa-envelope'
   - title: rss
-    href: /feed.xml
+    href: *feed_path
     class: 'fas fa-rss'
   - title: HitGub
-    href: //github.com/Young-Lord
+    href: *github_profile_url
     class: 'fab fa-github'
   nav:
   - title: '<i class="fas fa-home fa-fw"></i> 首页'
@@ -219,9 +219,9 @@ sidebar:
   - title: '<i class="fab fa-readme fa-fw"></i> 关于 & 友链'
     href: /about
   - title: '<i class="fas fa-archive fa-fw"></i> 归档'
-    href: /archive
+    href: *archive_path
   jekyll_table_of_contents:
-    enable: true
+    enable: false
     autoloader: /assets/js/jekyll_table_of_contents.js
   busuanzi:
     enable: true

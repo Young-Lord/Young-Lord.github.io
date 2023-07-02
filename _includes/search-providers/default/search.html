@@ -6,11 +6,10 @@
         <div class="search-box__icon-search"><i class="fas fa-search"></i></div>
         <input type="text" title="搜索博文-输入框"/>
         <div class="search-box__icon-clear js-icon-clear">
-          <a><i class="fas fa-times"></i></a>
+          <button type="button" title="清除搜索框"><i class="fas fa-times"></i></button>
         </div>
       </div>
-      <button class="button button--theme-dark button--pill search__cancel js-search-toggle">
-        {{ _locale_cancel }}</button>
+      <button class="button button--theme-dark button--pill search__cancel js-search-toggle" type="button">{{ _locale_cancel }}</button>
     </div>
     <div class="search-result js-search-result"></div>
   </div>

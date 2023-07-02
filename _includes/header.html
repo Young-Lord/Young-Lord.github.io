@@ -12,7 +12,7 @@
   {%- assign _pan_gu_zhi_bai = __return -%}
   {%- if _pan_gu_zhi_bai -%}
   <div>
-    <script src="/assets/js/text_autospace_include.js" defer></script>
+    <script src="/assets/js/text_autospace_include.js" async defer></script>
   </div>
   {%- endif -%}
     <div class="main">
@@ -22,7 +22,7 @@
           {%- assign _paths_root = site.paths.root | default: site.data.variables.default.paths.root  -%}
           {%- include snippets/get-nav-url.html path=_paths_root -%}
           {%- if site.title -%}
-            <a title="{%- if site.description -%}{{ site.description }}{%- endif -%}" href="{{ __return }}">{{ site.title }}</a>
+            <a title="{%- if site.title_description -%}{{ site.title_description }}{%- endif -%}" href="{{ __return }}">{{ site.title }}</a>
           {%- endif -%}
         </div>
         {%- if site.search.provider -%}
@@ -45,7 +45,7 @@
             {%- endif -%}
           {%- endfor -%}
           {%- if site.search.provider -%}
-            <li><button class="button button--secondary button--circle search-button js-search-toggle" title="搜索"><i class="fas fa-search"></i></button></li>
+            <li><button type="button" class="button button--secondary button--circle search-button js-search-toggle" title="搜索"><i class="fas fa-search"></i></button></li>
           {%- endif -%}
         </ul>
       </nav>
