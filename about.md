@@ -1,6 +1,6 @@
 ---
 layout: article
-title: 关于&友链
+title: 关于  &友链
 key: page-about
 id: page-about
 pan_gu_zhi_bai: false
