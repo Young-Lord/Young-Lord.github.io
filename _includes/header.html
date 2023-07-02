@@ -18,7 +18,7 @@
     <div class="main">
       <div class="header__title">
         <div class="header__brand">
-          <img id="LY_page_logo" src="/assets/images/logo/logo_pixiv65149795.webp" x="0px" y="0px" width="auto" height="100%" loading="lazy" alt="博客logo_翠星石">
+          <img id="LY_page_logo" src="/assets/images/logo/logo_pixiv65149795.webp" loading="lazy" alt="博客logo_翠星石">
           {%- assign _paths_root = site.paths.root | default: site.data.variables.default.paths.root  -%}
           {%- include snippets/get-nav-url.html path=_paths_root -%}
           {%- if site.title -%}
@@ -26,7 +26,7 @@
           {%- endif -%}
         </div>
         {%- if site.search.provider -%}
-          <button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search" title="搜索博文"></i></button>
+          <button class="button button--secondary button--circle search-button js-search-toggle" type="button"><i class="fas fa-search" title="搜索博文"></i></button>
         {%- endif -%}
       </div>
       {%- if site.data.navigation.header -%}

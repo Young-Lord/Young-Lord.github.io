@@ -3,22 +3,22 @@
 /*https://github.com/mastermay/text-autospace.js
 中英文间自动添加空白*/
 html.han-la hanla:after {
-	content: " ";
-	display: inline;
-	font-family: Arial;
-	font-size: 0.89em;
+    content: " ";
+    display: inline;
+    font-family: Arial;
+    font-size: 0.89em;
 }
 
 html.han-la code hanla,
 html.han-la pre hanla,
 html.han-la kbd hanla,
 html.han-la samp hanla {
-	display: none;
+    display: none;
 }
 
-html.han-la ol > hanla,
-html.han-la ul > hanla {
-	display: none;
+html.han-la ol>hanla,
+html.han-la ul>hanla {
+    display: none;
 }
 
 /*复制的，rss图标显示*/
@@ -86,6 +86,13 @@ html.han-la ul > hanla {
     fill: rgba(255, 255, 255, 0.4) !important;
 }
 
+/* 头像相关 */
+#LY_page_logo {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
 .header__brand {
     /*使头像紧密贴边*/
     height: 100%;
@@ -127,7 +134,12 @@ html.han-la ul > hanla {
 }
 
 /*重载下字体（来自 Typecho）*/
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Source Sans Pro", "Hiragino Sans GB", "Microsoft Yahei", SimSun, Helvetica, Arial, Sans-serif, monospace;
 }
 
