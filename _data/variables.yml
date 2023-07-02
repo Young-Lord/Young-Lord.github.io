@@ -14,6 +14,7 @@ default:
   toc:
     selectors: 'h1,h2,h3'
   sources: bootcdn
+  copy_to_clipboard: true
 
   page:
     mode: normal
@@ -52,6 +53,7 @@ sources:
     valine: 'https://unpkg.com/valine/dist/Valine.min.js' # bootcdn not available
     mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML'
     mermaid: 'https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'
+    clipboard: 'https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.js'
   unpkg:
     font_awesome: 'https://use.fontawesome.com/releases/v5.15.1/css/all.css'
     jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js'
@@ -63,3 +65,4 @@ sources:
     valine: 'https//unpkg.com/valine/dist/Valine.min.js'
     mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML'
     mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js'
+    clipboard: 'https://unpkg.com/clipboard@2/dist/clipboard.min.js'

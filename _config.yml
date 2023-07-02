@@ -141,6 +141,10 @@ analytics:
   provider: false # false (default), "google", "custom"
 ## FUCK GOOGLE!
 
+## => Copy code to clipboard by https://github.com/kitian616/jekyll-TeXt-theme/pull/218/files
+##############################
+copy_to_clipboard: true
+
 ## => Build
 ##############################
 markdown    : kramdown
