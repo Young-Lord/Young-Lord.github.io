@@ -104,6 +104,11 @@ html.han-la ul>hanla {
     margin: unset;
 }
 
+.header__brand > a {
+    /*增加留白*/
+    padding-left: 10px;
+}
+
 /*头像旋转，来自blog.csdn.net/a1669000102/article/details/107686399*/
 #LY_page_logo:hover {
     transform: rotate(333turn);
@@ -149,4 +154,18 @@ h6 {
 
 .sidebar {
     font-family: "Source Sans Pro", "Hiragino Sans GB", "Microsoft Yahei", SimSun, Helvetica, Arial, Sans-serif, monospace;
+}
+
+.pagination {
+    color: #585B63;
+}
+
+/* 分隔线 */
+hr {
+    height: 2px;
+    background: #575757;
+}
+
+.alert > p {
+    margin: 0 !important;
 }

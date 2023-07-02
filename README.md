@@ -47,6 +47,8 @@
 
 在此基础上修改的代码基于 [WTFPL](https://github.com/Young-Lord/young-lord.github.io/blob/master/LICENSE.md) 开源于 [GitHub](https://github.com/Young-Lord/young-lord.github.io)。
 
+部分 CSS 来自 [poole/lanyon](https://github.com/poole/lanyon/releases/tag/v1.1.0)，根据 MIT License 使用。该部分不属于 WTFPL 适用范围。
+
 ## 致谢
 
 托管于 [Github Pages](https://pages.github.com/)，感谢。

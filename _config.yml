@@ -225,7 +225,7 @@ sidebar:
     autoloader: /assets/js/jekyll_table_of_contents.js
   busuanzi:
     enable: true
-    src: //cdn.jsdelivr.net/npm/busuanzi/bsz.pure.mini.min.js
+    src: https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.js
     page_pv: # 页面访问量
       alert: <i class="fas fa-eye fa-fw"></i>
       unit: 次
