@@ -73,9 +73,6 @@
           interval = setInterval(function() {
             calc();
           }, 100);
-          timeout = setTimeout(function() {
-            clearInterval(interval);
-          }, 45000);
           window.pageLoad.then(function() {
             setTimeout(function() {
               clearInterval(interval);
