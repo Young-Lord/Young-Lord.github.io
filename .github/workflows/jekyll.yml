@@ -42,6 +42,8 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
+      - name: Setup IndexNow
+        run: echo ${{ secrets.INDEXNOW_KEY }} > IndexNow-${{ secrets.INDEXNOW_KEY }}.txt
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
@@ -62,3 +64,16 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+
+  # Push to IndexNow
+  indexnow:
+    if: github.repository == 'Young-Lord/Young-Lord.github.io'
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: IndexNow Action
+        uses: bojieyang/indexnow-action@v1
+        with:
+          sitemap-location: 'https://young-lord.github.io/sitemap.xml'
+          key: ${{ secrets.INDEXNOW_KEY }}
+          key-location: https://young-lord.github.io/IndexNow-${{ secrets.INDEXNOW_KEY }}.txt
