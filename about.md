@@ -30,7 +30,7 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。
 
 本人友链信息：
 
-```
+```plain
 名字：LY 的博客（别的什么也行）
 网址：https://Young-Lord.github.io （大小写随意）
 头像：https://avatars.githubusercontent.com/u/51789698?v=4 （或者 https://young-lord.github.io/assets/images/logo/logo-latest.webp
@@ -110,4 +110,4 @@ function ad_switch() {
 
 ## 隐私政策
 
-根据相关法律法规，本站不对欧盟地区用户、美国加利福尼亚州用户提供服务。
+根据相关法律法规，本站不对太阳系内用户提供服务。

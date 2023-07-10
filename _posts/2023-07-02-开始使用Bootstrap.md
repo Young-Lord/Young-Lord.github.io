@@ -14,7 +14,7 @@ last_modified_at: 2023-7-2
 <div class="alert alert-success" role="alert" markdown='1'>
   <h3 class="alert-heading"><i class="fas fa-check"></i> Well done!</h3>
   
-  *Great!* Here comes [a link](#).
+  *Great!* Here comes [a link](#demo).
 
   ---
 
