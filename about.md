@@ -1,6 +1,6 @@
 ---
 layout: article
-title: 关于  &友链
+title: 关于 & 友链
 key: page-about
 id: page-about
 pan_gu_zhi_bai: false
@@ -51,6 +51,7 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。
 - [NekoHouse](https://blog.amu.moe/)：Inari Aimu - Touching Fish
 - [Akula::Blog](https://blog.akula.moe)：悟已往之不谏，知来者之可追
 - [BsBlog](https://sorabs.cc/): bs在摸鱼还是睡觉呢zzz
+- [Jett's blog](https://blog.jettchen.me/):CTF领域大神！（？
 
 ## 打钱
 
