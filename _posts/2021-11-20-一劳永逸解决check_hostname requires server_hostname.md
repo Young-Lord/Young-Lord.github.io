@@ -1,12 +1,8 @@
 ---
-tags: [Python]
+tags: [Python, bugfix]
 title: 一劳永逸解决 check_hostname requires server_hostname
-last_modified_at: 2023-3-14
+last_modified_at: 2023-8-29
 ---
-
-## 结束
-
-新版的`pip`已经修复此 bug。
 
 ## 注意
 

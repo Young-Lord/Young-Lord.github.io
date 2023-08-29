@@ -1,5 +1,5 @@
 ---
-tags: [Bootstrap,博客,网站]
+tags: [Bootstrap, 博客, 网站]
 title: 开始使用 Bootstrap
 slug: bootstrap-demo
 last_modified_at: 2023-7-2

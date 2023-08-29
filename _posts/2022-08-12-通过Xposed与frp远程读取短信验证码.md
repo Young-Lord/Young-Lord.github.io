@@ -1,5 +1,5 @@
 ---
-tags: [Xposed,frp,Termux,Android]
+tags: [Xposed, frp, Termux, Android]
 title: 通过 Xposed 与 frp 远程读取短信验证码
 last_modified_at: 2023-6-18
 ---

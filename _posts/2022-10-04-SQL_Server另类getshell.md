@@ -1,5 +1,5 @@
 ---
-tags: [SQL Server,网络安全]
+tags: [SQL Server, 网络安全]
 title: SQL Server 另类 getshell
 last_modified_at: 2023-5-4
 ---
