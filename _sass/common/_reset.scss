@@ -138,10 +138,10 @@ pre, code {
   font-family: map-get($base, font-family-code);
 }
 
-code {
+/*code {
   font-size: map-get($base, font-size-xs);
   line-height: map-get($base, line-height-sm);
-}
+}*/
 
 figure > img {
   display: block;
