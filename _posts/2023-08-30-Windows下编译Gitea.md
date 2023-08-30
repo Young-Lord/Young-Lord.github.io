@@ -5,7 +5,7 @@ slug: windows-compile-gitea
 last_modified_at: 2023-8-30
 ---
 
-> 我就想提个PR怎么这么麻烦？
+> 我就想[提个PR](https://github.com/go-gitea/gitea/pull/26814)怎么这么麻烦？
 
 ## 编译环境
 
@@ -51,3 +51,7 @@ make build
 ```
 
 会报一大堆`FIND: 参数格式不正确`的错误，忽略即可。只要最终当前目录下生成`gitea.exe`即算成功。
+
+## 运行
+
+上面那个编译出来的是没有`SQLite 3`支持的，这边建议你跑一个`MariaDB`作数据库，具体[参见此博文](https://blog.csdn.net/xhaimail/article/details/103306009)
