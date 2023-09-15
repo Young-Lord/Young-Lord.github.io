@@ -58,7 +58,7 @@ sc.exe create caddy start= auto binPath= "C:\Program Files\Caddy\caddy.exe run"
 
 - `:53091`：绑定到`0.0.0.0:53091`
 - `handle_path /files/*`：在`/files`路径下显示一个Web页面用于浏览器访问
-- `handle /webdav/*`：在`/webdav`路径下处理`WebDAV`服务，根目录为`E:/ftp`
+- `handle /webdav/*`：在`/webdav`路径下处理`WebDAV`服务，根目录为`E:/ftp`（如果用中文文件名，记得要用`UTF-8`编码保存文件）
 - `basicauth /webdav/*`：只允许用户名为`ftp`、密码为`a`的用户访问。这里的密码已经hash过，可以使用`caddy hash-password`生成。
 
 ## 使用
@@ -73,6 +73,8 @@ reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameter
 net stop webclient
 net start webclient
 ```
+
+建议：编辑`C:\Windows\System32\drivers\etc\hosts`，加入一行`ftp.local 192.168.66.66`（根据实际情况更改）以更好同时挂载到同一个IP地址下的不同网络驱动器。如果这样做，下面的`192.168.66.66`也要对应改为`ftp.local`
 
 右键“此电脑”，选择“映射网络驱动器”，文件夹写`http://192.168.66.66:53091/webdav`，勾选“使用其他凭据连接”。在弹出的登录提示中用户名输入“ftp”，密码输入“a”。
 
