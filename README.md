@@ -43,7 +43,7 @@
 
 由于插入大量商业性质的广告，CSDN 与简书被认为违反了“非商业性使用”原则，因此博客内的文章**严禁**转载至 CSDN 或简书，无论是否署名。
 
-博客原始代码来自 [TeXt](https://tianqi.name/jekyll-TeXt-theme)，根据 MIT License 使用。该部分不属于 WTFPL 适用范围。
+博客原始代码来自 [TeXt](https://kitian616.github.io/jekyll-TeXt-theme/)，根据 MIT License 使用。该部分不属于 WTFPL 适用范围。
 
 在此基础上修改的代码基于 [WTFPL](https://github.com/Young-Lord/young-lord.github.io/blob/master/LICENSE.md) 开源于 [GitHub](https://github.com/Young-Lord/young-lord.github.io)。
 
@@ -55,7 +55,7 @@
 
 博客引擎来自于 [Jekyll](https://github.com/jekyll/jekyll)，感谢。
 
-新的博客主题（北京时间2022/08/01正午起）来自 [TeXt](https://tianqi.name/jekyll-TeXt-theme/)，感谢！
+新的博客主题（北京时间2022/08/01正午起）来自 [TeXt](https://kitian616.github.io/jekyll-TeXt-theme/)，感谢！
 
 旧的博客主题基于 [poole/lanyon](https://github.com/poole/lanyon)，感谢。
 
