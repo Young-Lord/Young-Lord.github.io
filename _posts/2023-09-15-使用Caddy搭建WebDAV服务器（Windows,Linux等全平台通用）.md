@@ -2,7 +2,7 @@
 tags: [Caddy, WebDAV]
 title: 使用 Caddy 搭建 WebDAV 服务器（Windows, Linux 等全平台通用）
 slug: caddy-webdav
-last_modified_at: 2023-9-15
+last_modified_at: 2023-9-22
 ---
 
 ## 前言
@@ -67,7 +67,7 @@ sc.exe create caddy start= auto binPath= "C:\Program Files\Caddy\caddy.exe run"
 
 首先解除一些限制[^1]：
 
-```shell
+```bat
 reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters /v BasicAuthLevel /t REG_DWORD /d 2 /f
 reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters /v FileSizeLimitInBytes /t REG_DWORD /d 0xffffffff /f
 net stop webclient
@@ -78,11 +78,13 @@ net start webclient
 
 #### 关于连接
 
-不建议：右键“此电脑”，选择“映射网络驱动器”，文件夹写`http://192.168.66.66:53091/webdav`，勾选“使用其他凭据连接”。在弹出的登录提示中用户名输入“ftp”，密码输入“pwd123”。
+##### 使用Windows自带的“映射网络驱动器”（不建议）
+
+右键“此电脑”，选择“映射网络驱动器”，文件夹写`http://192.168.66.66:53091/webdav`，勾选“使用其他凭据连接”。在弹出的登录提示中用户名输入“ftp”，密码输入“pwd123”。
 
 为什么不建议？这样做无法实现开机自动连接，而且每次都要弹出一次密码输入框（即使你已经选择了“记住凭据”）。
 
-我的方法：
+##### 使用远古的`net use`命令（不建议）
 
 ```bat
 chcp 65001
@@ -106,4 +108,30 @@ iReturn = objShell.Run("cmd /c "&chr(34)&"C:\Program Files\LoginAtStartup\connec
 
 把这货丢进一个`vbs`文件里，再把它的快捷方式丢进`shell:startup`（也就是`C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`）下，就可以开机自动连接了。再次感叹一句Windows之屎。
 
+为什么不建议？这货打开文件时传参是\*\*的`http://`开头的链接。
+
+##### 使用`rclone`
+
+> 参考链接：[^2]
+
+下载安装[WinFsp](https://github.com/winfsp/winfsp/releases/latest)，下载[rclone](https://github.com/rclone/rclone/releases/latest)，进入`rclone.exe`所在目录，随后按参考链接完成配置。
+
+<del>[FUSE](https://zhuanlan.zhihu.com/p/106719192): 遥遥领先！</del>
+
+开机自启动可以用Windows服务（略），也可以直接用上一部分那个开机自启动脚本：
+
+把`.bat`文件里的内容进行如下更改（[关于参数的详细解释](https://blog.xiaoz.org/archives/15519)）：
+
+```bat
+chcp 65001
+pushd "C:\Program Files\rclone"
+rclone mount myftp:/ Z: --vfs-cache-mode full
+```
+
+（这里的 myftp 是 rclone 配置文件中的名称，Z: 是挂载的盘符，--vfs-cache-mode full 是启用缓存）
+
+然后应该就好了。
+
 [^1]:[win10原生webdav设置的问题](https://juejin.cn/post/6992463338160521230)
+
+[^2]:[使用rclone搭建webdav客户端](https://www.bilibili.com/read/cv21803909/)
