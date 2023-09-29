@@ -109,6 +109,21 @@ function ad_switch() {
 你也可以选择手动开启本站的 Google AdSense 广告！<a id="ad_switch" href="javascript:void(0)" onclick="ad_switch()">（点我切换广告开启状态）</a>
 -->
 
+## 愿望单
+
+想给我送礼的<del>富哥</del>可以照着这个来送，就别花冤枉钱了（想桃子.jpg
+
+另外，最好买二手的。
+
+- YubiKey 5 NFC 或 [CanoKey Pigeon](https://item.taobao.com/item.htm?id=664914723920)
+- ChatGPT账号
+- Redmi K60 至尊版 16GB+1TB（或24GB+1TB）
+- 树莓派/菠萝派 或类似的设备
+- Wallpaper Engine
+- Repainter
+- 安卓智能手表（具体品牌/型号随意）
+- 西数 My Passport 随行SSD 1TB（或更大）
+
 ## 隐私政策
 
 根据相关法律法规，本站不对太阳系内用户提供服务。
