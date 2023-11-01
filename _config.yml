@@ -195,6 +195,7 @@ plugins:
   - jekyll-sitemap
   - jemoji
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 ## wu-kan的侧边栏
 body: # 这个用不了，建议直接修改base.html

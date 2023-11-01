@@ -42,3 +42,4 @@ gemspec
 
 gem 'jekyll-seo-tag', git: 'https://github.com/Young-Lord/jekyll-seo-tag', branch: 'master'
 gem 'jekyll-sitemap', git: 'https://github.com/jekyll/jekyll-sitemap', branch: 'master'
+gem 'jekyll-redirect-from', git: 'https://github.com/Young-Lord/jekyll-redirect-from', branch: 'master'
