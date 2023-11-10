@@ -21,7 +21,7 @@ id: page-memories
 - 只要可能，文本的大小写一律严格遵循事实
 - 名字一律**加粗**
 - 对于**一代与二代**、**第一季与第二季**等，在名字后以不加粗的如`[1,2,SP]`形式的字样表示
-- “原名字/备注”栏使用`，`或`；`分隔
+- “原名字/备注”栏使用`；`分隔
 
 点击特定列可以进行排序。
 
@@ -133,78 +133,126 @@ id: page-memories
 | **传说之下** & **三角符文**             | 英语：**UNDERTALE** & **DELTARUNE**                            | 游戏      | 8   | meta 元素应用最知名的作品吧，可惜本人并没有很好的理解其内涵，只能给出这个分数了，最欣赏的是其游戏性上的创新 | 201x       |
 | **我的世界**                          | 英语：**Minecraft**                                          | 游戏      | 10   | 真正的开放世界，没有任何固定的流程；高度的自动化与自定义化。退坑前应该有几千小时游戏时长了吧…… | 201[3-6]   |
 
-<script>
-//来自 https://blog.csdn.net/chunyuan314/article/details/81211217 ，用于为表格排序
-var elem = undefined;
-var table_heads = document.getElementsByTagName("th");
-var need_sort = [];
-for(var i=0;i<table_heads.length;i+=1){
-    if(["评分","名字","类别"].indexOf(table_heads[i].innerText)!==-2){need_sort.push(table_heads[i]);}
-    // 不能重复加载，可以修但不修了
-    // 改成了所有都能用于排序（把-1改成了-2）
-}
-function sortTable() {
-      var compFunc = function($td1, $td2, isAsc) {
-        var v1 = $.trim($td1.text()).replace(/,|\s+|%/g, '');
-        var v2 = $.trim($td2.text()).replace(/,|\s+|%/g, '');
-        var pattern = /^\d+(\.\d*)?$/;
-        if (pattern.test(v1) && pattern.test(v2)) {
-          v1 = parseFloat(v1);
-          v2 = parseFloat(v2);
-        }
-        return isAsc ? v1 > v2 : v1 < v2;
-      };
-      var doSort = function($tbody, index, compFunc, isAsc)
-      {
-        var $trList = $tbody.find("tr");
-        var len = $trList.length;
-        for(var i=0; i<len-1; i++) {
-          for(var j=0; j<len-i-1; j++) {
-            var $td1 = $trList.eq(j).find("td").eq(index);
-            var $td2 = $trList.eq(j+1).find("td").eq(index);
-            if (compFunc($td1, $td2, isAsc)) {
-              var t = $trList.eq(j+1);
-              $trList.eq(j).insertAfter(t);
-              $trList = $tbody.find("tr");
-            }
-          }
-        }
-      }
-      var init = function(elem) {
-        var $th = $(elem);
-        this.$table = $th.closest("table");
-        var that = this;
-        $th.click(function(){
-          var index = $(this).index();
-          var asc = $(this).attr('data-asc');
-          isAsc = asc === undefined ? true : (asc > 0 ? true : false);
-          doSort(that.$table.find("tbody"), index, compFunc, isAsc);
-          $(this).attr('data-asc', 1 - (isAsc ? 1 : 0));
-        });
-        $th.css({'cursor': 'pointer'})
-           .attr('title', '点击以'+elem.innerText+'为依据排序');
-      };
-      need_sort.forEach(function(item){init(item)});
-    }
-window.Lazyload.js(window.TEXT_VARIABLES.sources.jquery, function(){sortTable();})
-</script>
-
 电子设备记录：
 
 总配置格式：A+B。A代表存储空间，B代表运行内存大小。如果有扩展的，则以`(基础+扩展)`表示。默认单位为GB，也可特殊标识单位。
 
 | 名字 | 品牌 | 类别 | 价格 | 时间 | 短评 | 红外遥控 | NFC | 3.5mm耳机孔 | HDMI | 充电接口 | 总配置 | 生物识别 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 小米平板5 Pro | 小米 | 平板 | 1650 | 2023/7 ~ 至今 | MIUI出乎意料的做得并没有很烂。多设备协作比较惊喜（虽然要是任何数据经过服务器就典了），鼠标和键盘在 Termux X11 里**基本**无障碍使用，MIUI 优化带来的部分 bug 用 Shizuku 也勉强可以解决，现在这行字就是在 Termux 里的 Arch 里的 VSCode 用 fcitx5 打下来的<br />**但后面这几项一个勾都没有是几个意思？** | × | × | × | × | Type-C | 256G+8G | 侧边指纹、人脸 |
+| 小米平板5 Pro | 小米 | 平板 | 1650 | 2023/7 ~ 至今 | MIUI出乎意料的做得并没有很烂。多设备协作比较惊喜（虽然要是任何数据经过服务器就典了），鼠标和键盘在 Termux X11 里**基本**无障碍使用，MIUI 优化带来的部分 bug 用各种模块也可以解决（甚至还有一些优化），现在这行字就是在 Termux 里的 Arch 里的 VSCode 用 fcitx5 打下来的<br />**但后面这几项一个勾都没有是几个意思？**<br />以及，我是[极端小米用户](https://www.zhihu.com/question/616958766) | × | × | × | × | Type-C | 256G+8G | 侧边指纹、人脸 |
 | Redmi Note 11 Pro 极速版 | 红米 | 手机 | 1698 | 2023/2 ~ 至今 | 小米的系统就是屎。apk安装都tm能给你拦下来？ | ✓ | ✓ | ✓ | × | Type-C | 256+8 | 侧边指纹、人脸 |
 | Redmi路由器 AX6 | 红米 | 路由器 | 277 | 2023/1 ~ 至今 | 本来是想刷个机的，但又有网速、变砖、信号等方面的顾虑，所以就一直在用默认系统 | / | / | / | / | 专用适配器 | 128M+512M | / |
 | 小米MIX 2S | 小米 | 手机 | 358 | 2022/8 ~ 至今 | 逆天的摄像头设计……左上角屏幕是碎的，因为这个便宜了不少 | × | ✓ | × | × | Type-C | 128+6 | 背面指纹 |
 | 小米5 | 小米 | 手机 | 158 | 2021/9 ~ 2022/8 | 非常喜欢！本来是给逆向用的，结果后来由于CPU太烂只能用来逆向了…B站视频音画不同步，微信打开半分钟，夏天能当暖手宝…最后由于进水死掉了，花了很大功夫抢救数据<br />刷了魔趣，并不是很好用，后来2023魔趣也没了 | ✓ | ✓ | ✓ | × | Type-C | 64+3 | HOME指纹 |
 | Redmi K30 5G | 红米 | 手机 | 1656 | 2022/11 ~ 至今 | 挺不错的，最大的缺点就是4G开机经常无信号，以及太重；除此以外没有明显缺点。同时，这也是孩子第一次体验120Hz（虽然马上就为了省电关了）<br />拼多多我的超人！ | ✓ | ✓ | ✓ | × | Type-C |  | 侧边指纹、人脸 |
 | 小米手环2 | 小米 | 手环 | 30 | 2021/12 | 买回来系统更新后立刻被强制降亮度，自此永不会买小米手环系列。 | / | × | / | / | 专用接口 | / | / |
-| OPPO A1 (A83) | OPPO | 手机 |  |  | 不能刷机=x | × | × | ✓ | × | Micro USB |  |  |
-| / | 华为 | 手机 | / | / | 路上丢了后被捡起来的人关机拿走了，自此丢失。 | × | × | ✓ | × | Micro USB | / | / |
+| OPPO A1 (A83) | OPPO | 手机 |  |  | 不能刷机=x；系统本身又烂的要死，流氓行为也是一点不少。 | × | × | ✓ | × | Micro USB |  |  |
+| 荣耀畅玩6X | 华为 | 手机 | / | / | 路上丢了后被捡起来的人关机拿走了，自此丢失。 | × | × | ✓ | × | Micro USB | / | / |
 | 金立F103S | 金立 | 手机 | / | / | / | × | × | ✓ | × | Micro USB | 16+1 | 无 |
-| / | 酷派 | 手机 | / | / | / | × | × | ✓ | × | Micro USB | / | 无 |
+| 酷派? | 酷派 | 手机 | / | / | / | × | × | ✓ | × | Micro USB | / | 无 |
 | 清华同方超锐 T43 | 清华同方 | 电脑 | / | 2022前 ~ 至今 | 目前把SSD划出一块装Deepin作日用机。电池废了。 | / | / | ✓ | ✓ | 专用圆口 | 256+4 | 人脸 |
 | 联想昭阳E53-80 | 联想 | 电脑 | / | 2021前 ~ 至今 | Win10 + Ubuntu双系统。Windows下风扇总是异常响。额外安装了256G的SSD与4G的内存条。 | / | / | ✓ | ✓ | 专用方口、Type-C | (256+1024)+(4+4) | 无 |
+
+<script>
+// 来自 https://blog.csdn.net/chunyuan314/article/details/81211217 ，用于为表格排序
+(function() {
+  var elem = undefined;
+  var table_heads = document.getElementsByTagName("th");
+  var need_sort = [];
+  for (var i = 0; i < table_heads.length; i += 1) {
+    if (["评分", "名字", "类别"].indexOf(table_heads[i].innerText) !== -2) {
+      need_sort.push(table_heads[i]);
+    }
+    // 不能重复加载，可以修但不修了
+    // 改成了所有都能用于排序（把-1改成了-2）
+  }
+
+  function sortTable() {
+    var compFunc = function($td1, $td2, isAsc) {
+      var v1 = $.trim($td1.text())
+        .replace(/,|\s+|%/g, '');
+      var v2 = $.trim($td2.text())
+        .replace(/,|\s+|%/g, '');
+      var pattern = /^\d+(\.\d*)?$/;
+      if (pattern.test(v1) && pattern.test(v2)) {
+        v1 = parseFloat(v1);
+        v2 = parseFloat(v2);
+      }
+      return isAsc ? v1 > v2 : v1 < v2;
+    };
+    var doSort = function($tbody, index, compFunc, isAsc) {
+      var $trList = $tbody.find("tr");
+      var len = $trList.length;
+      for (var i = 0; i < len - 1; i++) {
+        for (var j = 0; j < len - i - 1; j++) {
+          var $td1 = $trList.eq(j)
+            .find("td")
+            .eq(index);
+          var $td2 = $trList.eq(j + 1)
+            .find("td")
+            .eq(index);
+          if (compFunc($td1, $td2, isAsc)) {
+            var t = $trList.eq(j + 1);
+            $trList.eq(j)
+              .insertAfter(t);
+            $trList = $tbody.find("tr");
+          }
+        }
+      }
+    }
+    var init = function(elem) {
+      var $th = $(elem);
+      this.$table = $th.closest("table");
+      var that = this;
+      $th.click(function() {
+        var index = $(this)
+          .index();
+        var asc = $(this)
+          .attr('data-asc');
+        isAsc = asc === undefined ? true : (asc > 0 ? true : false);
+        doSort(that.$table.find("tbody"), index, compFunc, isAsc);
+        $(this)
+          .attr('data-asc', 1 - (isAsc ? 1 : 0));
+      });
+      $th.css({
+          'cursor': 'pointer'
+        })
+        .attr('title', '点击以' + elem.innerText + '为依据排序');
+    };
+    need_sort.forEach(function(item) {
+      init(item)
+    });
+  }
+  window.Lazyload.js(window.TEXT_VARIABLES.sources.jquery, function() {
+    sortTable();
+  })
+})()
+</script>
+
+<script>
+// 用于根据URL中的hash跳转
+(function() {
+  var hash = window.location.hash;
+  var text_element, text_content;
+  if (typeof hash !== 'string') {
+    return;
+  }
+  hash = decodeURI(hash.slice(1)).replaceAll(" ", ""); // 去掉`#`、urldecode
+  if (hash.length === 0) {
+    return;
+  }
+  Array.from(document.getElementsByTagName("tbody"))
+    .forEach((tbody) => {
+      Array.from(tbody.children)
+        .forEach((tr) => {
+          text_element = tr.children[0];
+          text_content = text_element.innerText.replaceAll(" ", "");
+          if (text_content.indexOf(hash) === 0) {
+            text_element.scrollIntoView({
+              block: 'center'
+            });
+          }
+        })
+    })
+})()
+</script>
