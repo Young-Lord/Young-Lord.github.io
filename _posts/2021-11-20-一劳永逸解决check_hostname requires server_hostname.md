@@ -2,13 +2,16 @@
 tags: [Python, bugfix]
 title: 一劳永逸解决 check_hostname requires server_hostname
 last_modified_at: 2023-8-29
+slug: pip-proxy-issue
+redirect_from: 
+  - /posts/一劳永逸解决check_hostname requires server_hostname
 ---
 
 ## 注意
 
 对于`urllib3`等包，`pip`内自己存了一份，所以以下两个文件可能均需更改：
 
-```
+```plain
 C:\Users\%USERNAME%\AppData\Local\Programs\Python\Python310\Lib\site-packages\pip\_vendor\urllib3\poolmanager.py
 C:\Users\%USERNAME%\AppData\Local\Programs\Python\Python310\Lib\site-packages\urllib3\poolmanager.py
 ```

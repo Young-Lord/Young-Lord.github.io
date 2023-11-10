@@ -6,24 +6,49 @@ import os
 def processSingleFile(filename: str):
     is_crlf = False
     with open(filename, encoding="utf-8") as f:
-        ff = f.read()
-        if ff.find("\r\n") > 0:
+        file_content_str = f.read()
+        if file_content_str.find("\r\n") > 0:
             is_crlf = True
-        ff = ff.replace("\r\n", '\n').split('\n')
-    mark_begin = ff.index("---")
+        file_content_list: list[str] = file_content_str.replace("\r\n", "\n").split(
+            "\n"
+        )
+    mark_begin = file_content_list.index("---")
     if mark_begin == -1:
         return 1
-    mark_end = ff.index("---", mark_begin+1)
+    mark_end = file_content_list.index("---", mark_begin + 1)
     if mark_end == -1:
         return 1
-    if len([1 for i in ff[mark_begin+1:mark_end] if i.startswith("title: ")]) != 0:
-        return 2
+    yaml_datas = file_content_list[mark_begin + 1 : mark_end]
     new_title = filename.split("-", 3)[3][:-3]  # 提取标题正文，去除".md"
     if new_title.find(": ") != -1:
-        print("警告："+filename+"中标题存在特殊字符")  # 应该不太可能吧，毕竟":"基本不会用到
+        print("警告：" + filename + "中标题存在特殊字符")  # 应该不太可能吧，毕竟":"基本不会用到
+    if not any(
+        1
+        for i in file_content_list[mark_begin + 1 : mark_end]
+        if i.startswith("redirect_from: ")
+    ) and not any(
+        1
+        for i in file_content_list[mark_begin + 1 : mark_end]
+        if i.startswith("slug: ")
+    ):
+        yaml_datas.append("slug: " + new_title)
+        yaml_datas.append("redirect_from: ")
+        yaml_datas.append("  - /posts/" + filename.split("-", 3)[3].removesuffix(".md"))
+        print(filename + " 未设置slug，已自动设置。")
+        file_content_str = file_content_list[:mark_begin + 1] + yaml_datas + file_content_list[mark_end:]
+        new_file_str = ("\r\n" if is_crlf else "\n").join(file_content_str)
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(new_file_str)
     new_tile_text = f"title: {new_title}"
-    ff.insert(mark_end, new_tile_text)
-    new_file_str = ('\r\n' if is_crlf else '\n').join(ff)
+    if any(
+        1
+        for i in yaml_datas
+        if i.startswith("title: ")
+    ):
+        return 2
+    yaml_datas.append(new_tile_text)
+    file_content_str = file_content_list[:mark_begin + 1] + yaml_datas + file_content_list[mark_end:]
+    new_file_str = ("\r\n" if is_crlf else "\n").join(file_content_str)
     with open(filename, "w", encoding="utf-8") as f:
         f.write(new_file_str)
     return 0

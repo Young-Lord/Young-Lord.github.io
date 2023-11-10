@@ -1,8 +1,15 @@
 ---
 tags: [Metasploit, 网络安全]
 title: 为 Metasploit 的后门内置 persistence
-last_modified_at: 2023-9-15
+last_modified_at: 2023-11-10
+slug: metasploit-auto-persistence
+redirect_from: 
+  - /posts/为Metasploit的后门内置persistence
 ---
+
+## 新版
+
+重构后的项目位于[Young-Lord/msf-remote-logger](https://github.com/Young-Lord/msf-remote-logger)，直接用这个就可以了。（开源协议：`AGPL-3.0`）
 
 ## 前言
 
@@ -205,7 +212,7 @@ exploit32.execute(payload=payload32)
 
 ## 一些别的记录
 
-```text
+```plaintext
 msfrpcd -U u8edh1289hwqwd -P k2ffUE912hjesqw -f -p 61529
 
 msf:
