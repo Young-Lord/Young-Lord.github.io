@@ -7,7 +7,7 @@ last_modified_at: 2023-11-1
 
 ## TLDR
 
-一眼以概之，就是拿`pyodbc`换掉`pymssql`。
+一言以概之，就是拿`pyodbc`换掉`pymssql`。
 
 ### 安装`msodbc`驱动
 
@@ -41,9 +41,7 @@ pymssql.connect(
 改为：
 
 ```python
-{% raw %}
-pyodbc.connect(f'DRIVER={{ODBC Driver 18 for SQL Server}};SERVER={Config.DATABASE_ADDRESS};DATABASE={Config.DATABASE_DB};UID={Config.DATABASE_USERNAME};PWD={Config.DATABASE_PASSWORD};TrustServerCertificate=yes')
-{% endraw %}
+{% raw %}pyodbc.connect(f'DRIVER={{ODBC Driver 18 for SQL Server}};SERVER={Config.DATABASE_ADDRESS};DATABASE={Config.DATABASE_DB};UID={Config.DATABASE_USERNAME};PWD={Config.DATABASE_PASSWORD};TrustServerCertificate=yes'){% endraw %}
 ```
 
 （注意，此处的**18**要改为你安装的驱动的版本，否则会报错）
@@ -76,4 +74,4 @@ db.execute(
 
 ### 更改charset参数
 
-将`pymssql.connect`中的参数改为`gbk`/`gb2312`/`gb18030`/`CP936`可能有奇效，但说不定就没用呢。
+将`pymssql.connect`中的参数改为`gbk`/`gb2312`/`gb18030`/`CP936`可能有奇效<del>，但这太玄学了</del>。
