@@ -10,21 +10,19 @@ pan_gu_zhi_bai: false
 
 > 自疏濯淖污泥之中，蝉蜕于浊秽，以浮游尘埃之外，不获世之滋垢，皭然泥而不滓者也。
 
-Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。
+Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指代我建议使用 `LY` / `GitHub @Young-Lord`。
 
 头像为《蔷薇少女》中的翠星石，Pixiv ID: [65149795](https://www.pixiv.net/artworks/65149795)。*（感谢 [SHIKI](https://www.bilibili.com/video/BV1Bh411Y7gX)！）* *翠星石超可爱的说！*
 
-配色炸掉了🤯 又好了😋
+与对消费主义与享乐主义斗争。
 
-正在竭力与对消费主义与享乐主义斗争。
-
-不喜欢在无关场合涉政，也厌恶就政治话题争吵
+不喜欢在无关场合涉政/LGBT，也厌恶就此类话题争吵
 
 中英文规范书写提倡者
 
-技能树完全乱点，语言的话 Python, C++, JavaScript, Java 都多少会一点<del>但都学艺不精</del>
+技能树完全乱点，语言的话 Python, C++, JavaScript, Java, Go 都多少会一点<del>但都学艺不精</del>
 
-自由软件支持者，正在试图迁移到 GNU/Linux 系统
+自由软件支持者，正在试图迁移到 GNU/Linux 系统（BTW I Use Arch）
 
 ## 友情链接🔗
 
@@ -69,7 +67,7 @@ DOGE: `D7CkqdwySeeZZAXoDr9zmUzkNDcktmhJWi`
 
 XMR: `43NB6wcfVqTJBhTcRktTMKbnW5UWK7bDC6JVb5qhmWSvJZ71qr7qS4bSoARWMqwozUJPkSp2QBRZBW2sjw887yMcDiz2Y7h`
 
-（更多付款方式可以给我发邮件）
+（发虚拟货币的话建议给我发个邮件（我一般不会去看）；更多付款方式可以给我发邮件）
 
 <!--
 <script>
