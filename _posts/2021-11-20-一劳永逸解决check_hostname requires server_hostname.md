@@ -4,7 +4,7 @@ title: 一劳永逸解决 check_hostname requires server_hostname
 last_modified_at: 2023-8-29
 slug: pip-proxy-issue
 redirect_from: 
-  - /posts/一劳永逸解决check_hostname requires server_hostname
+  - /posts/一劳永逸解决check_hostname-requires-server_hostname
 ---
 
 ## 注意
