@@ -91,17 +91,14 @@ html.han-la ul>hanla {
     position: relative;
     height: 100%;
     aspect-ratio: 1/1;
+    /*圆角，去除间隔*/
+    border-radius: 10%;
+    margin: unset;
 }
 
 .header__brand {
     /*使头像紧密贴边*/
     height: 100%;
-}
-
-#LY_page_logo {
-    /*圆角，去除间隔*/
-    border-radius: 10%;
-    margin: unset;
 }
 
 .header__brand > a {
@@ -177,4 +174,19 @@ hr {
 
 .search-box__icon-clear > button {
     color: #fff;
+}
+
+/* 修复 plaintext 样式 */
+.highlight {
+    border-radius: 0 !important;
+}
+
+pre {
+    border-radius: 0.4rem !important;
+    padding: unset !important;
+}
+
+pre > code {
+    padding: 1rem 0 1rem 1rem !important;
+    display: block !important;
 }

@@ -65,7 +65,7 @@ last_modified_at: 2023-12-2
 
 这一步主要是把`/boot/loader/entries`中的PARTUUID改为UUID，否则在UEFI模式下会无法启动。
 
-```shell
+```console
 [user@livearch entries]$ cat /boot/loader/entries/*.conf | grep --color=auto PARTUUID
 options root=PARTUUID=77e06bbc-e680-44fa-a5eb-47f2a38967f9 zswap.enabled=0 rootflags=subvol=@ rw rootfstype=btrfs
 options root=PARTUUID=77e06bbc-e680-44fa-a5eb-47f2a38967f9 zswap.enabled=0 rootflags=subvol=@ rw rootfstype=btrfs
@@ -193,7 +193,7 @@ Dec 02 00:19:00 archlinux systemd[1]: efi.mount: Job efi.mount/start failed with
 Dec 02 00:19:00 archlinux systemd[1]: dev-disk-by\x2ddiskseq-3\x2dpart1.device: Job dev-disk-by\x2ddiskseq-3\x2dpart1.device/start failed with result 'timeout'.
 ```
 
-```shell
+```console
 [user@archlinux dev]$ bootctl
 Couldn't find EFI system partition. It is recommended to mount it to /boot or /efi.
 Alternatively, use --esp-path= to specify path to mount point.

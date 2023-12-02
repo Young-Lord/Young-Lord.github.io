@@ -34,7 +34,7 @@ proxy_url = proxy_url.replace("https://", "http://")
 
 ![下载包时出现异常](https://i.loli.net/2021/11/20/5BMCkKNAuhYvE43.png)
 
-![搜索结果](https://i.loli.net/2021/11/20/CUHBjOkQPqTdXo6.png)
+![搜索结果，大部分为重复内容](https://i.loli.net/2021/11/20/CUHBjOkQPqTdXo6.png)
 
 不幸的是，全世界都遇到了这个问题，但（除了降级）唯一的解决方案是：
 
@@ -69,7 +69,7 @@ proxy_url = proxy_url.replace("https://", "http://")
 
 这一次，是`ProxyError`。去网上一查，你就发现，只有 http 类型的代理才能正常运行。也就是说，你要把你的代理设置改成这样：
 
-![在代理地址前添加http](https://i.loli.net/2021/11/20/21KSixgUTeJyWLv.png)
+![在Windows设置中的代理地址前添加http](https://i.loli.net/2021/11/20/21KSixgUTeJyWLv.png)
 
 但是，这是自动配置的啊？！
 
@@ -87,7 +87,7 @@ proxy_url = proxy_url.replace("https://", "http://")
 
 ## 尾声
 
-![成功](https://i.loli.net/2021/11/20/hov3ViZl2AMCPWm.png)
+![pip成功在开启代理的情况下装包](https://i.loli.net/2021/11/20/hov3ViZl2AMCPWm.png)
 
 至此，你终于享受到了一个开着代理也能使用 pip 的体验。
 
@@ -95,9 +95,9 @@ proxy_url = proxy_url.replace("https://", "http://")
 
 希望 CSDN，简书等垃圾平台少一些抄袭，多一些真材实料，不要只会说“关了代理就’解决‘了”，这才不是科技圈应有的样子。
 
-## 彩蛋
+## 关于patch
 
-正当我为了写这篇 blog 去复现 bug 的时候，我发现不更改`ssl.py`也不会出现问题，所以只用修改`poolmanager.py`就可以了。
+为了写这篇 blog 去复现 bug 的时候，我发现不更改`ssl.py`也不会出现问题，所以只用修改`poolmanager.py`就可以了。
 
 ## 参考资料
 
