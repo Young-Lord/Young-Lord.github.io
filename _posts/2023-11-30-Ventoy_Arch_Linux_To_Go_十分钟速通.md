@@ -153,7 +153,7 @@ echo vhci-hcd | sudo tee /etc/modules-load.d/vhci-hcd.conf  # 开机自动加载
 # yay -S --needed remmina remmina-plugin-rdesktop 用于测试RDP共享Canokey
 ```
 
-关于Web Console，[新版](https://console.canokeys.org/)可以直接作为Chrome应用安装，[旧版](https://console-legacy.canokeys.org/)可以使用我打包过(TODO)的离线运行。
+关于Web Console，[新版](https://console.canokeys.org/)可以直接作为Chrome PWA应用安装，[旧版](https://console-legacy.canokeys.org/)可以使用我打包过的离线运行（`yay -S canokey-console-legacy`）。
 
 关于`gpg-agent`，不用的时候记得kill掉以防止占用USB设备。
 
