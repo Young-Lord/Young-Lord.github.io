@@ -55,7 +55,9 @@ last_modified_at: 2023-12-2
 
 此时可以从AUR装个`clash-for-windows-bin`来替代之前自己丢进去的版本（注意安装过程必须使用代理）。
 
-安装一系列基础包：`yay -S --needed curl wget nano vim p7zip which lvm2 git noto-fonts-cjk xfce4-networkmanager`
+安装一系列基础包：`yay -S --needed curl wget nano vim p7zip which lvm2 git noto-fonts-cjk`
+
+关于网络连接，使用`network-manager-applet`即可，参考[官方教程](https://wiki.archlinux.org/title/NetworkManager#nm-applet)可以在任务栏管理网络连接；如果不装，也可以使用`nmcli`与`nmtui`管理网络连接。
 
 （可能需要）`yay -S mkinitcpio-firmware`
 
@@ -150,7 +152,7 @@ echo vhci-hcd | sudo tee /etc/modules-load.d/vhci-hcd.conf  # 开机自动加载
 # 完成后运行 sudo udevadm control --reload-rules && sudo udevadm trigger
 # 重启后生效
 
-# yay -S --needed remmina remmina-plugin-rdesktop 用于测试RDP共享Canokey
+# yay -S --needed remmina freerdp 用于测试RDP共享Canokey
 ```
 
 关于Web Console，[新版](https://console.canokeys.org/)可以直接作为Chrome PWA应用安装，[旧版](https://console-legacy.canokeys.org/)可以使用我打包过的离线运行（`yay -S canokey-console-legacy`）。
