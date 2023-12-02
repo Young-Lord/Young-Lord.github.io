@@ -55,7 +55,7 @@ last_modified_at: 2023-12-2
 
 此时可以从AUR装个`clash-for-windows-bin`来替代之前自己丢进去的版本（注意安装过程必须使用代理）。
 
-安装一系列基础包：`yay -S --needed curl wget nano vim p7zip which lvm2 git noto-fonts-cjk`
+安装一系列基础包：`yay -S --needed curl wget nano vim p7zip which lvm2 git noto-fonts-cjk xfce4-networkmanager`
 
 （可能需要）`yay -S mkinitcpio-firmware`
 
