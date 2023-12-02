@@ -2,7 +2,7 @@
 tags: [Arch Linux, Ventoy]
 title: Ventoy Arch Linux To Go 十分钟速通
 slug: arch-to-go
-last_modified_at: 2023-11-30
+last_modified_at: 2023-12-2
 ---
 
 ## 前言
@@ -31,7 +31,7 @@ last_modified_at: 2023-11-30
 - Mirrors: Region: China
 - Disk configuration: Use a best-effort default partition layout -> 选中那个比较大的盘（`ATA VBOX HARDDISK`;`/dev/sda`;`scsi`） -> btrfs -> yes -> yes（一路Enter就行）
 - Bootloader: Systemd-boot（默认值）（这里要是默认值是`Grub`且没有`Systemd-boot`就可以重开了，你没开`EFI`）
-- Swap: no（真有人拿U盘当swap？要是是移动硬盘之类的可以视情况调整）
+- Swap: no<del>（真有人拿U盘当swap？要是是移动硬盘之类的可以视情况调整）</del>（其实这个[貌似](https://github.com/archlinux/archinstall/blob/4955b64a8c596d3eafa1b96b74e915ad12b3fe63/archinstall/lib/installer.py#L710)是[zram](https://wiki.archlinux.org/title/Zram)而非swap分区或Swapfile，所以开应该也没关系…吧？）
 - Hostname: livearch（自行输入）
 - Root password: 自行输入
 - User account: 自行输入，我这里用户名为`user`，并且给予了`sudo`权限
@@ -39,6 +39,7 @@ last_modified_at: 2023-11-30
 - Audio: Pipewire（可选，不用声音的话不装也行）
 - Network configuration: NetworkManager（要是你用别的方法能装包，也可以不装）
 - Timezone: Asia/Shanghai
+- NTP: True（时间同步，如果你的Timezone与宿主机（也就是你插U盘进去那台机）上的Timezone不一致的话建议不开，否则可能会搞乱宿主机的系统时间）
 
 配置完后直接Install。
 
@@ -164,7 +165,147 @@ echo vhci-hcd | sudo tee /etc/modules-load.d/vhci-hcd.conf  # 开机自动加载
 
 这里建议测试一下是否在`UEFI`（主要与`mkinitcpio`有关）及`Legacy BIOS`（主要与`grub`有关）启动模式下均能正常工作，方法不再赘述。
 
-UEFI启动时会有奇怪的start job failed，不过不影响使用。
+## 问题
+
+### 使用UEFI启动时的1min30s延迟
+
+UEFI启动时会有奇怪的`[ *** ] A start job is running for xxx (xxx / 1min 30s)`，不过不影响使用。根据我的猜测，这个问题成因是`boot`分区指向`/dev/dm-1`，因此`Systemd-boot`拒绝使用已挂载的`/boot`作为ESP。
+
+有一些workaround：
+
+- 使用Grub完全替换掉Systemd-boot：太麻烦了，不推荐
+- 修改Systemd的默认timeout（把`/etc/systemd/system.conf`里的`DefaultDeviceTimeoutSec`改成`10s`）：不推荐，可能会导致其他问题
+- 修改对应unit的timeout：没有成功。
+- 阻止此服务运行：我的方法，没有出现其他问题，具体见下：
+
+```shell
+sudo mkdir /usr/lib/systemd/system-generators-backup
+sudo mv /usr/lib/systemd/system-generators/systemd-gpt-auto-generator /usr/lib/systemd/system-generators-backup/systemd-gpt-auto-generator.bak
+```
+
+具体log（`journalctl -b`）：
+
+```plain
+Dec 02 00:19:00 archlinux systemd[1]: Job dev-disk-by\x2ddiskseq-3\x2dpart1.device/start timed out.
+Dec 02 00:19:00 archlinux systemd[1]: Timed out waiting for device /dev/disk/by-diskseq/3-part1.
+Dec 02 00:19:00 archlinux systemd[1]: Dependency failed for EFI System Partition Automount.
+Dec 02 00:19:00 archlinux systemd[1]: efi.mount: Job efi.mount/start failed with result 'dependency'.
+Dec 02 00:19:00 archlinux systemd[1]: dev-disk-by\x2ddiskseq-3\x2dpart1.device: Job dev-disk-by\x2ddiskseq-3\x2dpart1.device/start failed with result 'timeout'.
+```
+
+```shell
+[user@archlinux dev]$ bootctl
+Couldn't find EFI system partition. It is recommended to mount it to /boot or /efi.
+Alternatively, use --esp-path= to specify path to mount point.
+System:
+      Firmware: UEFI 2.70 (American Megatrends 5.13)
+ Firmware Arch: x64
+   Secure Boot: disabled (unknown)
+  TPM2 Support: yes
+  Boot into FW: supported
+
+Current Boot Loader:
+      Product: systemd-boot 254.6-2-arch
+     Features: ✓ Boot counting
+               ✓ Menu timeout control
+               ✓ One-shot menu timeout control
+               ✓ Default entry control
+               ✓ One-shot entry control
+               ✓ Support for XBOOTLDR partition
+               ✓ Support for passing random seed to OS
+               ✓ Load drop-in drivers
+               ✓ Support Type #1 sort-key field
+               ✓ Support @saved pseudo-entry
+               ✓ Support Type #1 devicetree field
+               ✓ Enroll SecureBoot keys
+               ✓ Retain SHIM protocols
+               ✓ Boot loader sets ESP information
+          ESP: /dev/disk/by-partuuid/503e184d-c5db-425f-84d7-572495267d53
+         File: └─/EFI/BOOT/BOOTX64.EFI
+
+Random Seed:
+ System Token: not set
+
+Boot Loaders Listed in EFI Variables:
+        Title: deepin
+           ID: 0x0002
+       Status: active, boot-order
+    Partition: /dev/disk/by-partuuid/a0cda2b8-607d-4a98-ab39-4a267c7dd522
+         File: └─/EFI/DEEPIN/SHIMX64.EFI
+
+        Title: Windows Boot Manager
+           ID: 0x0001
+       Status: active, boot-order
+    Partition: /dev/disk/by-partuuid/a0cda2b8-607d-4a98-ab39-4a267c7dd522
+         File: └─/EFI/MICROSOFT/BOOT/BOOTMGFW.EFI
+
+[user@archlinux dev]$ bootctl --esp-path=/boot
+dm-1: Failed to get device property: No such file or directory
+System: <OMITTED>
+
+Current Boot Loader: <OMITTED>
+
+Random Seed:
+ System Token: not set
+       Exists: yes
+
+Available Boot Loaders on ESP:
+          ESP: /boot
+         File: ├─/EFI/systemd/systemd-bootx64.efi (systemd-boot 254.6-2-
+arch)
+               └─/EFI/BOOT/BOOTX64.EFI (systemd-boot 254.6-2-arch)
+
+Boot Loaders Listed in EFI Variables: <OMITTED>
+
+Boot Loader Entries:
+        $BOOT: /boot
+        token: arch
+
+Default Boot Loader Entry:
+         type: Boot Loader Specification Type #1 (.conf)
+        title: Arch Linux (linux)
+           id: 2023-11-30_13-31-20_linux.conf
+       source: /boot//loader/entries/2023-11-30_13-31-20_linux.conf
+        linux: /boot//vmlinuz-linux
+       initrd: /boot//initramfs-linux.img
+      options: root=UUID=3292b807-b6b5-4fd5-b50d-9dfdcf01088c zswap.enabled=0 ro
+otflags=subvol=@ rw rootfstype=btrfs
+
+
+[user@archlinux dev]$ ls -al /dev/dm-1
+brw-rw---- 1 root disk 254, 1 Dec  2  2023 /dev/dm-1
+
+[user@archlinux dev]$ mount | grep boot
+/dev/mapper/ventoy1 on /boot type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro)
+
+[user@archlinux dev]$ ls -al /dev/mapper/ventoy1
+lrwxrwxrwx 1 root root 7 Dec  2  2023 /dev/mapper/ventoy1 -> ../dm-1
+
+[user@archlinux dev]$ lsblk
+NAME          MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda             8:0    0 465.8G  0 disk 
+sdb             8:16   1 115.5G  0 disk 
+├─sdb1          8:17   1 100.5G  0 part 
+│ └─ventoy    254:0    0     6G  0 dm   
+│   ├─ventoy1 254:1    0   512M  0 dm   /boot
+│   └─ventoy2 254:2    0   5.5G  0 dm   /var/log
+│                                       /home
+│                                       /var/cache/pacman/pkg
+│                                       /.snapshots
+│                                       /
+├─sdb2          8:18   1    32M  0 part 
+```
+
+本段的参考资料：
+
+- [global mounting default timeout of 1min 30s / System Administration / Arch Linux Forums](https://bbs.archlinux.org/viewtopic.php?id=191744)
+- [systemd#GPT_partition_automounting - ArchWiki](https://wiki.archlinux.org/title/systemd#GPT_partition_automounting)
+- [Why should I mount both /boot and /efi / Laptop Issues / Arch Linux Forums](https://bbs.archlinux.org/viewtopic.php?id=289331)
+- [\[SOLVED\] systemd boot mounts to /efi despite specifying ESP path / Newbie Corner / Arch Linux Forums](https://bbs.archlinux.org/viewtopic.php?pid=2006888#p2006888)
+- [systemd-gpt-auto-generator(8) - Linux manual page](https://www.freedesktop.org/software/systemd/man/devel/systemd-gpt-auto-generator.html)
+- [systemd.generator(7) - Linux manual page](https://www.freedesktop.org/software/systemd/man/latest/systemd.generator.html)
+- [systemd.unit(5) - Linux manual page](https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html#Description)：写了一个override.conf来覆盖`efi.mount`的`TimeoutSec`，但是好像没用。
+- [How to change systemd service timeout value? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/227017/how-to-change-systemd-service-timeout-value)
 
 ## 参考资料
 
