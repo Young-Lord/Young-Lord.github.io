@@ -3,7 +3,7 @@ layout: article
 title: 关于 & 友链
 key: page-about
 id: page-about
-pan_gu_zhi_bai: false
+pan_gu_zhi_bai: true
 ---
 
 ## 碎碎念
@@ -16,13 +16,17 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指
 
 与对消费主义与享乐主义斗争。
 
-不喜欢在无关场合涉政/LGBT，也厌恶就此类话题争吵
+不喜欢在无关场合涉政/LGBT，不想就此类话题争吵。
 
-中英文规范书写提倡者
+中英文规范书写提倡者。
 
 技能树完全乱点，语言的话 Python, C++, JavaScript, Java, Go 都多少会一点<del>但都学艺不精</del>
 
 自由软件支持者，正在试图迁移到 GNU/Linux 系统（BTW I Use Arch）
+
+a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系统Cusdis提供过无障碍改进，向Termux Monet、Coursera、K-9 Mail等项目提交过翻译。
+
+比较喜欢的游戏有 史丹利的寓言/蔚蓝/请出示文件/传送门/MC/樱之诗 等，大多为独立游戏，有少量gal。网游基本没碰过。
 
 ## 友情链接🔗
 
@@ -36,7 +40,7 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指
 邮箱：ly-niko #at# qq.com
 ```
 
-交换友链可以在评论区留言~
+交换友链可以在评论区留言。
 
 - [wu-kan](https://wu-kan.github.io)：原先的博客模板原作者
 - [TeXt Theme](https://tianqi.name)：目前博客模板的主页
