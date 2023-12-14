@@ -7,7 +7,7 @@ last_modified_at: 2023-12-2
 
 ## 前言
 
-最近不是[Canokey](https://item.taobao.com/item.htm?id=664914723920)有货了嘛，想买一个来玩玩gpg。gpg公钥显然需要离线生成，刚好几个月前参加科苗的时候认识了一个用Ventoy跑Fedora的人，于是就想到了用Ventoy做一个Arch Linux To Go。
+最近不是[CanoKey](https://item.taobao.com/item.htm?id=664914723920)有货了嘛，想买一个来玩玩gpg。gpg公钥显然需要离线生成，刚好几个月前参加科苗的时候认识了一个用Ventoy跑Fedora的人，于是就想到了用Ventoy做一个Arch Linux To Go。
 
 中途出了一大堆问题，于是水了这篇博文以防后人踩坑。
 
@@ -24,7 +24,7 @@ last_modified_at: 2023-12-2
 启动VirtualBox，新建个虚拟机，配置时有两点需要注意的：
 
 - 勾选“启用 EFI”
-- 创建虚拟硬盘时选择“预先分配全部空间”，如果只是给Canokey用的话8GB就够了（这个以后可以扩容，）
+- 创建虚拟硬盘时选择“预先分配全部空间”，如果只是给CanoKey用的话8GB就够了（这个以后可以扩容，）
 
 开机，启动`archinstall`，我的配置如下（默认值省略）：
 
@@ -55,7 +55,7 @@ last_modified_at: 2023-12-2
 
 此时可以从AUR装个`clash-for-windows-bin`来替代之前自己丢进去的版本（注意安装过程必须使用代理）。
 
-安装一系列基础包：`yay -S --needed curl wget nano vim p7zip which lvm2 git noto-fonts-cjk`
+安装一系列基础包：`yay -S --needed curl wget nano vim p7zip which lvm2 git noto-fonts-cjk ntfs3g`
 
 关于网络连接，使用`network-manager-applet`即可，参考[官方教程](https://wiki.archlinux.org/title/NetworkManager#nm-applet)可以在任务栏管理网络连接；如果不装，也可以使用`nmcli`与`nmtui`管理网络连接。
 
@@ -131,10 +131,10 @@ sudo bash ./vtoyboot.sh
 
 那几个`Possibly missing firmware for module:`一般没有影响，绝大部分固件是用不到的，不过如果你想隐藏警告的话可以自行从AUR安装`mkinitcpio-firmware`。
 
-### Canokey相关
+### CanoKey相关
 
 ```shell
-yay -S --needed openssl gnupg ungoogled-chromium-bin python-pipx yubico-piv-tool swig opensc kleopatra canokey-usbip-git
+yay -S --needed openssl gnupg ungoogled-chromium-bin python-pipx yubico-piv-tool swig opensc kleopatra canokey-usbip-git pcsclite pcsc-tools veracrypt
 pipx ensurepath
 pipx install yubikey-manager
 pipx install canokey-manager
@@ -142,24 +142,57 @@ pipx install twisted
 pipx install ipython
 sudo modprobe vhci-hcd  # 手动加载usbip内核模块
 echo vhci-hcd | sudo tee /etc/modules-load.d/vhci-hcd.conf  # 开机自动加载usbip内核模块
-# canokey-usbip 相关，用于模拟 Canokey
+
+## 模拟 CanoKey 的 canokey-usbip 相关
 # canokey-usbip /tmp/canokey-file 3240 true &
 # sudo usbip attach -r localhost -b 1-1.1
 
-# 允许非 root 用户访问 USB 设备
+## 允许非 root 用户访问 USB 设备
 # /etc/udev/rules.d/69-canokeys.rules
-# 按照Canokey官方教程 https://docs.canokeys.org/userguide/setup/#udev 配置，最后一行取消注释
+# 按照CanoKey官方教程 https://docs.canokeys.org/userguide/setup/#udev 配置，最后一行取消注释
 # 完成后运行 sudo udevadm control --reload-rules && sudo udevadm trigger
 # 重启后生效
 
-# yay -S --needed remmina freerdp 用于测试RDP共享Canokey
+## 用于测试RDP共享CanoKey
+# yay -S --needed remmina freerdp 
+
+## pcsc 相关，用于ckman等软件连接CanoKey
+sudo systemctl enable pcscd.socket
+sudo systemctl enable pcscd
+# 注意，这个会导致gnupg无法配置智能卡，解决方案以下两种任选一种即可。
+#
+# 第一种方案：使gnupg使用pcscd（我仅用了这个就可以了，完整内容可以参考下面的Arch Wiki链接）
+# echo disable-ccid >> $HOME/.gnupg/scdaemon.conf
+# gpg-connect-agent 'SCD KILLSCD' /bye
+# 可能需要：使gnupg支持pcscd共享访问
+# echo pcsc-shared >> $HOME/.gnupg/scdaemon.conf
+# gpg-connect-agent 'SCD KILLSCD' /bye：
+#
+# 第二种方案：停止pcscd（不推荐）
+# sudo systemctl stop pcscd.socket
+# sudo systemctl stop pcscd
+#
+# 完成任意一种方案后，重新插入CanoKey。
+# 参考资料：https://wiki.archlinux.org/title/GnuPG#GnuPG_with_pcscd_(PCSC_Lite)
+# 参考资料： https://support.nitrokey.com/t/nk3-mini-gpg-selecting-card-failed-no-such-device-gpg-card-setup/5057/7
+
+## 如果浏览器无法连接到CanoKey，可以尝试以下方法
+# killall gpg gpg-agent ssh-agent pcscd
+# sudo systemctl stop pcscd.socket
+# sudo systemctl stop pcscd
+
+## 关于密钥冷备份：
+# 使用 `sudo mkdir /mnt/cold && sudo mount -t ntfs /dev/sdb3 /mnt/cold`挂载外接设备，这里可以直接挂载Ventoy安装时位于分区表尾部的保留空间。
+# 建议使用 VeraCrypt 进行加密。
+# 使用 gpg --home /mnt/veracrypt/.gnupg xxx 进行操作。注意`--home`必须是第一个参数。
+# 这里可能需要适当进行`killall gpg-agent`等操作防止奇怪的bug。
 ```
 
-关于Web Console，[新版](https://console.canokeys.org/)可以直接作为Chrome PWA应用安装，[旧版](https://console-legacy.canokeys.org/)可以使用我打包过的离线运行（`yay -S canokey-console-legacy`）。
+关于Web Console，[新版](https://console.canokeys.org/)（可能）可以直接作为Chrome PWA应用安装，[旧版](https://console-legacy.canokeys.org/)可以使用我打包过的离线运行（`yay -S canokey-console-legacy`）。
 
 关于`gpg-agent`，不用的时候记得kill掉以防止占用USB设备。
 
-记得使用`shred -u -v`和`ramfs`保证文件私密性。
+记得使用`shred -u -v`保证文件私密性。
 
 ## 丢进Ventoy
 

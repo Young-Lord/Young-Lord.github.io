@@ -24,6 +24,8 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指
 
 自由软件支持者，正在试图迁移到 GNU/Linux 系统（BTW I Use Arch）
 
+PGP: `69D6E8DCB9E4117864368CA0EE4FB075119CE61F`，也可以在[这里](/pgp.asc)下载。
+
 a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系统Cusdis提供过无障碍改进，向Termux Monet、Coursera、K-9 Mail等项目提交过翻译。
 
 比较喜欢的游戏有 史丹利的寓言/蔚蓝/请出示文件/传送门/MC/樱之诗 等，大多为独立游戏，有少量gal。网游基本没碰过。
@@ -117,14 +119,14 @@ function ad_switch() {
 
 另外，最好买二手的。
 
-- YubiKey 5 NFC 或 [CanoKey Pigeon](https://item.taobao.com/item.htm?id=664914723920)
-- ChatGPT账号
-- Redmi K60 至尊版 16GB+1TB（或24GB+1TB）
-- 树莓派/菠萝派 或类似的设备
-- Wallpaper Engine
-- Repainter
-- 安卓智能手表（具体品牌/型号随意）
-- 西数 My Passport 随行SSD 1TB（或更大）
+- [x] YubiKey 5 NFC 或 [CanoKey Pigeon](https://item.taobao.com/item.htm?id=664914723920)
+- [x] ChatGPT账号
+- [ ] Redmi K60 至尊版 16GB+1TB（或24GB+1TB）
+- [ ] 树莓派/菠萝派 或类似的设备
+- [ ] Wallpaper Engine
+- [ ] Repainter
+- [ ] 安卓智能手表（具体品牌/型号随意）
+- [ ] 西数 My Passport 随行SSD 1TB（或更大）
 
 ## 隐私政策
 
