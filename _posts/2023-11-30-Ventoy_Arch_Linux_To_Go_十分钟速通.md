@@ -177,6 +177,10 @@ sudo systemctl enable pcscd
 # 参考资料：https://wiki.archlinux.org/title/GnuPG#GnuPG_with_pcscd_(PCSC_Lite)
 # 参考资料： https://support.nitrokey.com/t/nk3-mini-gpg-selecting-card-failed-no-such-device-gpg-card-setup/5057/7
 
+## 关于gpg操作智能卡
+# gpg --card-status
+# 最下面的`General key info`是key上的密钥与本机的`.gnupg`中的公钥的交集，如果为`[none]`，使用key前需要先在本机的gnupg导入对应key的公钥。
+
 ## 如果浏览器无法连接到CanoKey，可以尝试以下方法
 # killall gpg gpg-agent ssh-agent pcscd
 # sudo systemctl stop pcscd.socket
