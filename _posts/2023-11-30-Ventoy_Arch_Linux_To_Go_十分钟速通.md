@@ -154,7 +154,8 @@ echo vhci-hcd | sudo tee /etc/modules-load.d/vhci-hcd.conf  # 开机自动加载
 # 重启后生效
 
 ## 用于测试RDP共享CanoKey
-# yay -S --needed remmina freerdp 
+# yay -S --needed remmina freerdp
+# 在 Advanced -> USB device redirection 中填入 id:20a0:42d4 即可。
 
 ## pcsc 相关，用于ckman等软件连接CanoKey
 sudo systemctl enable pcscd.socket
