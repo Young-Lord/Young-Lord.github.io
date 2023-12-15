@@ -191,6 +191,20 @@ sudo systemctl enable pcscd
 # 建议使用 VeraCrypt 进行加密。
 # 使用 gpg --home /mnt/veracrypt/.gnupg xxx 进行操作。注意`--home`必须是第一个参数。
 # 这里可能需要适当进行`killall gpg-agent`等操作防止奇怪的bug。
+
+## 关于gpg授权ssh
+# 直接看Arch Wiki和另外一些资料即可。
+# https://wiki.archlinux.org/title/GnuPG#SSH_agent
+# https://zhuanlan.zhihu.com/p/397614510
+# 生成密钥时记得开`--expert`，并且添加Authentication的Capability。
+# 大体来说每次使用是这些命令，注意我这里是在`.gnupg`命令下执行的。
+# sudo systemctl start sshd
+# set SSH_AGENT_PID=""
+# export SSH_AUTH_SOCK=$(gpgconf --home . --list-dirs agent-ssh-socket)
+# gpgconf --home . --launch gpg-agent
+# export GPG_TTY=$(tty)
+# gpg-connect-agent --home . updatestartuptty /bye >/dev/null
+# ssh localhost  # 这个时候会让你输入CanoKey的PIN，（前提是你本地没有存私钥，只存了公钥）
 ```
 
 关于Web Console，[新版](https://console.canokeys.org/)（可能）可以直接作为Chrome PWA应用安装，[旧版](https://console-legacy.canokeys.org/)可以使用我打包过的离线运行（`yay -S canokey-console-legacy`）。
