@@ -20,7 +20,7 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指
 
 中英文规范书写提倡者。
 
-技能树完全乱点，语言的话 Python, C++, JavaScript, Java, Go 都多少会一点<del>但都学艺不精</del>
+技能树完全乱点，语言的话 Python, C++, JavaScript, Go, Java, Kotlin, Vue.js 都多少会一点<del>但都学艺不精</del>
 
 自由软件支持者，正在试图迁移到 GNU/Linux 系统（BTW I Use Arch）
 
