@@ -130,4 +130,10 @@ function ad_switch() {
 
 ## 隐私政策
 
+本站点使用了[不蒜子](https://busuanzi.ibruce.info/)的JS用于访问量统计，可以自行屏蔽。
+
+本站点使用了[BootCDN](https://www.bootcdn.cn/)、[Bootstrap 中文网](https://www.bootcss.com/)、[字节跳动静态资源公共库](https://cdn.bytedance.com/)等公共CDN引用CSS、JS等资源文件，不建议屏蔽。
+
+本站点的评论系统由[Cusdis](https://cusdis.com)提供，屏蔽会导致无法查看或发表评论。
+
 根据相关法律法规，本站不对太阳系内用户提供服务。
