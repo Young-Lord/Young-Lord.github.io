@@ -161,18 +161,22 @@ window.Lazyload.js(
     // Char Code: 13  Enter, 37  ⬅, 38  ⬆, 39  ➡, 40  ⬇
     $(window).on("keyup", function (e) {
       var modalVisible = search.getModalVisible && search.getModalVisible();
+      var processed = false;
       if (modalVisible) {
         if (e.which === 38) {
-          modalVisible && moveActiveIndex("up");
-          e.preventDefault();
+          moveActiveIndex("up");
+          processed = true;
         } else if (e.which === 40) {
-          modalVisible && moveActiveIndex("down");
-          e.preventDefault();
+          moveActiveIndex("down");
+          processed = true;
         } else if (e.which === 13) {
-          if (modalVisible && $resultItems && activeIndex >= 0) {
+          if ($resultItems && activeIndex >= 0) {
             $resultItems.eq(activeIndex).children("a")[0].click();
-            e.preventDefault();
+            processed = true;
           }
+        }
+        if (processed) {
+          return false;
         }
       }
     });
