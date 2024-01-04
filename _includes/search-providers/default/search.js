@@ -51,7 +51,7 @@ window.Lazyload.js(
             } else if (_url.replace(/^\/posts\//, "").indexOf(query) >= 0) {
               // match by post url
               result[key].push([current_entry, 2]);
-            } else if (match(_title, query)) {
+            } else if (match(_title, query, { continuous: true }) !== null) {
               // match by pinyin
               result[key].push([current_entry, 3]);
             }
