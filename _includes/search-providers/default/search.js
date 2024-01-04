@@ -23,25 +23,56 @@ window.Lazyload.js(
         j,
         key,
         keys,
-        cur,
+        current_entry,
         _title,
-        result = {};
+        _url,
+        result = {},
+        filtered_each_result_list;
       keys = Object.keys(searchData);
+
       for (i = 0; i < keys.length; i++) {
-        key = keys[i];
+        key = keys[i]; // only `posts` for now
         for (j = 0; j < searchData[key].length; j++) {
-          (cur = searchData[key][j]), (_title = cur.title);
+          current_entry = searchData[key][j];
+          _title = current_entry.title.toLowerCase();
+          _url = current_entry.url.toLowerCase();
           if (
-            (result[key] === undefined ||
-              (result[key] && result[key].length < 4)) &&
-            (_title.indexOf(query) >= 0 || match(_title, query))
+            result[key] === undefined ||
+            (result[key] && result[key].length < 100)
+            // add only if less than 100 results
           ) {
             if (result[key] === undefined) {
+              // init
               result[key] = [];
             }
-            result[key].push(cur);
+            if (_title.indexOf(query) >= 0) {
+              // match by name
+              result[key].push([current_entry, 1]);
+            } else if (_url.replace(/^\/posts\//, "").indexOf(query) >= 0) {
+              // match by post url
+              result[key].push([current_entry, 2]);
+            } else if (match(_title, query)) {
+              // match by pinyin
+              result[key].push([current_entry, 3]);
+            }
           }
         }
+        // sort result
+        result[key].sort(function (a, b) {
+          return a[1] - b[1];
+        });
+        // preserve only the entry, remove the weight
+        result[key] = result[key].map(function (entry) {
+          return entry[0];
+        });
+        // remove duplicate entries
+        filtered_each_result_list = [];
+        result[key].forEach(function (entry) {
+          if (filtered_each_result_list.indexOf(entry) === -1) {
+            filtered_each_result_list.push(entry);
+          }
+        });
+        result[key] = filtered_each_result_list;
       }
       return result;
     }
