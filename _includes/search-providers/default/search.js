@@ -73,6 +73,9 @@ window.Lazyload.js(
           }
         });
         result[key] = filtered_each_result_list;
+        if (result[key].length === 0) {
+          delete result[key];
+        }
       }
       return result;
     }
@@ -161,13 +164,15 @@ window.Lazyload.js(
       if (modalVisible) {
         if (e.which === 38) {
           modalVisible && moveActiveIndex("up");
+          e.preventDefault();
         } else if (e.which === 40) {
           modalVisible && moveActiveIndex("down");
+          e.preventDefault();
         } else if (e.which === 13) {
-          modalVisible &&
-            $resultItems &&
-            activeIndex >= 0 &&
+          if (modalVisible && $resultItems && activeIndex >= 0) {
             $resultItems.eq(activeIndex).children("a")[0].click();
+            e.preventDefault();
+          }
         }
       }
     });
