@@ -1,8 +1,12 @@
 <!-- start custom head snippets -->
+{%- include snippets/get-sources.html -%}
+{%- assign _sources = __return -%}
+
 <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css"></noscript>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js" defer async></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/sweetalert2/11.7.3/sweetalert2.all.min.js" defer async></script>
+<script src="{{ _sources.sweetalert2 }}" defer async></script>
+<script src="{{ _sources.pinyin_pro }}" defer async></script>
 <link rel="stylesheet" href="/assets/css/lanyon/poole.min.css">
 <link rel="stylesheet" href="/assets/css/lanyon/syntax.min.css">
 <link rel="stylesheet" href="/assets/css/lanyon/lanyon.min.css">

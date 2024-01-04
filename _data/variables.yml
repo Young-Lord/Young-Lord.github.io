@@ -55,7 +55,9 @@ sources:
     mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML'
     mermaid: 'https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'
     clipboard: 'https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.js'
+    # custom.html
     sweetalert2: 'https://cdn.bootcdn.net/ajax/libs/sweetalert2/11.7.3/sweetalert2.all.min.js'
+    pinyin_pro: 'https://cdn.bootcdn.net/ajax/libs/pinyin-pro/3.16.6/index.js'
   unpkg:
     font_awesome: 'https://use.fontawesome.com/releases/v5.15.1/css/all.css'
     jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js'
@@ -69,3 +71,4 @@ sources:
     mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js'
     clipboard: 'https://unpkg.com/clipboard@2/dist/clipboard.min.js'
     sweetalert2: 'https://cdn.bootcdn.net/ajax/libs/sweetalert2/11.7.3/sweetalert2.all.min.js'
+    pinyin_pro: 'https://cdn.bootcdn.net/ajax/libs/pinyin-pro/3.16.6/index.js'
