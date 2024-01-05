@@ -46,8 +46,7 @@
         setState(false);
       }
       function handleKeyup(e) {
-        // Char Code: 27  ESC
-        if (e.which ===  27) {
+        if (e.key ===  "Escape") {
           hide();
         }
       }

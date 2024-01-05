@@ -158,18 +158,17 @@ window.Lazyload.js(
       }
     }
 
-    // Char Code: 13  Enter, 37  ⬅, 38  ⬆, 39  ➡, 40  ⬇
     $(window).on("keyup", function (e) {
       var modalVisible = search.getModalVisible && search.getModalVisible();
       var processed = false;
       if (modalVisible) {
-        if (e.which === 38) {
+        if (e.key === "ArrowUp") {
           moveActiveIndex("up");
           processed = true;
-        } else if (e.which === 40) {
+        } else if (e.key === "ArrowDown") {
           moveActiveIndex("down");
           processed = true;
-        } else if (e.which === 13) {
+        } else if (e.key === "Enter") {
           if ($resultItems && activeIndex >= 0) {
             $resultItems.eq(activeIndex).children("a")[0].click();
             processed = true;
@@ -178,6 +177,12 @@ window.Lazyload.js(
         if (processed) {
           return false;
         }
+      }
+    });
+
+    $("#search-input-box").on("keydown", function (e) {
+      if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+        return false;
       }
     });
 

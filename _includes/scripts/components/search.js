@@ -41,9 +41,9 @@
     $searchToggle.on('click', function() {
       modalVisible ? searchModal.hide() : searchModal.show();
     });
-    // Char Code: 83  S, 191 /
-    $(window).on('keyup', function(e) {
-      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+
+    $(window).on('keyup', function (e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.key in { 's': 1, 'S': 1, '/': 1 })) {
         modalVisible || searchModal.show();
       }
     });
