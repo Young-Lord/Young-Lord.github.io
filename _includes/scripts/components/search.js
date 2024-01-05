@@ -1,15 +1,19 @@
-
 (function () {
   var SOURCES = window.TEXT_VARIABLES.sources;
-  window.Lazyload.js(SOURCES.jquery, function() {
+  window.Lazyload.js(SOURCES.jquery, function () {
     // search panel
-    var search = (window.search || (window.search = {}));
-    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
-      true : window.useDefaultSearchBox ;
+    var search = window.search || (window.search = {});
+    var useDefaultSearchBox =
+      window.useDefaultSearchBox === undefined
+        ? true
+        : window.useDefaultSearchBox;
 
-    var $searchModal = $('.js-page-search-modal');
-    var $searchToggle = $('.js-search-toggle');
-    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var $searchModal = $(".js-page-search-modal");
+    var $searchToggle = $(".js-search-toggle");
+    var searchModal = $searchModal.modal({
+      onChange: handleModalChange,
+      hideWhenWindowScroll: true,
+    });
     var modalVisible = false;
     search.searchModal = searchModal;
 
@@ -30,55 +34,69 @@
       } else {
         search.onShow && search.onHide();
         useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
-        setTimeout(function() {
-          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+        setTimeout(function () {
+          useDefaultSearchBox &&
+            ($searchInput.val(""), $searchBox.removeClass("not-empty"));
           search.clear && search.clear();
           window.pageAsideAffix && window.pageAsideAffix.refresh();
         }, 400);
       }
     }
 
-    $searchToggle.on('click', function() {
+    $searchToggle.on("click", function () {
       modalVisible ? searchModal.hide() : searchModal.show();
     });
 
-    $(window).on('keyup', function (e) {
-      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.key in { 's': 1, 'S': 1, '/': 1 })) {
+    $(window).on("keyup", function (e) {
+      if (
+        !modalVisible &&
+        !window.isFormElement(e.target || e.srcElement) &&
+        e.key in { s: 1, S: 1, "/": 1 }
+      ) {
         modalVisible || searchModal.show();
       }
     });
 
     if (useDefaultSearchBox) {
-      $searchBox = $('.js-search-box');
-      $searchInput = $searchBox.children('input');
-      $searchClear = $searchBox.children('.js-icon-clear');
-      search.getSearchInput = function() {
+      $searchBox = $(".js-search-box");
+      $searchInput = $searchBox.children("input");
+      $searchClear = $searchBox.children(".js-icon-clear");
+      search.getSearchInput = function () {
         return $searchInput.get(0);
       };
-      search.getVal = function() {
+      search.getVal = function () {
         return $searchInput.val();
       };
-      search.setVal = function(val) {
+      search.setVal = function (val) {
         $searchInput.val(val);
       };
 
-      $searchInput.on('focus', function() {
-        $(this).addClass('focus');
+      $searchInput.on("focus", function () {
+        $(this).addClass("focus");
       });
-      $searchInput.on('blur', function() {
-        $(this).removeClass('focus');
+      $searchInput.on("blur", function () {
+        $(this).removeClass("focus");
       });
-      $searchInput.on('input', window.throttle(function() {
-        var val = $(this).val();
-        if (val === '' || typeof val !== 'string') {
-          search.clear && search.clear();
-        } else {
-          $searchBox.addClass('not-empty');
-          search.onInputNotEmpty && search.onInputNotEmpty(val);
+      $searchInput.on(
+        "input",
+        window.throttle(function () {
+          var val = $(this).val();
+          if (val === "" || typeof val !== "string") {
+            search.clear && search.clear();
+          } else {
+            $searchBox.addClass("not-empty");
+            search.onInputNotEmpty && search.onInputNotEmpty(val);
+          }
+        }, 400)
+      );
+      $searchInput.on("keydown", function (e) {
+        if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+          return false;
         }
-      }, 400));
-      $searchClear.on('click', function() {
-        $searchInput.val(''); $searchBox.removeClass('not-empty');
+      });
+      $searchClear.on("click", function () {
+        $searchInput.val("");
+        $searchBox.removeClass("not-empty");
         search.clear && search.clear();
       });
     }

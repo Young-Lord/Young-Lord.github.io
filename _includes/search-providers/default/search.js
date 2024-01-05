@@ -180,12 +180,6 @@ window.Lazyload.js(
       }
     });
 
-    $("#search-input-box").on("keydown", function (e) {
-      if (e.key === "ArrowUp" || e.key === "ArrowDown") {
-        return false;
-      }
-    });
-
     $result.on("mouseover", ".search-result__item > a", function () {
       var itemIndex = $(this).parent().data("index");
       itemIndex >= 0 &&
