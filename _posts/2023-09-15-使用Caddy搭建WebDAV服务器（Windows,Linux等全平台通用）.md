@@ -120,7 +120,7 @@ iReturn = objShell.Run("cmd /c "&chr(34)&"C:\Program Files\LoginAtStartup\connec
 
 为什么不建议？这货打开文件时传参是\*\*的`http://`开头的链接。
 
-##### 使用`rclone`
+##### 使用`rclone`（建议）
 
 > 参考链接：[^2]
 
