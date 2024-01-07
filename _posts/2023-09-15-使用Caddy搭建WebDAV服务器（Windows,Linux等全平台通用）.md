@@ -2,7 +2,7 @@
 tags: [Caddy, WebDAV]
 title: 使用 Caddy 搭建 WebDAV 服务器（Windows, Linux 等全平台通用）
 slug: caddy-webdav
-last_modified_at: 2023-9-22
+last_modified_at: 2024-1-7
 ---
 
 ## 前言
@@ -18,13 +18,23 @@ IIS的WebDAV太烂，于是有了本博文。以下步骤使用的环境为Windo
 
 ### 自启动
 
+> 这一步使用[NSSM](https://nssm.cc/)也可以，而且更简单，更强大。
+
 根据[官方教程](https://caddyserver.com/docs/running#windows-service)，安装为服务：
 
-```shell
-sc.exe create caddy start= auto binPath= "C:\Program Files\Caddy\caddy.exe run"
+CMD写法：
+
+```bat
+sc.exe create caddy start= auto binPath= "\"C:\Program Files\Caddy\caddy.exe\" run"
 ```
 
-> 这样做会有个[漏洞](https://cloud.tencent.com/developer/article/2120444)，好孩子不要学。
+Powershell写法：
+
+```powershell
+New-Service -Name "caddy" -StartupType Automatic -BinaryPathName '"C:\Program Files\Caddy\caddy.exe" run'
+```
+
+> 路径不加引号的话会有个[漏洞](https://cloud.tencent.com/developer/article/2120444)，好孩子不要学。
 
 ### Caddyfile
 
