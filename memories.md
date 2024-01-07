@@ -201,7 +201,6 @@ id: page-memories
     var init = function(elem) {
       var $th = $(elem);
       var $table = $th.closest("table");
-      console.log(this);
       $th.click(function() {
         var index = $(this)
           .index();
