@@ -21,11 +21,13 @@ last_modified_at: 2024-1-12
 
 去除了`revert`，删除某个以前有的东西应当在`类别`前加`-`，如`-feat`。后面的内容依然是对此commit本身的描述。
 
+对于scope，如果三秒内想不出来就不要写。
+
 | 类别 | 说明 | 示例 |
 | --- | --- | --- |
 | init | 初始化项目 | `init` |
-| fix | 代码中的bugfix、文档中的错误内容更正、文档中的404网址替换 | `fix: known_activities not used` |
-| docs | 文档 | `docs: add WebExtension` |
+| fix | 代码中的bugfix | `fix: known_activities not used` |
+| docs | 文档（包含内容、失效URL修复、错误内容修改，不包含typo、style） | `docs: add WebExtension` |
 | chore | 杂项（格式化、修改标点或换行等等，完全不影响代码和文档本身功能） | `chore: style`; `chore: clean build logs after build` |
 | ci | CI | `ci: clone with --depth 1` |
 | test | 测试 | `test: add Spotify.apk` |
