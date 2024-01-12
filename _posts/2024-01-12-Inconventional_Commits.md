@@ -24,6 +24,7 @@ last_modified_at: 2024-1-12
 | 类别 | 说明 | 示例 |
 | --- | --- | --- |
 | init | 初始化项目 | `init` |
+| fix | 代码中的bugfix、文档中的错误内容更正、文档中的404网址替换 | `fix: known_activities not used` |
 | docs | 文档 | `docs: add WebExtension` |
 | chore | 杂项（格式化、修改标点或换行等等，完全不影响代码和文档本身功能） | `chore: style`; `chore: clean build logs after build` |
 | ci | CI | `ci: clone with --depth 1` |
@@ -44,3 +45,7 @@ last_modified_at: 2024-1-12
 | security | 安全性 |  |
 | ui | UI / UX |  |
 | prompt | LLM prompt |  |
+| conf | 配置值更改 |  |
+| log | 日志 |  |
+| eval | 论文中的Evaluation相关 |  |
+| tool | 辅助开发的工具 |  |
