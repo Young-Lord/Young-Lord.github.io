@@ -102,6 +102,7 @@ jobs:
             _posts/*.md
       # use all_changed_files
       - name: Save Page
+        if: steps.changed-posts.outputs.all_changed_files	!= ''
         run: python .github/workflows/save_page.py
         env:
           all_changed_files: ${{ steps.changed-posts.outputs.all_changed_files }}
