@@ -1,17 +1,3 @@
-## 访问域名
-
-[GitHub Pages](https://young-lord.github.io)
-
-[GitHub Pages + Cloudflare + eu.org](https://blog.lyniko.eu.org)
-
-[Vercel](https://ly-blog.vercel.app)
-
-[Vercel + eu.org](https://bl0g.lyniko.eu.org)
-
-[Cloudflare Pages](https://ly-blog.pages.dev)
-
-[Cloudflare Pages + eu.org](https://b1og.lyniko.eu.org)
-
 ## 简介
 
 这是 LY 的博客，有以下特性：
@@ -32,10 +18,19 @@
 
 - 可[自由开关](https://github.com/Young-Lord/Young-Lord.github.io/blob/master/about.md?plain=1#L6)的[盘古之白](https://github.com/mastermay/text-autospace.js)（即中英文间的**空白**）
 
-## 开始
+## 访问域名
 
-1. 摆了，自己看[官方教程](https://tianqi.name/jekyll-TeXt-theme/docs/zh/quick-start)
-2. 欢迎 <a class="github-button" aria-label="Star Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io" data-icon="octicon-star" data-show-count="true">Star</a> <a class="github-button" aria-label="Fork Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/fork" data-icon="octicon-repo-forked" data-show-count="true">Fork</a> <a class="github-button" aria-label="Issue Young-Lord/young-lord.github.io on GitHub" href="https://github.com/Young-Lord/young-lord.github.io/issues" data-icon="octicon-issue-opened" data-show-count="true">Issue</a>
+[GitHub Pages](https://young-lord.github.io)
+
+[GitHub Pages + Cloudflare + eu.org](https://blog.lyniko.eu.org)
+
+[Vercel](https://ly-blog.vercel.app)
+
+[Vercel + eu.org](https://bl0g.lyniko.eu.org)
+
+[Cloudflare Pages](https://ly-blog.pages.dev)
+
+[Cloudflare Pages + eu.org](https://b1og.lyniko.eu.org)
 
 ## 声明
 
@@ -49,31 +44,7 @@
 
 部分 CSS 来自 [poole/lanyon](https://github.com/poole/lanyon/releases/tag/v1.1.0)，根据 MIT License 使用。该部分不属于 WTFPL 适用范围。
 
-## 致谢
-
-托管于 [Github Pages](https://pages.github.com/)，感谢。
-
-博客引擎来自于 [Jekyll](https://github.com/jekyll/jekyll)，感谢。
-
-新的博客主题（北京时间2022/08/01正午起）来自 [TeXt](https://kitian616.github.io/jekyll-TeXt-theme/)，感谢！
-
-旧的博客主题基于 [poole/lanyon](https://github.com/poole/lanyon)，感谢。
-
-旧的博客界面（北京时间2022/08/01正午前） Fork 自 [wu-kan/wu-kan.github.io](https://github.com/wu-kan/wu-kan.github.io)，感谢！
-
-图标库来自于 [<i class="fab fa-font-awesome"></i>fontawesome-free](https://fontawesome.com/)，感谢。
-
-页面统计来自于[不蒜子](http://busuanzi.ibruce.info/)，感谢。
-
-侧边栏博文目录插件来自于 [ghiculescu/jekyll-table-of-contents](https://github.com/ghiculescu/jekyll-table-of-contents)，感谢。
-
-侧边栏博客搜索插件来自于 [christian-fei/Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)，感谢。
-
-<!--背景来源于 [NightMargin](https://tieba.baidu.com/p/6683972695)，感谢。-->
-
-博客评论系统为 [Cusdis](https://cusdis.com)，感谢。
-
-## 一些规范
+## Commit 规范
 
 一切博文相关的 commit 名必须满足以下规范：
 
