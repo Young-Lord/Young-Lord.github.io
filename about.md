@@ -12,11 +12,11 @@ pan_gu_zhi_bai: true
 
 Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指代我建议使用 `LY` / `GitHub @Young-Lord`。
 
-头像为《蔷薇少女》中的翠星石，Pixiv ID: [65149795](https://www.pixiv.net/artworks/65149795)。*（感谢 [SHIKI](https://www.bilibili.com/video/BV1Bh411Y7gX)！）* *翠星石超可爱的说！*
+头像为《蔷薇少女》中的翠星石，Pixiv ID: [65149795](https://www.pixiv.net/artworks/65149795)。*（赞美 [SHIKI](https://www.bilibili.com/video/BV1Bh411Y7gX)！）*
 
-与对消费主义与享乐主义斗争。
+正在与消费主义与享乐主义斗争。
 
-不喜欢在无关场合涉政/LGBT，不想就此类话题争吵。
+不喜欢在非私聊场合 涉政 / LGBT，不想就此类话题争吵。
 
 中英文规范书写提倡者。
 
@@ -28,7 +28,7 @@ PGP: `69D6E8DCB9E4117864368CA0EE4FB075119CE61F`，也可以在[这里](/pgp.asc)
 
 a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系统Cusdis提供过无障碍改进，向Termux Monet、Coursera、K-9 Mail等项目提交过翻译。
 
-比较喜欢的游戏有 史丹利的寓言/蔚蓝/请出示文件/传送门/MC/樱之诗 等，大多为独立游戏，有少量gal。网游基本没碰过。
+比较喜欢的游戏有 史丹利的寓言/蔚蓝/请出示文件/传送门/MC/樱之诗/ATRI/Ingress 等，大多为独立游戏，有少量gal。网游基本不碰。
 
 ## 友情链接🔗
 
