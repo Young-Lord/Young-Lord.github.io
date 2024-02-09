@@ -88,6 +88,8 @@ jobs:
       # find all modified files under `_posts` folder
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 5
       - name: Find modified posts
         id: changed-posts
         uses: tj-actions/changed-files@v42
@@ -95,9 +97,13 @@ jobs:
           json: true
           files: |
             _posts/*.md
+          fetch_depth: 5
+          quotepath: false
+          safe_output: false
+          escape_json: false
       # use all_changed_files
       - name: Save Page
-        if: steps.changed-posts.outputs.all_changed_files	!= ''
+        if: steps.changed-posts.outputs.all_changed_files != '[]' && steps.changed-posts.outputs.all_changed_files != ''
         run: python .github/workflows/save_page.py
         env:
           all_changed_files: ${{ steps.changed-posts.outputs.all_changed_files }}
