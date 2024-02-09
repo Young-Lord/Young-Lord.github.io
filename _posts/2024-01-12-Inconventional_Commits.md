@@ -2,7 +2,7 @@
 tags: []
 title: Inconventional Commits
 slug: inconventional-commits
-last_modified_at: 2024-1-14
+last_modified_at: 2024-2-9
 ---
 
 ## 前言
@@ -28,11 +28,11 @@ fix和feat应当仅在不满足其它任何类别的情况下使用。
 | 类别 | 说明 | 示例 |
 | --- | --- | --- |
 | init | 初始化项目 | `init` |
-| docs | 注释、文档（包含内容、失效URL修复、错误内容修改，不包含typo、style） | `docs: add WebExtension` |
+| docs | 注释、文档（包含内容、失效URL修复、错误内容修改，不包含typo或style） | `docs: add WebExtension` |
 | chore | 杂项（格式化、修改标点或换行等等，完全不影响代码和文档本身功能） | `chore: style`; `chore: clean build logs after build` |
 | ci | CI | `ci: clone with --depth 1` |
 | test | 测试 | `test: add Spotify.apk` |
-| deps | 依赖 | `deps: bump openai to 1.0.0`; `-deps: revert alembic to 1.13.1`; `deps: bump` |
+| deps | 依赖（不包含CI依赖） | `deps: bump openai to 1.0.0`; `-deps: revert alembic to 1.13.1`; `deps: bump` |
 | perf | 性能 | `perf: skip resource analyzing in build` |
 | refactor | 重构，对**代码功能**、**文档内容**无影响，但是使**调用关系**或**目录结构**等更清晰。 | `refactor: make Password a class` |
 | release | 发布新版本。只应涉及版本号更改和`git tag`。 | `release: 1.0.0` |
