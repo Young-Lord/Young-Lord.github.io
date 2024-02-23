@@ -44,18 +44,23 @@ a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系
 
 交换友链可以在评论区留言。
 
+双向：
+
+- [某猫](https://qmqaq.top)：Aw.Cat (Arcaea-Infinity)
+- [BsBlog](https://blog.bsdayo.moe/): 怎么会是呢？<del>很喜欢一句话：域名可出售</del> (Arcaea-Infinity)
+
+单向：
+
 - [wu-kan](https://wu-kan.github.io)：原先的博客模板原作者
 - [TeXt Theme](https://tianqi.name)：目前博客模板的主页
-- [西城飘雪的博客](https://blog.hoshi.tech/)：逆向聚聚
-- [wlt233的博客](https://tqlwsl.moe/index.php/)：逆向引路人
-- [Benpigchu](https://benpigchu.com/)：BEMANI Programming Crew
-- [湖精](https://blog.awa.moe)：Atmosphere - IN PURSUIT OF FREEDOM
-- [某猫](https://qmqaq.top)：Aw.Cat
-- [Yang-Blog](https://bakayang.moe/)：一只笨蛋的Blog
-- [NekoHouse](https://blog.amu.moe/)：Inari Aimu - Touching Fish
-- [Akula::Blog](https://blog.akula.moe)：悟已往之不谏，知来者之可追
-- [BsBlog](https://blog.bsdayo.moe/): 怎么会是呢？<del>很喜欢一句话：域名可出售</del>
-- [Jett's blog](https://blog.jettchen.me/)：CTF领域大神！（？
+- [西城飘雪的博客](https://blog.hoshi.tech/)：逆向聚聚 (Arcaea-Wiki)
+- [wlt233的博客](https://tqlwsl.moe/index.php/)：逆向引路人 (Arcaea-Wiki)
+- [Benpigchu](https://benpigchu.com/)：BEMANI Programming Crew (Arcaea-Wiki)
+- [湖精](https://blog.awa.moe)：Atmosphere - IN PURSUIT OF FREEDOM (Arcaea-Wiki)
+- [Yang-Blog](https://bakayang.moe/)：一只笨蛋的Blog (Arcaea-Wiki)
+- [NekoHouse](https://blog.amu.moe/)：Inari Aimu - Touching Fish (Arcaea-Wiki)
+- [Akula::Blog](https://blog.akula.moe)：悟已往之不谏，知来者之可追 - 404 (Arcaea-Wiki)
+- [Jett's blog](https://blog.jettchen.me/)：CTF领域大神！（？ (科苗线下认识的人，一起打过CTF)
 
 ## 打钱
 
