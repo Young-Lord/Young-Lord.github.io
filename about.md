@@ -62,9 +62,9 @@ a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系
 - [Akula::Blog](https://blog.akula.moe)：悟已往之不谏，知来者之可追 - 404 (Arcaea-Wiki)
 - [Jett's blog](https://blog.jettchen.me/)：CTF领域大神！（？ (科苗线下认识的人，一起打过CTF)
 
-## 打钱
+## 打钱 {#donate}
 
-如果我的博文帮到了你，欢迎给我打钱！
+如果我的博文帮到了你，欢迎给我打钱！<del>目前收入 8 元，感谢老板😂</del>
 
 ![微信赞赏码](/assets/images/donate/wechat.png)
 
