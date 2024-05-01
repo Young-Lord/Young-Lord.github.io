@@ -130,9 +130,9 @@ id: page-memories
 | **xkcd的漫画**                              |                                            | 漫画      | 9   |  | 201x       |
 | **那些古怪又令人忧心的问题**                              |                                            | 书籍      | 8    |  | 201x       |
 | **从一到无穷大**                              |                                            | 书籍      | 9    |  | 201x       |
-| **奇怪的大冒险** & **正常的大冒险 & **比较简单的大冒险** & **没有人知道的大冒险** | / | 游戏 | 9 |  | 2021x |
+| **奇怪的大冒险** & **正常的大冒险** & **比较简单的大冒险** & **没有人知道的大冒险** | / | 游戏 | 9 | 和 There Is No Game 类似，突出一个对玩家的创新。虽然挺古早，但值得一玩。 | 2021x |
 | **夜空**                              | 英语：**NightSky**                                           | 游戏      | 8    | 围绕夜空中的一个玻璃球叙事，氛围营造很强，诗意也拉满（还记得汉化组把每个关卡名都翻成了一句诗） | 201x       |
-| **侠盗猎车手：血战唐人街**            | 英语：**Grand Theft Auto: Chinatown Wars**；简称：**GTA: CTW**/**GTA: CW** | 游戏      | 8    | 选材是一个挺好的尝试，可惜叙事中对中国有一定偏见，但文化融入还是可以的。<del>这不比x神文化输出强多了？</del> | 2020       |
+| **侠盗猎车手：血战唐人街**            | 英语：**Grand Theft Auto: Chinatown Wars**；简称：**GTA: CTW**/**GTA: CW** | 游戏      | 8    | 选材是一个挺好的尝试，文化融入还是可以的。<del>这不比x神文化输出强多了？</del> | 2020       |
 | **侠盗猎车手：圣安地列斯**            | 英语：**Grand Theft Auto: San Andreas**；简称：**GTA: SA**   | 游戏      | 8    | 同《罪恶都市》，不过是增强了可玩性罢了 | 201x       |
 | **侠盗猎车手：罪恶都市**              | 英语：**Grand Theft Auto: Vice City**；简称：**GTA: VC**     | 游戏      | 8    | 虽然是所谓的“开放世界”，故事仍是线性的。你无法选择（这也是我基本不喜欢 3A 的原因）。含有一定情怀分。 | 201x       |
 | **黑塔利亚** | 汉语：**黑塔利亚 Axis Powers**；日语：**Axis powers ヘタリア**；英语：**Hetalia: Axis Powers** | 动画 | / | / | 201x |
@@ -239,8 +239,15 @@ id: page-memories
 </script>
 
 <script>
-// 用于根据URL中的hash跳转
+// 用于根据 URL 中的 hash 快速跳转到对应条目
 (function() {
+  function go_to_element(element){
+    if (element) {
+      element.scrollIntoView({
+        block: 'center'
+      });
+    }
+  }
   var hash = window.location.hash;
   var text_element, text_content;
   if (typeof hash !== 'string') {
@@ -250,18 +257,21 @@ id: page-memories
   if (hash.length === 0) {
     return;
   }
+  var full_match = null, prefix_match = null;
   Array.from(document.getElementsByTagName("tbody"))
     .forEach((tbody) => {
       Array.from(tbody.children)
         .forEach((tr) => {
           text_element = tr.children[0];
           text_content = text_element.innerText.replaceAll(" ", "");
+          if (text_content === hash) {
+            full_match = text_element; // 优先根据完全一样的名字匹配
+          }
           if (text_content.indexOf(hash) === 0) {
-            text_element.scrollIntoView({
-              block: 'center'
-            });
+            prefix_match = text_element; // 记录最靠下（最早）的条目
           }
         })
     })
+  go_to_element(full_match ?? prefix_match);
 })()
 </script>
