@@ -8,6 +8,7 @@ To use, modify:
 """
 import json
 import os
+import traceback
 from typing import Final, Optional, TypedDict
 import yaml
 import requests
@@ -141,7 +142,8 @@ def capture(
     elif status_code == 403:
         raise Forbidden(response.headers)
     elif status_code == 429:
-        raise TooManyRequests(response.headers)
+        traceback.print_exc()
+        # raise TooManyRequests(response.headers)
     elif status_code == 502:
         raise BadGateway(response.headers)
     elif status_code == 520:
