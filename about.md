@@ -14,21 +14,19 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指
 
 头像为《蔷薇少女》中的翠星石，Pixiv ID: [65149795](https://www.pixiv.net/artworks/65149795)。*（赞美 [SHIKI](https://www.bilibili.com/video/BV1Bh411Y7gX)！）*
 
-正在与消费主义与享乐主义斗争。
-
-不喜欢在非私聊场合 涉政 / LGBT，不想就此类话题争吵。
-
 中英文规范书写提倡者。
 
 技能树完全乱点，语言的话 Python, C++, JavaScript, Go, Java, Kotlin, Vue.js 都多少会一点<del>但都学艺不精</del>
 
-自由软件支持者，正在试图迁移到 GNU/Linux 系统（BTW I Use Arch）
+自由软件支持者，正在试着跑去 Linux 系统（BTW I Use Arch）
 
 PGP: `69D6E8DCB9E4117864368CA0EE4FB075119CE61F`，也可以在[这里](/pgp.asc)下载。
 
 a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系统Cusdis提供过无障碍改进，向Termux Monet、Coursera、K-9 Mail等项目提交过翻译。
 
-比较喜欢的游戏有 史丹利的寓言/蔚蓝/请出示文件/传送门/MC/樱之诗/ATRI/Ingress 等，大多为独立游戏，有少量gal。网游基本不碰。
+比较喜欢的游戏有 史丹利的寓言/蔚蓝/请出示文件/传送门/MC/樱之诗/ATRI/Ingress/少量gal 等。网游基本不碰。
+
+被定性为一个红绿色盲/色弱，也因此感到中国现有的这套体系偏见与歧视性很大，或许以后能试着改变吧。
 
 ## 友情链接🔗
 
@@ -61,6 +59,8 @@ a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系
 - [NekoHouse](https://blog.amu.moe/)：Inari Aimu - 猫粮制作中... (玩硬件的) (Arcaea-Wiki)
 - [Akula::Blog](https://blog.akula.moe)：悟已往之不谏，知来者之可追 (Arcaea-Wiki)
 - [Jett's blog](https://blog.jettchen.me/)：CTF领域大神！（？ (科苗线下认识的人，一起打过CTF)
+- [Sukka's Blog](https://blog.skk.moe/)：搞前端的，并且前端以外的分享也很不错
+- [Manjusaka](https://www.manjusaka.blog/)：貌似主要是一些比较底层的东西？
 
 ## 打钱 {#donate}
 
