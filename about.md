@@ -61,6 +61,7 @@ a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系
 - [Jett's blog](https://blog.jettchen.me/)：CTF领域大神！（？ (科苗线下认识的人，一起打过CTF)
 - [Sukka's Blog](https://blog.skk.moe/)：搞前端的，并且前端以外的分享也很不错
 - [Manjusaka](https://www.manjusaka.blog/)：貌似主要是一些比较底层的东西？
+- [Plum's Blog](https://plumz.me/)：锐评galgame、社会现象、Linux等的大神，写的文字能让人感觉非常真诚<del>地骂</del>
 
 ## 打钱 {#donate}
 
