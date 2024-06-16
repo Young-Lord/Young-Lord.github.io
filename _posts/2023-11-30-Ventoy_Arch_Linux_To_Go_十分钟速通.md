@@ -1,5 +1,5 @@
 ---
-tags: [Arch Linux, Ventoy]
+tags: [Arch Linux, Ventoy, 硬件密钥]
 title: Ventoy Arch Linux To Go 十分钟速通
 slug: arch-to-go
 last_modified_at: 2023-12-2
