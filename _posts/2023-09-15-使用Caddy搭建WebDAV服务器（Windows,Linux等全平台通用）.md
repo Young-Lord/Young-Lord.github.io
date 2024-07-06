@@ -2,7 +2,7 @@
 tags: [Caddy, WebDAV]
 title: 使用 Caddy 搭建 WebDAV 服务器（Windows, Linux 等全平台通用）
 slug: caddy-webdav
-last_modified_at: 2024-1-7
+last_modified_at: 2024-7-6
 ---
 
 ## 前言
@@ -75,6 +75,8 @@ New-Service -Name "caddy" -StartupType Automatic -BinaryPathName '"C:\Program Fi
 
 ### Windows
 
+仅当不使用rclone或RaiDrive等第三方工具时，才需要进行此步，否则忽略即可。
+
 首先解除一些限制[^1]：
 
 ```bat
@@ -140,7 +142,23 @@ rclone mount myftp:/ Z: --vfs-cache-mode full
 
 （这里的 myftp 是 rclone 配置文件中的名称，Z: 是挂载的盘符，--vfs-cache-mode full 是启用缓存）
 
-然后应该就好了。
+然后应该就好了。Linux/macOS也可以用类似的方法，在此略去。
+
+#### 使用RaiDrive
+
+[RaiDrive](https://www.raidrive.com/)专为挂载WebDAV等远程连接设计，提供了简单易用的图形化界面。缺点是免费版功能严重受限，且资源占用更高。
+
+### macOS
+
+系统自带的“访达”就可以，详见[官方教程](https://support.apple.com/zh-cn/guide/mac-help/mchlp1546/mac)。
+
+### Android
+
+使用[MT管理器](https://mt2.cn/download/)（需要付费）、[FolderSync](https://foldersync.io/)（免费，有广告）均可，此处不展开。
+
+### iOS
+
+参考：[用好 WebDAV，我是如何在 Windows 和手机之间传输文件的](https://sspai.com/post/53942)
 
 [^1]:[win10原生webdav设置的问题](https://juejin.cn/post/6992463338160521230)
 
