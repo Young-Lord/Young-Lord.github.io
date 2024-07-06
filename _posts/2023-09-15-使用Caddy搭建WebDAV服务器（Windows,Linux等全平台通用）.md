@@ -45,10 +45,10 @@ New-Service -Name "caddy" -StartupType Automatic -BinaryPathName '"C:\Program Fi
 	order webdav last
 }
 :53091 {
-	handle_path /files/* {
-		file_server browse
-	}
-	redir /files /files/
+	# handle_path /files/* {
+	# 	file_server browse
+	# }
+	# redir /files /files/
 
 	handle /webdav/* {
 		webdav {
@@ -67,60 +67,17 @@ New-Service -Name "caddy" -StartupType Automatic -BinaryPathName '"C:\Program Fi
 具体来说：
 
 - `:53091`：绑定到`0.0.0.0:53091`
-- `handle_path /files/*`：在`/files`路径下显示一个Web页面用于浏览器访问
-- `handle /webdav/*`：在`/webdav`路径下处理`WebDAV`服务，根目录为`E:/ftp`（如果用中文文件名，记得要用`UTF-8`编码保存文件）
+- `handle_path /files/*`：在`/files`路径下显示一个Web页面，用于浏览器访问。与WebDAV功能无关，但可以用于快速确认防火墙配置是否正确、Caddy是否正常运行等。
+- `handle /webdav/*`：在`/webdav`路径下处理`WebDAV`服务，根目录为`E:/ftp`（如果用中文文件名，记得要用`UTF-8`编码保存文件）（此处注意路径分隔符必须用`/`而非`\`）
 - `basicauth /webdav/*`：只允许用户名为`ftp`、密码为`pwd123`的用户访问。这里的密码已经hash过，可以使用`caddy hash-password`生成。
+
+### ACL（更高级的分用户权限控制）
+
+不好意思没有，需要的可以使用[Caddy 1的类似插件](https://github.com/hacdias/caddy-v1-webdav)。（[相关issue](https://github.com/mholt/caddy-webdav/issues/15)）
 
 ## 使用
 
 ### Windows
-
-仅当不使用rclone或RaiDrive等第三方工具时，才需要进行此步，否则忽略即可。
-
-首先解除一些限制[^1]：
-
-```bat
-reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters /v BasicAuthLevel /t REG_DWORD /d 2 /f
-reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters /v FileSizeLimitInBytes /t REG_DWORD /d 0xffffffff /f
-net stop webclient
-net start webclient
-```
-
-建议：编辑`C:\Windows\System32\drivers\etc\hosts`，加入一行`ftp.local 192.168.66.66`（根据实际情况更改）以更好同时挂载到同一个IP地址下的不同网络驱动器。如果这样做，下面的`192.168.66.66`也要对应改为`ftp.local`
-
-#### 关于连接
-
-##### 使用Windows自带的“映射网络驱动器”（不建议）
-
-右键“此电脑”，选择“映射网络驱动器”，文件夹写`http://192.168.66.66:53091/webdav`，勾选“使用其他凭据连接”。在弹出的登录提示中用户名输入“ftp”，密码输入“pwd123”。
-
-为什么不建议？这样做无法实现开机自动连接，而且每次都要弹出一次密码输入框（即使你已经选择了“记住凭据”）。
-
-##### 使用远古的`net use`命令（不建议）
-
-```bat
-chcp 65001
-:TRY
-net use Z: http://192.168.66.66:53091/webdav /Persistent:Yes /USER:ftp pwd123 /Y 2>&1|find "找不到网络名">nul
-if %errorlevel%==0 (
-   timeout 10
-    goto :TRY
-) else (
-    echo fin.
-)
-```
-
-把这货丢进一个`bat`文件里，比如`C:\Program Files\LoginAtStartup\connect-with-net.bat`
-
-```vb
-DIM objShell 
-set objShell = wscript.createObject("wscript.shell") 
-iReturn = objShell.Run("cmd /c "&chr(34)&"C:\Program Files\LoginAtStartup\connect-with-net.bat"&chr(34)&"", 0, FALSE)
-```
-
-把这货丢进一个`vbs`文件里，再把它的快捷方式丢进`shell:startup`（也就是`C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`）下，就可以开机自动连接了。再次感叹一句Windows之屎。
-
-为什么不建议？这货打开文件时传参是\*\*的`http://`开头的链接。
 
 ##### 使用`rclone`（建议）
 
@@ -144,9 +101,54 @@ rclone mount myftp:/ Z: --vfs-cache-mode full
 
 然后应该就好了。Linux/macOS也可以用类似的方法，在此略去。
 
+##### 使用Windows内置工具（不建议）
+
+首先解除一些限制[^1]：
+
+```bat
+reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters /v BasicAuthLevel /t REG_DWORD /d 2 /f
+reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters /v FileSizeLimitInBytes /t REG_DWORD /d 0xffffffff /f
+net stop webclient
+net start webclient
+```
+
+建议：编辑`C:\Windows\System32\drivers\etc\hosts`，加入一行`ftp.local 192.168.66.66`（根据实际情况更改）以更好同时挂载到同一个IP地址下的不同网络驱动器。如果这样做，下面的`192.168.66.66`也要对应改为`ftp.local`
+
+###### 内置工具 - “映射网络驱动器”（不建议）
+
+右键“此电脑”，选择“映射网络驱动器”，文件夹写`http://192.168.66.66:53091/webdav`，勾选“使用其他凭据连接”。在弹出的登录提示中用户名输入“ftp”，密码输入“pwd123”。
+
+为什么不建议？这样做无法实现开机自动连接，而且每次都要弹出一次密码输入框（即使你已经选择了“记住凭据”）。
+
+###### 内置工具 - 远古的`net use`命令（不建议）
+
+```bat
+chcp 65001
+:TRY
+net use Z: http://192.168.66.66:53091/webdav /Persistent:Yes /USER:ftp pwd123 /Y 2>&1|find "找不到网络名">nul
+if %errorlevel%==0 (
+   timeout 10
+    goto :TRY
+) else (
+    echo fin.
+)
+```
+
+把这货丢进一个`bat`文件里，比如`C:\Program Files\LoginAtStartup\connect-with-net.bat`
+
+```vb
+DIM objShell 
+set objShell = wscript.createObject("wscript.shell") 
+iReturn = objShell.Run("cmd /c "&chr(34)&"C:\Program Files\LoginAtStartup\connect-with-net.bat"&chr(34)&"", 0, FALSE)
+```
+
+把这货丢进一个`vbs`文件里，再把它的快捷方式丢进`shell:startup`（也就是`C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`）下，就可以开机自动连接了。再次感叹一句Windows之屎。
+
+为什么不建议？这货打开文件时传参是`http://`开头的链接，没几个软件能用。
+
 #### 使用RaiDrive
 
-[RaiDrive](https://www.raidrive.com/)专为挂载WebDAV等远程连接设计，提供了简单易用的图形化界面。缺点是免费版功能严重受限，且资源占用更高。
+[RaiDrive](https://www.raidrive.com/)专为挂载WebDAV等远程连接设计，提供了简单易用的图形化界面。缺点是资源占用较高，且若不付费，功能严重受限。
 
 ### macOS
 
