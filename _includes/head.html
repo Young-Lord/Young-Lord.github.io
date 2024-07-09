@@ -14,6 +14,7 @@
 {%- assign _paths_rss = site.paths.rss | default: site.data.variables.default.paths.rss -%}
 {%- include snippets/get-nav-url.html path=_paths_rss -%}
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ __return }}">
+{% seo title=false %}
 
 
 {%- if layout.articles.data_source == 'paginator.posts' -%}
@@ -32,4 +33,5 @@
 {%- assign _sources = __return -%}
 <link rel="stylesheet" href="{{ _sources.font_awesome }}" >
 
-{% seo title=false %}
+<!--所有权验证-->
+<link rel="me" href="https://infosec.exchange/@Young_Lord">
