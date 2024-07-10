@@ -67,6 +67,8 @@ a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系
 
 如果我的博文帮到了你，欢迎给我打钱！<del>目前收入 8 元，感谢老板😂</del>
 
+爱发电： [@Young-Lord](https://afdian.net/a/Young-Lord)
+
 ![微信赞赏码](/assets/images/donate/wechat.png)
 
 BTC (SegWit): `bc1qskd2qxwglhgcet39u6axpy2zy27gkmeyzwy7rd`
