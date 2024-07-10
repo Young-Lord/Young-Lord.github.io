@@ -13,7 +13,7 @@ default:
   chart: false
   toc:
     selectors: 'h1,h2,h3'
-  sources: bootcdn
+  sources: bytedance
   copy_to_clipboard: true
 
   page:
@@ -42,33 +42,22 @@ default:
     pan_gu_zhi_bai: true
 
 sources:
-  bootcdn:
+  bytedance:
     font_awesome: 'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.15.1/css/all.min.css'
     # https://cdn.bytedance.com/?query=font-awesome&version=5.15.1
-    jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js'
-    leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js'
-    chart: 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js'
+    jquery: 'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js'
+    leancloud_js_sdk: ''
+    chart: 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/Chart.js/2.7.2/Chart.bundle.min.js'
     gitalk:
-      js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js'
-      css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
-    valine: 'https://unpkg.com/valine/dist/Valine.min.js' # bootcdn not available
-    mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML'
-    mermaid: 'https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'
-    clipboard: 'https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.js'
+      js: ''
+      css: ''
+    valine: ''
+    mathjax: 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mathjax/2.7.4/config/TeX-MML-AM_CHTML.js'
+    mermaid: 'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/mermaid/8.0.0/mermaid.min.js'
+    clipboard: 'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/clipboard.js/2.0.10/clipboard.min.js'
     # custom.html
-    sweetalert2: 'https://cdn.bootcdn.net/ajax/libs/sweetalert2/11.7.3/sweetalert2.all.min.js'
-    pinyin_pro: 'https://cdn.bootcdn.net/ajax/libs/pinyin-pro/3.16.6/index.js'
-  unpkg:
-    font_awesome: 'https://use.fontawesome.com/releases/v5.15.1/css/all.css'
-    jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js'
-    leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js'
-    chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js'
-    gitalk:
-      js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js'
-      css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
-    valine: 'https//unpkg.com/valine/dist/Valine.min.js'
-    mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML'
-    mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js'
-    clipboard: 'https://unpkg.com/clipboard@2/dist/clipboard.min.js'
-    sweetalert2: 'https://cdn.bootcdn.net/ajax/libs/sweetalert2/11.7.3/sweetalert2.all.min.js'
-    pinyin_pro: 'https://cdn.bootcdn.net/ajax/libs/pinyin-pro/3.16.6/index.js'
+    sweetalert2: 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/sweetalert2/11.7.3/sweetalert2.all.min.js'
+    pinyin_pro: 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/pinyin-pro/3.16.6/index.js'
+    twitter_bootstrap_js: 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js'
+    twitter_bootstrap_css: 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css'
+    busuanzi: 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.js'

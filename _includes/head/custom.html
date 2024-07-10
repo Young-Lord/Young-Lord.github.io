@@ -2,9 +2,9 @@
 {%- include snippets/get-sources.html -%}
 {%- assign _sources = __return -%}
 
-<link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css"></noscript>
-<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js" defer async></script>
+<link rel="preload" href="{{ _sources.twitter_bootstrap_css }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ _sources.twitter_bootstrap_css }}"></noscript>
+<script src="{{ _sources.twitter_bootstrap_js }}" defer async></script>
 <script src="{{ _sources.sweetalert2 }}" defer async></script>
 <script src="{{ _sources.pinyin_pro }}" defer async></script>
 <link rel="stylesheet" href="/assets/css/lanyon/poole.min.css">
