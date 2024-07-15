@@ -33,9 +33,9 @@ a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系
 本人友链信息：
 
 ```plain
-名字：LY 的博客（别的什么也行）
+名字：LY 的博客（别的什么也行，比如 LY Blog ）
 网址：https://Young-Lord.github.io （大小写随意）
-头像：https://avatars.githubusercontent.com/u/51789698?v=4 （或者 https://young-lord.github.io/assets/images/logo/logo-latest.webp
+头像：https://avatars.githubusercontent.com/u/51789698?v=4 （或者 https://young-lord.github.io/assets/images/logo/logo-latest.webp ）
 简介：自疏濯淖污泥之中，蝉蜕于浊秽，以浮游尘埃之外。 （不写或随你喜好写更好）
 邮箱：ly-niko #at# qq.com
 ```
