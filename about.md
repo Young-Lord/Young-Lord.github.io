@@ -46,6 +46,7 @@ a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系
 
 - [某猫](https://qmqaq.top)：Aw.Cat (写QQ机器人的) (Arcaea-Infinity)
 - [BsBlog](https://blog.bsdayo.moe/): 怎么会是呢？<del>很喜欢一句话：域名可出售</del> (写QQ机器人的，全栈) (Arcaea-Infinity)
+- [yllhwa's blog](https://blog.yllhwa.com/)：一位华中科大学网络空间安全的大神，博客也写得比我好多了 (QQBackup)
 
 单向：
 
