@@ -67,9 +67,9 @@ a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系
 
 ## 打钱 {#donate}
 
-如果我的博文帮到了你，欢迎给我打钱！<del>目前收入 8 元，感谢老板😂</del>
+如果我的博文帮到了你，欢迎给我打钱！<del>目前收入 9 元，感谢老板😂</del>
 
-爱发电： [@Young-Lord](https://afdian.net/a/Young-Lord)
+爱发电： [@Young-Lord](https://afdian.com/a/Young-Lord)
 
 ![微信赞赏码](/assets/images/donate/wechat.png)
 
