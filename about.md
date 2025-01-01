@@ -16,7 +16,9 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指
 
 中英文规范书写提倡者。
 
-技能树完全乱点，语言的话 Python, C++, JavaScript, Go, Java, Kotlin, Vue.js 都多少会一点<del>但都学艺不精</del>
+技能树完全乱点，语言的话 Python, C++, JavaScript, Go, Java, Kotlin, Vue.js, WASM 都多少会一点<del>但都学艺不精</del>
+
+因为[某些契机](https://young-lord.github.io/posts/axis-2023)写过篇[论文](https://github.com/kxmz-1/Chactivity-public)，但由于学业原因，最终没有发到任何地方。
 
 自由软件支持者，正在试着跑去 Linux 系统（BTW I Use Arch）
 
