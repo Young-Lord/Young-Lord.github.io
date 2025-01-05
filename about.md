@@ -129,7 +129,7 @@ function ad_switch() {
 
 ## 愿望单
 
-想给我送礼的<del>富哥</del>可以照着这个来送，就别花冤枉钱了（想桃子.jpg
+想给我送礼的可以照着这个来送，就别花冤枉钱了（想桃子.jpg
 
 另外，最好买二手的。
 
@@ -138,9 +138,7 @@ function ad_switch() {
 - [ ] Redmi K60 至尊版 16GB+1TB（或24GB+1TB）
 - [ ] 树莓派/菠萝派 或类似的设备
 - [ ] Wallpaper Engine
-- [ ] Repainter
-- [ ] 安卓智能手表（具体品牌/型号随意）
-- [ ] 西数 My Passport 随行SSD 1TB（或更大）
+- [ ] 西数 My Passport 随行SSD 1TB
 
 ## 隐私政策
 
