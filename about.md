@@ -18,7 +18,9 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指
 
 技能树完全乱点，语言的话 Python, C++, JavaScript, Go, Java, Kotlin, Vue.js, WASM 都多少会一点<del>但都学艺不精</del>
 
-因为[某些契机](https://young-lord.github.io/posts/axis-2023)写过篇[论文](https://github.com/kxmz-1/Chactivity-public)，但由于学业原因，最终没有发到任何地方。
+会一点网安，和[Leo Li](https://github.com/66Leo66)、[Jett Chen](https://github.com/JettChenT)等人拿了个[picoCTF 2024](https://play.picoctf.org/events/73)全球第十。
+
+因为[某些契机](https://young-lord.github.io/posts/axis-2023)和[Leo Li](https://github.com/66Leo66)写过篇[论文](https://github.com/kxmz-1/Chactivity-public)，但由于学业原因，最终没有发到任何地方。
 
 自由软件支持者，正在试着跑去 Linux 系统（BTW I Use Arch）
 
