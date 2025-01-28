@@ -95,6 +95,8 @@ jobs:
           json: true
           files: |
             _posts/*.md
+            about.md
+            memories.md
           quotepath: false
           safe_output: false
           escape_json: false

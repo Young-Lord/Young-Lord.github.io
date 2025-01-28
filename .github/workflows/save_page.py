@@ -6,6 +6,7 @@ To use, modify:
    and set them as SAVEPAGENOW_ACCESS_KEY and SAVEPAGENOW_SECRET_KEY environment variables.
    It's recommended to set them as repository secrets.
 """
+
 import json
 import os
 import traceback
@@ -13,13 +14,14 @@ from typing import Final, Optional, TypedDict
 import yaml
 import requests
 
-BASEURL: Final[str] = "https://young-lord.github.io/posts/"
+ROOTURL: Final[str] = "https://young-lord.github.io/"
+POSTS_BASEURL: Final[str] = ROOTURL + "posts/"
 
 # https://archive.org/details/spn-2-public-api-page-docs-2023-01-22
 # https://github.com/palewire/savepagenow/blob/main/savepagenow/api.py MIT License
-DEFAULT_USER_AGENT: Final[
-    str
-] = "savepagenow (https://github.com/Young-Lord/Young-Lord.github.io/blob/master/.github/workflows/save_page.py)"
+DEFAULT_USER_AGENT: Final[str] = (
+    "savepagenow (https://github.com/Young-Lord/Young-Lord.github.io/blob/master/.github/workflows/save_page.py)"
+)
 
 
 class WaybackRuntimeError(Exception):
@@ -157,14 +159,21 @@ if not all_changed_files:
     print("No blog post changed.")
     exit(0)
 
+FILE_SUFFIX: Final[str] = ".md"
 for file in all_changed_files:
-    assert file.endswith(".md")
+    assert file.endswith(FILE_SUFFIX)
     # https://stackoverflow.com/a/34727830
+    url: str = ""
     with open(file, "r", encoding="utf8") as f:
         front_matter = next(yaml.load_all(f, Loader=yaml.FullLoader))
-    slug: str = front_matter["slug"]
     title: str = front_matter["title"]
-    url: str = BASEURL + slug
+    if file.startswith("_posts/"):
+        slug: str = front_matter["slug"]
+        url = POSTS_BASEURL + slug
+    else:
+        assert "/" not in file  # it must be in root dir
+        url = ROOTURL + file.removesuffix(FILE_SUFFIX)
+
     ret = capture(
         url,
         data={
