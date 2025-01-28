@@ -178,4 +178,4 @@ for file in all_changed_files:
     if "message" in ret:
         print("\t" + ret["message"])
     else:
-        print("\tno message")
+        print("\tno message (that means success)")
