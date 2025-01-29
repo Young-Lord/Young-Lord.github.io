@@ -3,6 +3,7 @@ layout: article
 title: 一些记录
 key: page-memories
 id: page-memories
+pan_gu_zhi_bai: false
 ---
 
 > 告诉我你吃什么，我就知道你是什么样的人。

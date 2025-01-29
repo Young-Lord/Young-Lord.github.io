@@ -3,6 +3,7 @@ layout: article
 title: 一些无聊的记录
 key: page-memories-stash
 id: page-memories-stash
+pan_gu_zhi_bai: false
 ---
 
 这个页面主要用于记录那些没啥好写的东西以供查找。
