@@ -2,7 +2,7 @@
 tags: [Arch Linux, Ventoy, 硬件密钥]
 title: Ventoy Arch Linux To Go 十分钟速通
 slug: arch-to-go
-last_modified_at: 2023-12-2
+last_modified_at: 2024-3-24
 ---
 
 ## 前言
@@ -114,10 +114,11 @@ options root=UUID=3292b807-b6b5-4fd5-b50d-9dfdcf01088c zswap.enabled=0 rootflags
 sudo pacman -S --needed grub lvm2
 sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub --removable
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-sudo ./vtoyboot.sh
 ```
 
-### Vtoyboot
+### vtoyboot
+
+这一步是为了让Arch可以在Ventoy中启动。建议每次 配置完mkinitcpio/grub 或 更新包 之后都重新运行一次`vtoyboot.sh`。
 
 下载[vtoyboot](https://github.com/ventoy/vtoyboot/releases/latest)并解压、安装：
 
