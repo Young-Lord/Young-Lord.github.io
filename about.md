@@ -137,14 +137,14 @@ function ad_switch() {
 - [x] ChatGPT账号
 - [ ] Redmi K60 至尊版 16GB+1TB（或24GB+1TB）
 - [ ] 树莓派/菠萝派 或类似的设备
-- [ ] Wallpaper Engine
+- [x] Wallpaper Engine
 - [ ] 西数 My Passport 随行SSD 1TB
 
 ## 隐私政策
 
 本站点使用了[不蒜子](https://busuanzi.ibruce.info/)的JS用于访问量统计，可以自行屏蔽。
 
-本站点使用了[BootCDN](https://www.bootcdn.cn/)、[Bootstrap 中文网](https://www.bootcss.com/)、[字节跳动静态资源公共库](https://cdn.bytedance.com/)等公共CDN引用CSS、JS等资源文件，不建议屏蔽。
+本站点使用了[字节跳动静态资源公共库](https://cdn.bytedance.com/)等公共CDN引用CSS、JS等资源文件，不建议屏蔽。
 
 本站点的评论系统由[Cusdis](https://cusdis.com)提供，屏蔽会导致无法查看或发表评论。
 
