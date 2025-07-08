@@ -134,11 +134,10 @@ function ad_switch() {
 另外，最好买二手的。
 
 - [x] YubiKey 5 NFC 或 [CanoKey Pigeon](https://item.taobao.com/item.htm?id=664914723920)
-- [x] ChatGPT账号
-- [ ] Redmi K60 至尊版 16GB+1TB（或24GB+1TB）
-- [ ] 树莓派/菠萝派 或类似的设备
 - [x] Wallpaper Engine
+- [ ] 树莓派/菠萝派 或类似的设备
 - [ ] 西数 My Passport 随行SSD 1TB
+- [ ] Oculus Quest 3
 
 ## 隐私政策
 
