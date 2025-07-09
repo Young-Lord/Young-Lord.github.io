@@ -2,7 +2,7 @@
 
 这是 LY 的博客，有以下特性：
 
-- 基于 [TeXt](https://tianqi.name/jekyll-TeXt-theme) 的简洁主题
+- 基于 [TeXt](https://github.com/kitian616/jekyll-TeXt-theme) 的简洁主题
 
 - [侧边栏](https://wu-kan.cn/)
 
