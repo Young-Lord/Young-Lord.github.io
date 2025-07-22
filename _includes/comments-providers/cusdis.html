@@ -1,5 +1,18 @@
 {%- if page.id and site.comments.cusdis.app-id -%}
 <!--特殊界面只有手动设置才有id-->
+<script>
+// src: https://github.com/djyde/cusdis/issues/283#issuecomment-2436307442
+window.addEventListener('load', () => {
+    let cusdis_height_timer = setInterval(() => {
+        let elem = document.querySelector("#cusdis_thread > iframe");
+        if(!elem) return;
+        let scrollHeight = elem.contentWindow.document.body.scrollHeight;
+        elem.style.height = scrollHeight + "px";
+        clearInterval(cusdis_height_timer);
+        // console.log("Fixed Cusdis iframe height.")
+    }, 500);
+});
+</script>
 <div id="cusdis_thread"
   data-host="https://cusdis.com"
   data-app-id="{{ site.comments.cusdis.app-id }}"
