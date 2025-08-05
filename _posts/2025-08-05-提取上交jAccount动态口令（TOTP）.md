@@ -19,7 +19,7 @@ last_modified_at: 2025-08-06
 
 ### 获取密钥
 
-两个方法二选一即可。
+多种方法选择任一即可。
 
 #### 读数据库方法
 
@@ -70,7 +70,7 @@ select * from TOTPKey;
 
 ##### 不用手机的抓包方法
 
-将浏览器的User Agent设置为`TaskCenterApp/3.4.9`，然后在浏览器中访问`https://jaccount.sjtu.edu.cn/jaccount/issueTotp?account=你的用户名`，即可访问开通TOTP的页面。其他操作与[“抓包方法”一节](#抓包方法)相同。
+将浏览器的User Agent设置为`TaskCenterApp/3.4.9`，然后在浏览器中访问`https://jaccount.sjtu.edu.cn/jaccount/issueTotp?account=你的用户名`，即可访问开通TOTP的页面。对页面源码进行一些修改后，即可正常开通TOTP。其他操作与[“抓包方法”一节](#抓包方法)相同。
 
 ### 将密钥导入密码管理器
 
