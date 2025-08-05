@@ -2,7 +2,7 @@
 tags: [上海交通大学]
 title: 提取上交 jAccount 动态口令（TOTP）
 slug: sjtu-totp
-last_modified_at: 2025-08-05
+last_modified_at: 2025-08-06
 ---
 
 ## 背景
@@ -76,7 +76,7 @@ select * from TOTPKey;
 
 得到的密钥为128位长，仅由`[0-9A-F]`组成的字符串，可直接猜测其为使用`SHA-512`的TOTP中，以hex格式表示的密钥。该猜测可被`edu.sjtu.infoplus.taskcenter.widget.TaskCenterWebView$5`的`TOTP.generateTOTP512`代码验证。
 
-一般密码管理器中，需要的TOTP密钥均为Base32格式（移除结尾的`=`），因此需要转码。以上文中得到的密钥为例，转码后得到的Base32格式密钥为`FQIOU3TFEAURHHVL5CEW4EGDOBOLB52XZIXS2WXL6FD7AJ7AOJUXOYF3KDEPYHHR5MURJRKRJL2XUDJ4O2HU73IDK6BQWDSFM6QXM7Y`，配置好参数后即可导入你的密码管理器或验证器。
+一般密码管理器中，需要的TOTP密钥均为Base32格式（移除结尾的`=`），因此需要转码。
 
 [“鸣谢”一节](#鸣谢)中列出的网站可以帮你完成这一过程，但强烈建议在本地转换。比如，Linux系统中可以使用以下命令：
 
@@ -84,12 +84,19 @@ select * from TOTPKey;
 
 执行该命令，粘贴hex格式的密钥，按下回车，按下`Ctrl + D`，输出即为所需的Base32格式密钥。
 
+以上文中得到的密钥为例，转码后得到的Base32格式密钥为`FQIOU3TFEAURHHVL5CEW4EGDOBOLB52XZIXS2WXL6FD7AJ7AOJUXOYF3KDEPYHHR5MURJRKRJL2XUDJ4O2HU73IDK6BQWDSFM6QXM7Y`
+
+配置好参数（即使用`SHA-512`，而非更常见的`SHA-1`算法）后，即可导入你的密码管理器或验证器。
+
+如果你需要生成二维码，或者直接编辑密码管理器的`otp`字段，你需要的Key Uri形如：`otpauth://totp/jAccount:faputa?issuer=jAccount&secret=FQIOU3TFEAURHHVL5CEW4EGDOBOLB52XZIXS2WXL6FD7AJ7AOJUXOYF3KDEPYHHR5MURJRKRJL2XUDJ4O2HU73IDK6BQWDSFM6QXM7Y&algorithm=SHA512&digits=6&period=30`
+
 ## 鸣谢
 
 警告：TOTP密钥为隐私内容，不应在任何不信任的网站上输入。以下网站可能将你的密钥传输到服务端，并且可能存在第三方追踪器，因此不应当被信任。
 
 - [在线OTP密码生成器 - lddgo.net](https://www.lddgo.net/encrypt/otp-code-generate)
 - [Time-based one-time password (TOTP) Generator - 2fasolution.com](https://2fasolution.com/totp.html)
+- [Key Uri Format](https://github.com/google/google-authenticator/wiki/Key-Uri-Format)
 
 ## 另外
 
