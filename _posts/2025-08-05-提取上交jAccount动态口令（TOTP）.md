@@ -90,6 +90,8 @@ select * from TOTPKey;
 
 如果你需要生成二维码，或者直接编辑密码管理器的`otp`字段，你需要的Key Uri形如：`otpauth://totp/jAccount:faputa?issuer=jAccount&secret=FQIOU3TFEAURHHVL5CEW4EGDOBOLB52XZIXS2WXL6FD7AJ7AOJUXOYF3KDEPYHHR5MURJRKRJL2XUDJ4O2HU73IDK6BQWDSFM6QXM7Y&algorithm=SHA512&digits=6&period=30`
 
+导入完成后，如果密钥来自“交我办”应用，可以验证生成的验证码是否与“交我办”中一致。
+
 ## 鸣谢
 
 警告：TOTP密钥为隐私内容，不应在任何不信任的网站上输入。以下网站可能将你的密钥传输到服务端，并且可能存在第三方追踪器，因此不应当被信任。
