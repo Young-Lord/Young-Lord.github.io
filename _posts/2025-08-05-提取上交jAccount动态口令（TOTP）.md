@@ -29,7 +29,7 @@ last_modified_at: 2025-08-06
 
 去翻翻应用私密文件，发现了个`TOTP.db`，打开看看发现没有`SQLite format 3`文件头，而且乱码看着很无规律，盲猜是`SQLCipher`。分析`classes*.dex`，在`edu.sjtu.infoplus.taskcenter.db.totp.TOTPDatabase$Companion`中发现`SQLCipher`相关内容（也就是`net.sqlcipher.database.SQLiteDatabase`等等类名）。结合[sqlcipher-android文档](https://github.com/sqlcipher/sqlcipher-android?tab=readme-ov-file#sqlcipher-for-android-room-integration)，得到密钥`account#totp@db`。
 
-备份“交我办”后，在`databases`或对于目录下找到`TOTP.db`及`TOTP.db-wal`文件。（谢谢你，`android:allowBackup="true"`）（如果你的手机root了，直接访问`/data/user/0/edu.sjtu.infoplus.taskcenter/databases/`即可获得）
+备份“交我办”后，解压备份文件，在`databases`或对应目录下找到`TOTP.db`及`TOTP.db-wal`文件。（谢谢你，`android:allowBackup="true"`）（如果你的手机root了，直接访问`/data/user/0/edu.sjtu.infoplus.taskcenter/databases/`即可获得）
 
 为什么要有个`TOTP.db-wal`文件？简单来说，由于某些bug，TOTP密钥一直没有被真正写入`TOTP.db`中，而是在`TOTP.db-wal`中暂存。<del>这垃圾bug调了我十分钟。</del>
 
