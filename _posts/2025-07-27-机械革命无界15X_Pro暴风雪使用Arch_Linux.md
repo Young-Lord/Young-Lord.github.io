@@ -2,7 +2,7 @@
 tags: [Linux]
 title: 机械革命无界 15X Pro 暴风雪使用 Arch Linux
 slug: mechrevo-linux-2025
-last_modified_at: 2025-07-27
+last_modified_at: 2025-08-06
 ---
 
 ## 参考资料
@@ -19,6 +19,8 @@ last_modified_at: 2025-07-27
 阅读本部分前，请先默念：“傻逼微软！”
 
 本文适用于Copilot键对应“按下时执行一次`leftmeta + leftshift + f23`，长按无作用，松开无作用”的机型。本部分将其映射为一个500ms内单次有效的rightctrl键。
+
+缺点：需要三个按键的快捷键（比如`Ctrl + Shift + P`很难激活，执行时表现为`rightctrl ; rightshift + p`）
 
 原始的`sudo keyd monitor -t`输出如下：
 
@@ -133,3 +135,7 @@ EOF
 请先阅读[ArchWiki 对应章节](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Troubleshooting)，以及其中引用的[best practices to debug suspend issues 一文](https://web.archive.org/web/20230502010825/https://01.org/blogs/rzhang/2015/best-practice-debug-linux-suspend/hibernate-issues)。
 
 对于我，应用[System does not power off when hibernating 一节](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#System_does_not_power_off_when_hibernating)中的内容即可解决。
+
+## 其他
+
+这机子毛病一堆，如果有钱还是考虑别的牌子吧。
