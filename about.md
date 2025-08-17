@@ -22,13 +22,13 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指
 
 因为[某些契机](https://young-lord.github.io/posts/axis-2023)和[Leo Li](https://github.com/66Leo66)写过篇[论文](https://github.com/kxmz-1/Chactivity-public)，但由于学业原因，最终没有发到任何地方。
 
-自由软件支持者，正在试着跑去 Linux 系统（BTW I Use Arch）
+自由软件支持者，I Use Arch Linux btw
 
 PGP: `69D6E8DCB9E4117864368CA0EE4FB075119CE61F`，也可以在[这里](/pgp.asc)下载。
 
 a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系统Cusdis提供过无障碍改进，向Termux Monet、Coursera、K-9 Mail等项目提交过翻译。
 
-比较喜欢的游戏有 史丹利的寓言/Celeste/请出示文件/传送门/MC/樱之诗/ATRI/Ingress 等。网游基本不碰。
+比较喜欢的游戏有 史丹利的寓言/Celeste/请出示文件/传送门/MC/樱之诗/Arcaea/Ingress 等。网游基本不碰。
 
 被定性为一个红绿色盲/色弱，也因此感到中国现有的这套体系偏见与歧视性很大，或许以后能试着改变吧。
 
