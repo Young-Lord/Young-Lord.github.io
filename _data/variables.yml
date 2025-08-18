@@ -13,7 +13,7 @@ default:
   chart: false
   toc:
     selectors: 'h1,h2,h3'
-  sources: bytedance
+  sources: sustech
   copy_to_clipboard: true
 
   page:
@@ -42,19 +42,18 @@ default:
     pan_gu_zhi_bai: true
 
 sources:
-  bytedance:
-    font_awesome: 'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.15.1/css/all.min.css'
-    # https://cdn.bytedance.com/?query=font-awesome&version=5.15.1
-    jquery: 'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js'
+  sustech:
+    font_awesome: 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/font-awesome/5.15.1/css/all.min.css'
+    jquery: 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/jquery/3.1.1/jquery.min.js'
     leancloud_js_sdk: ''
-    chart: 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/Chart.js/2.7.2/Chart.bundle.min.js'
+    chart: 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js'
     gitalk:
       js: ''
       css: ''
     valine: ''
-    mathjax: 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mathjax/2.7.4/config/TeX-MML-AM_CHTML.js'
-    mermaid: 'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/mermaid/8.0.0/mermaid.min.js'
-    clipboard: 'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/clipboard.js/2.0.10/clipboard.min.js'
+    mathjax: 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/mathjax/2.7.4/config/TeX-MML-AM_CHTML.js'
+    mermaid: 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/mermaid/8.0.0/mermaid.min.js'
+    clipboard: 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/clipboard.js/2.0.10/clipboard.min.js'
     # custom.html
     sweetalert2: 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/sweetalert2/11.7.3/sweetalert2.all.min.js'
     pinyin_pro: 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/pinyin-pro/3.16.6/index.js'
