@@ -22,7 +22,7 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指
 
 因为[某些契机](https://young-lord.github.io/posts/axis-2023)和[Leo Li](https://github.com/66Leo66)写过篇[论文](https://github.com/kxmz-1/Chactivity-public)，但由于学业原因，最终没有发到任何地方。
 
-自由软件支持者，I Use Arch Linux btw
+自由软件支持者，日用 Linux (I Use Arch Linux btw)
 
 PGP: `69D6E8DCB9E4117864368CA0EE4FB075119CE61F`，也可以在[这里](/pgp.asc)下载。
 
