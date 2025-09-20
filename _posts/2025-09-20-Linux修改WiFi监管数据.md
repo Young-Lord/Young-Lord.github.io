@@ -96,7 +96,11 @@ CONFIG_CFG80211_WEXT=y
 
 使用`make -C /lib/modules/$(uname -r)/build M=$(pwd) modules -j$(nproc)`编译，得到`cfg80211.ko`。
 
-使用`sudo make -C /lib/modules/$(uname -r)/build M=$(pwd) INSTALL_MOD_STRIP=1 modules_install`替换掉当前的`cfg80211`模块。
+使用`sudo make -C /lib/modules/$(uname -r)/build M=$(pwd) INSTALL_MOD_STRIP=1 modules_install && sudo depmod`替换掉当前的`cfg80211`模块。
+
+可以使用`modinfo -n cfg80211`验证当前正在使用的模块路径，其应当为`/lib/modules/$(uname -r)/updates/cfg80211.ko.zst`。
+
+（如果不使用`make modules_install`，而是直接压缩`cfg80211.ko`并覆盖原先的`/lib/modules/$(uname -r)/kernel/net/wireless/cfg80211.ko.zst`，也可以达到预期效果）
 
 #### 直接修改证书
 
@@ -138,3 +142,7 @@ country VN: DFS-FCC
 ```
 
 开启热点测试，成功。
+
+### 善后
+
+记得屏蔽`wireless-regdb`的自动更新，在`/etc/pacman.conf`的`IgnorePkg`里加一条就行，或者用`NoUpgrade`阻止监管数据被更新。不过如果没有一个自动化patch`cfg80211`的方案的话，这样做可能只会让你每次内核更新后都用回最严格的监管数据……
