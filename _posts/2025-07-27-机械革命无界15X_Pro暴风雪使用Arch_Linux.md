@@ -20,7 +20,7 @@ last_modified_at: 2025-08-06
 
 #### 新版
 
-在“机械革命控制台”更新BIOS到较新的版本后，Copilot键在按下、松开时均会产生行为，这使的映射变得更加方便，具体如何实现我仍在调试。~~这kmonad文档就不是给人看的~~
+在使用“机械革命控制台”更新BIOS后，Copilot键在按下与松开时均会产生行为，这使得映射更加方便。具体如何实现我仍在调试。~~这kmonad文档就不是给人看的~~
 
 #### 旧版
 
@@ -45,7 +45,7 @@ device added: 0001:0001:70533846 AT Translated Set 2 keyboard (/dev/input/event3
 
 首先装上`kmonad`：`sudo pacman -S kmonad`
 
-然后把这份配置文件存在一个合适的地方，比如`~/.config/kmonad/kmonad.kbd`：
+然后把这份配置文件存在一个合适的地方，比如`/etc/kmonad/kmonad.kbd`：
 
 ```clojure
 (defcfg
@@ -124,7 +124,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/kmonad /home/$(whoami)/.config/kmonad/kmonad.kbd
+ExecStart=/usr/bin/kmonad /etc/kmonad/kmonad.kbd
 Restart=always
 User=root
 Group=root
