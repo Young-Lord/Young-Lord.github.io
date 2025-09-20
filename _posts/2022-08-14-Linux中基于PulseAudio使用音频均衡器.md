@@ -1,5 +1,5 @@
 ---
-tags: [Linux, Deepin, PulseAudio, 音频]
+tags: [Linux, 音频]
 title: Linux 中基于 PulseAudio 使用音频均衡器
 slug: linux-pulseaudio-equalizer
 redirect_from: 

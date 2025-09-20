@@ -1,5 +1,5 @@
 ---
-tags: [Gitea, Webhook, Python]
+tags: [Gitea]
 title: 使用 Python 内置模块接收 Gitea Webhook 以自动更新
 slug: python-gitea-webhook
 last_modified_at: 2023-7-1
