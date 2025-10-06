@@ -138,6 +138,7 @@ function ad_switch() {
 - [ ] 树莓派/菠萝派 或类似的设备
 - [ ] 西数 My Passport 随行SSD 1TB
 - [ ] Oculus Quest 3
+- [ ] 古明地恋/爱丽丝 fumo
 
 ## 隐私政策
 
