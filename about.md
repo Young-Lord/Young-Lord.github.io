@@ -51,6 +51,7 @@ a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系
 - [某猫](https://qmqaq.top)：Aw.Cat (写QQ机器人的) (Arcaea-Infinity)
 - [BsBlog](https://blog.bsdayo.moe/): 怎么会是呢？<del>很喜欢一句话：域名可出售</del> (写QQ机器人的，全栈) (Arcaea-Infinity)
 - [yllhwa's blog](https://blog.yllhwa.com/)：一位华中科大学网络空间安全的大神，博客也写得比我好多了 (QQBackup)
+- [Cainong's Blog](https://cainongw.github.io/)：主要是 Homelab 相关，表示看不懂… (Arcaea)
 
 单向：
 
@@ -63,7 +64,7 @@ a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系
 - [Yang-Blog](https://bakayang.moe/)：一只笨蛋的Blog (然而貌似已经成了一个Mastodon实例了) (Arcaea-Wiki)
 - [NekoHouse](https://blog.amu.moe/)：Inari Aimu - 猫粮制作中... (玩硬件的) (Arcaea-Wiki)
 - [Akula::Blog](https://blog.akula.moe)：悟已往之不谏，知来者之可追 (Arcaea-Wiki)
-- [Jett's blog](https://blog.jettchen.me/)：CTF领域大神！（？ (科苗线下认识的人，一起打过CTF)
+- [Jett's blog](https://blog.jettchen.me/)：CTF领域大神！ (科苗线下认识的人，一起打过CTF)
 - [Sukka's Blog](https://blog.skk.moe/)：搞前端的，并且前端以外的分享也很不错
 - [Manjusaka](https://www.manjusaka.blog/)：貌似主要是一些比较底层的东西？
 - [Plum's Blog](https://plumz.me/)：锐评galgame、社会现象、Linux等的大神，写的文字能让人感觉非常真诚<del>地骂</del>
