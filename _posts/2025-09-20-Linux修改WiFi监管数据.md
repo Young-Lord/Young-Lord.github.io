@@ -90,11 +90,13 @@ CONFIG_CFG80211_WEXT=y
 
 #### 修改源代码
 
-首先获取一份当前内核源码：`git clone https://github.com/archlinux/linux.git -b $(uname -r) --depth 1`
+首先获取一份当前内核源码：`git clone https://github.com/archlinux/linux.git -b v$(uname -r | cut -d- -f1-2) --depth 1 && cd linux`
 
-进入`net/wireless`目录：`cd linux/net/wireless`
+如果本地已经有一份内核源码：`git reset --hard HEAD && git fetch origin v$(uname -r | cut -d- -f1-2) --depth 1 && git checkout v$(uname -r | cut -d- -f1-2)`
 
-修改`reg.c`，将其中的`#ifdef CONFIG_CFG80211_REQUIRE_SIGNED_REGDB`改为`#ifdef CONFIG_CFG80211_REQUIRE_SIGNED_REGDB_DUCK`：`sed 's/CONFIG_CFG80211_REQUIRE_SIGNED_REGDB/CONFIG_CFG80211_REQUIRE_SIGNED_REGDB_DUCK/g' reg.c`
+进入`net/wireless`目录：`cd net/wireless`
+
+修改`reg.c`，将其中的`#ifdef CONFIG_CFG80211_REQUIRE_SIGNED_REGDB`改为`#ifdef CONFIG_CFG80211_REQUIRE_SIGNED_REGDB_DUCK`：`sed -i 's/CONFIG_CFG80211_REQUIRE_SIGNED_REGDB/CONFIG_CFG80211_REQUIRE_SIGNED_REGDB_DUCK/g' reg.c`
 
 使用`make -C /lib/modules/$(uname -r)/build M=$(pwd) modules -j$(nproc)`编译，得到`cfg80211.ko`。
 
@@ -112,9 +114,9 @@ CONFIG_CFG80211_WEXT=y
 
 下载一份[wireless-regdb](https://git.kernel.org/pub/scm/linux/kernel/git/wens/wireless-regdb.git)：`git clone https://git.kernel.org/pub/scm/linux/kernel/git/wens/wireless-regdb.git`
 
-开个Python虚拟环境，安装`m2crypto`，或者你要是喜欢`aur/python-m2crypto`也行。
+开个Python虚拟环境，安装`m2crypto`，或者要是你喜欢`aur/python-m2crypto`也行。
 
-打开`db.txt`，找到对应国家的监管数据，修改。此处只需删去`, DFS`即可。删去前请确保你已经完全理解此操作后果并且自愿承担法律责任。修改结果如下所示：
+打开`db.txt`，找到对应国家的监管数据，修改。此处只需删去`, DFS`即可。删去前请确保你已经完全理解此操作后果并且承担一切法律责任。修改结果如下所示：
 
 ```plaintext
 country VN: DFS-FCC
