@@ -90,9 +90,11 @@ CONFIG_CFG80211_WEXT=y
 
 #### 修改源代码
 
-首先[获取一份当前内核源码](https://wiki.archlinux.org/title/Kernel/Arch_build_system)，进入`net/wireless`目录。
+首先获取一份当前内核源码：`git clone https://github.com/archlinux/linux.git -b $(uname -r) --depth 1`
 
-修改`reg.c`，将其中的`#ifdef CONFIG_CFG80211_REQUIRE_SIGNED_REGDB`改为`#ifdef CONFIG_CFG80211_REQUIRE_SIGNED_REGDB_DUCK`。
+进入`net/wireless`目录：`cd linux/net/wireless`
+
+修改`reg.c`，将其中的`#ifdef CONFIG_CFG80211_REQUIRE_SIGNED_REGDB`改为`#ifdef CONFIG_CFG80211_REQUIRE_SIGNED_REGDB_DUCK`：`sed 's/CONFIG_CFG80211_REQUIRE_SIGNED_REGDB/CONFIG_CFG80211_REQUIRE_SIGNED_REGDB_DUCK/g' reg.c`
 
 使用`make -C /lib/modules/$(uname -r)/build M=$(pwd) modules -j$(nproc)`编译，得到`cfg80211.ko`。
 
