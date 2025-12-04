@@ -2,7 +2,7 @@
 tags: [Linux]
 title: 机械革命无界 15X Pro 暴风雪使用 Arch Linux
 slug: mechrevo-linux-2025
-last_modified_at: 2025-08-06
+last_modified_at: 2025-12-04
 ---
 
 ## 参考资料
@@ -10,17 +10,21 @@ last_modified_at: 2025-08-06
 感谢各位前辈的探索！
 
 - [机械革命无界 15X Linux 优化指南](https://rikka.im/post/mechrevo-wujie15x-linux/)
-- [在机械革命无界 15XPro 暴风雪上运行 Linux](https://zeeko.dev/2025/06/running-linux-on-mechanical-revolution-15xpro-blizzard)
+- [在机械革命无界 15X Pro 暴风雪上运行 Linux](https://zeeko.dev/2025/06/running-linux-on-mechanical-revolution-15xpro-blizzard)
 
 ## 正文
 
 ### 映射Copilot键到Ctrl键
 
-阅读本部分前，请先默念：“傻逼微软！”
+哈，傻逼微软。
 
 #### 新版
 
-在使用“机械革命控制台”更新BIOS后，Copilot键在按下与松开时均会产生行为，这使得映射更加方便。具体如何实现我仍在调试。~~这kmonad文档就不是给人看的~~
+在使用“机械革命控制台”更新BIOS后，Copilot键在按下与松开时均会产生行为，这使得映射更加方便。
+
+如果用keyd的话，加一行`leftshift+leftmeta+f23 = rightcontrol`就好了。（[参考资料](https://superuser.com/questions/1849424/make-copilot-key-work-as-right-ctrl-again-under-linux)）
+
+如果用kmonad的话，我不知道该怎么写。欢迎PR或给我发邮件。
 
 #### 旧版
 
@@ -144,6 +148,18 @@ EOF
 
 对于我，应用[System does not power off when hibernating 一节](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#System_does_not_power_off_when_hibernating)中的内容即可解决。
 
+### 休眠后无法点亮屏幕（或点亮屏幕后卡死）
+
+加一条内核参数`amdgpu.gpu_recovery=1`。
+
+### 休眠后键盘偶发性不工作
+
+临时解决：使用`Fn + F1`再次休眠并唤醒。
+
+永久解决：加一条内核参数`i8042.nomux=1`。
+
 ## 其他
 
-这机子毛病一堆，如果有钱还是考虑别的牌子吧。
+AI真强啊，遇到什么问题把`journalctl -b 0`丢给它就好了。
+
+这机子跑Linux体验其实还行，感谢[TUXEDO](https://www.tuxedocomputers.com)的软件支持。
