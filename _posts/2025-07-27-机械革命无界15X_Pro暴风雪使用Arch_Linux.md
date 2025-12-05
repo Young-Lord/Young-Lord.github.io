@@ -162,4 +162,4 @@ EOF
 
 AI真强啊，遇到什么问题把`journalctl -b 0`丢给它就好了。
 
-这机子跑Linux体验其实还行，感谢[TUXEDO](https://www.tuxedocomputers.com)的软件支持。
+这机子跑Linux体验其实还行，感谢[TUXEDO](https://www.tuxedocomputers.com)的软件支持。不过硬件体验的话，很容易在使用过程中黑屏卡死or自动重启，需要除静电等一系列操作才能恢复。
