@@ -2,7 +2,7 @@
 tags: [Linux]
 title: 机械革命无界 15X Pro 暴风雪使用 Arch Linux
 slug: mechrevo-linux-2025
-last_modified_at: 2025-12-04
+last_modified_at: 2025-12-20
 ---
 
 ## 参考资料
@@ -156,7 +156,13 @@ EOF
 
 临时解决：使用`Fn + F1`再次休眠并唤醒。
 
-永久解决：加一条内核参数`i8042.nomux=1`。
+永久解决：加一条内核参数`i8042.noloop`（需要验证）。
+
+### iPad靠在机身上时黑屏
+
+被霍尔传感器识别为合盖。这是硬件层面的“小巧思”，所以折腾`logind`,`UPower`,`PowerDevil`等并不能彻底解决。验证上句话的最简单方案是在UEFI设置页面放上Apple Pencil，可以观察到屏幕仍然熄灭。
+
+解决方法是拆下后盖（有数个卡扣），断开电池排线并取出电池，断开霍尔传感器排线。如果遇到困难，请询问AI。
 
 ## 其他
 
