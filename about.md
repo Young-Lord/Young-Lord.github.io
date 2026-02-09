@@ -16,7 +16,7 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指
 
 中英文规范书写提倡者。
 
-技能树完全乱点，语言的话 Python, C++, JavaScript, Go, Java, Kotlin, Vue.js, WASM 都多少会一点<del>但都学艺不精</del>
+技能树完全乱点，Python, C++, JavaScript, Go, Java, Kotlin, Vue.js, WASM 都多少会一点<del>但都学艺不精</del>
 
 会一点网安，和[Leo Li](https://github.com/66Leo66)、[Jett Chen](https://github.com/JettChenT)等人拿了个[picoCTF 2024](https://play.picoctf.org/events/73)全球第十。另外在众多 AI 的助力下拿了个 ZJUCTF 2025 #2。
 
@@ -26,11 +26,11 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指
 
 PGP: `69D6E8DCB9E4117864368CA0EE4FB075119CE61F`，也可以在[这里](/pgp.asc)下载。
 
-a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系统Cusdis提供过无障碍改进，向Termux Monet、Coursera、K-9 Mail等项目提交过翻译。
-
 比较喜欢的游戏有 史丹利的寓言/Celeste/请出示文件/传送门/MC/樱之诗/Arcaea/Ingress/东方永夜抄 等。网游基本不碰。动漫的话，来看《来自深渊》！
 
 被定性为一个红绿色盲/色弱，也因此感到中国现有的这套体系偏见与歧视性很大，或许以后能试着改变吧。
+
+a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系统Cusdis提供过无障碍改进，向Termux Monet、Coursera、K-9 Mail等项目提交过翻译。
 
 ## 友情链接🔗
 
