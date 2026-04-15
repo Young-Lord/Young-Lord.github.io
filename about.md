@@ -26,7 +26,7 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指
 
 PGP: `69D6E8DCB9E4117864368CA0EE4FB075119CE61F`，也可以在[这里](/pgp.asc)下载。
 
-比较喜欢的游戏有 史丹利的寓言/Celeste/请出示文件/传送门/MC/樱之诗/Arcaea/Ingress/东方永夜抄 等。网游基本不碰。动漫的话，来看《来自深渊》！
+比较喜欢的游戏有 史丹利的寓言/Celeste/请出示文件/传送门/MC/樱之诗/Arcaea/东方永夜抄 等。网游基本不碰。动漫的话，来看《来自深渊》！
 
 被定性为一个红绿色盲/色弱，也因此感到中国现有的这套体系偏见与歧视性很大，或许以后能试着改变吧。
 
@@ -61,34 +61,22 @@ a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系
 - [wlt233的博客](https://tqlwsl.moe/index.php/)：我的逆向引路人，写的博文清晰明了平易近人，不会逆向的快去看 (Arcaea-Wiki)
 - [Benpigchu](https://benpigchu.com/)：BEMANI Programming Crew，Arcaea中文维基的大佬，THU人 (Arcaea-Wiki)
 - [湖精](https://blog.awa.moe)：Atmosphere - IN PURSUIT OF FREEDOM (玩硬件的) (Arcaea-Wiki)
-- [Yang-Blog](https://bakayang.moe/)：一只笨蛋的Blog (然而貌似已经成了一个Mastodon实例了) (Arcaea-Wiki)
 - [NekoHouse](https://blog.amu.moe/)：Inari Aimu - 猫粮制作中... (玩硬件的) (Arcaea-Wiki)
 - [Akula::Blog](https://blog.akula.moe)：悟已往之不谏，知来者之可追 (Arcaea-Wiki)
 - [Jett's blog](https://blog.jettchen.me/)：CTF领域大神！ (科苗线下认识的人，一起打过CTF)
-- [Sukka's Blog](https://blog.skk.moe/)：搞前端的，并且前端以外的分享也很不错
-- [Manjusaka](https://www.manjusaka.blog/)：貌似主要是一些比较底层的东西？
+- [Sukka's Blog](https://blog.skk.moe/)：搞前端的。前端以外的分享也很不错
+- [Manjusaka](https://www.manjusaka.blog/)：貌似是一些偏底层的内容？
 - [Plum's Blog](https://plumz.me/)：锐评galgame、社会现象、Linux等的大神，写的文字能让人感觉非常真诚<del>地骂</del>
 - [影子屋](https://blog.bgme.me/)：社会现象、网络素养、自由软件、隐私保护
+- [YMGFC_CN's Hidden Space](https://okazaki-yumemi.github.io)：人怎么能这么强。
 
-## 打钱 {#donate}
+## 捐赠 {#donate}
 
 如果我的博文帮到了你，欢迎给我打钱！<del>目前收入 42 元，感谢老板😂</del>
 
-爱发电： [@Young-Lord](https://afdian.com/a/Young-Lord)
+[爱发电：@Young-Lord](https://afdian.com/a/Young-Lord)
 
-![微信赞赏码](/assets/images/donate/wechat.png)
-
-BTC (SegWit): `bc1qskd2qxwglhgcet39u6axpy2zy27gkmeyzwy7rd`
-
-BTC (Legacy): `18gZhX9C5VCxRRK2HMSQzCPKqeeLoBcFEQ`
-
-ETH: `0x3A5De5d6B6958F73315D3b536c9D027e1079a4EE`
-
-DOGE: `D7CkqdwySeeZZAXoDr9zmUzkNDcktmhJWi`
-
-XMR: `43NB6wcfVqTJBhTcRktTMKbnW5UWK7bDC6JVb5qhmWSvJZ71qr7qS4bSoARWMqwozUJPkSp2QBRZBW2sjw887yMcDiz2Y7h`
-
-（发虚拟货币的话建议给我发个邮件（我一般不会去看）；更多付款方式可以给我发邮件）
+更多付款方式可以向我发邮件。
 
 <!--
 <script>
@@ -130,14 +118,11 @@ function ad_switch() {
 
 ## 愿望单
 
-想给我送礼的可以照着这个来送，就别花冤枉钱了（想桃子.jpg
-
-另外，最好买二手的。
+真的有人送欸。
 
 - [x] YubiKey 5 NFC 或 [CanoKey Pigeon](https://item.taobao.com/item.htm?id=664914723920)
 - [x] Wallpaper Engine
 - [ ] 树莓派/菠萝派 或类似的设备
-- [ ] 西数 My Passport 随行SSD 1TB
 - [ ] Oculus Quest 3
 - [ ] 古明地恋/爱丽丝 fumo
 
