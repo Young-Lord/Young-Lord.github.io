@@ -16,7 +16,9 @@ Young-Lord 仅为一个曾用名字，不含任何意义。LY 与它无关。指
 
 中英文规范书写提倡者。
 
-技能树完全乱点，Python, C++, JavaScript, Go, Java, Kotlin, Vue.js, WASM 都多少会一点<del>但都学艺不精</del>
+在学钢琴（少有的不会被AI替代的能力）。
+
+技能树完全乱点，Python, C++, JavaScript, Go, Java, Kotlin, Vue.js, WASM 都多少会一点<del>但都学艺不精</del>。正在试着学习计算机系统、AI相关内容。
 
 会一点网安，和[Leo Li](https://github.com/66Leo66)、[Jett Chen](https://github.com/JettChenT)等人拿了个[picoCTF 2024](https://play.picoctf.org/events/73)全球第十。另外在众多 AI 的助力下拿了个 ZJUCTF 2025 #2。
 
