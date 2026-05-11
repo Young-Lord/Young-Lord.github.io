@@ -124,9 +124,10 @@ function ad_switch() {
 
 - [x] YubiKey 5 NFC 或 [CanoKey Pigeon](https://item.taobao.com/item.htm?id=664914723920)
 - [x] Wallpaper Engine
+- [ ] [蓬莱人形　～ Dolls in Pseudo Paradise.](https://touhou.review/%E8%93%AC%E8%8E%B1%E4%BA%BA%E5%BD%A2) CD
+- [ ] 古明地恋/爱丽丝 fumo
 - [ ] 树莓派/菠萝派 或类似的设备
 - [ ] Oculus Quest 3
-- [ ] 古明地恋/爱丽丝 fumo
 
 ## 隐私政策
 
