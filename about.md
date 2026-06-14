@@ -56,6 +56,7 @@ a11y（无障碍）与i18n（国际化）推动者，向本站使用的评论系
 - [BsBlog](https://blog.bsdayo.moe/): 怎么会是呢？<del>很喜欢一句话：域名可出售</del> (写QQ机器人的，全栈) (Arcaea-Infinity)
 - [yllhwa's blog](https://blog.yllhwa.com/)：一位华中科大学网络空间安全的大神，博客也写得比我好多了 (QQBackup)
 - [Cainong's Blog](https://cainongw.github.io/)：主要是 Homelab 相关，表示看不懂… (Arcaea)
+- [静静's Blog](https://leak.moe/)：交互有趣的博客，实用的 Nix 内容 (Nix CN)
 
 单向：
 
