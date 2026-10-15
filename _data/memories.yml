@@ -1,0 +1,33 @@
+# memories.md 作品表的数据规范 + 前端筛选器配置。
+# 规范由 _plugins/memories.rb 在构建时校验，违规直接构建失败。
+# 本地单独检查：ruby _plugins/memories.rb
+
+# 「原名字/备注」栏允许的标签。不在这里的标签 = 构建报错。
+# 同一行里同一标签只能出现一次（一对一）。
+alt_name_labels:
+  # 语言类
+  languages:
+    - 日语
+    - 英语
+    - 汉语
+    - 罗马字
+  # 备注类
+  notes:
+    - 全称
+    - 全名
+    - 简称
+    - 别名
+    - 又名
+    - 又译
+    - 副标题
+
+# 筛选器强调色（选中的胶囊、焦点框）。留空 = 用 memories.css 里的默认值。
+# 换 _config.yml 的 text_skin 时顺手改这里：default #fc4d50 / dark #ff9500 / forest #51a351 ...
+accent: "#fc4d50"
+
+# 筛选器默认值
+defaults:
+  hidden_labels: [] # 默认隐藏哪些标签；空 = 全部显示
+  show_sub_category: false # 显示「游戏.FPS」里的「.FPS」
+  hide_spoiler: true # 模糊 <spoiler>…</spoiler>
+  hide_nsfw: false # 隐藏 <nsfw>…</nsfw> 及 NSFW 整行

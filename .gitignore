@@ -21,9 +21,14 @@ node_modules/
 yarn.lock
 package-lock.json
 Gemfile.lock
+Gemfile.local
+Gemfile.local.lock
 
 _site/
 .jekyll-metadata
 .jekyll-cache/
 
 .zettle-notes/
+
+# memories 筛选器的 CDP 测试脚手架（本地跑，不进仓库）
+.tmp-test/

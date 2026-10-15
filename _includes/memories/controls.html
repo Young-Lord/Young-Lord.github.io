@@ -1,0 +1,28 @@
+<div class="memories-controls" id="memories-controls">
+  <div class="memories-row">
+    <span class="memories-row__title">选项</span>
+    <span class="memories-row__body">
+      <button type="button" class="memories-pill" data-pref="showSubCategory">显示二级类别</button>
+      <button type="button" class="memories-pill" data-pref="hideSpoiler">隐藏剧透</button>
+      <button type="button" class="memories-pill" data-pref="hideNsfw">隐藏 NSFW</button>
+    </span>
+  </div>
+  <div class="memories-row" id="memories-tagbox">
+    <span class="memories-row__title">附加名字</span>
+    <span class="memories-row__body memories-tagbox__chips"></span>
+    <span class="memories-row__aside">
+      <button type="button" class="memories-btn" data-action="all">全部显示</button>
+      <button type="button" class="memories-btn" data-action="none">全部隐藏</button>
+    </span>
+  </div>
+  <div class="memories-row memories-row--search">
+    <label class="memories-row__title" for="memories-search">搜索</label>
+    <span class="memories-row__body">
+      <span class="memories-search-box">
+        <input id="memories-search" class="memories-search" type="search" autocomplete="off"
+          placeholder="名字 / 原名 / 拼音首字母…" aria-label="按名字过滤">
+        <span class="memories-count" id="memories-count" aria-live="polite"></span>
+      </span>
+    </span>
+  </div>
+</div>

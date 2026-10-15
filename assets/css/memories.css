@@ -1,0 +1,299 @@
+/* memories.md：剧透/NSFW 标记 + 筛选器 */
+
+.memories-controls,
+spoiler {
+    /* 中性色，浅色/深色皮肤都适用；强调色见 _data/memories.yml 的 accent */
+    --mem-accent: #fc4d50;
+    --mem-line: rgba(127, 127, 127, 0.3);
+    --mem-line-strong: rgba(127, 127, 127, 0.55);
+    --mem-fill: rgba(127, 127, 127, 0.14);
+    --mem-fill-hover: rgba(127, 127, 127, 0.26);
+    --mem-dim: rgba(127, 127, 127, 1);
+}
+
+/* ---------- 作者侧标记 ---------- */
+
+spoiler,
+nsfw {
+    display: inline;
+}
+
+/* 默认模糊；html.memories-show-spoiler 时才明文（这样禁用 JS 也不会直接漏出剧透） */
+spoiler {
+    border-radius: 0.2em;
+    background: var(--mem-fill);
+    cursor: pointer;
+    filter: blur(0.3em);
+    transition: filter 0.15s ease-out;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+spoiler:focus-visible {
+    outline: 2px solid var(--mem-accent);
+}
+
+html.memories-show-spoiler spoiler,
+spoiler.memories-revealed {
+    cursor: auto;
+    filter: none;
+    user-select: auto;
+    -webkit-user-select: auto;
+}
+
+html.memories-hide-nsfw nsfw {
+    display: none;
+}
+
+/* 空的 <nsfw></nsfw>（作者写的 <nsfw />）标记整行 */
+html.memories-hide-nsfw tbody tr:has(nsfw:empty) {
+    display: none;
+}
+
+/* ---------- 表格内容 ---------- */
+
+/* 二级类别：「游戏.FPS」里的「.FPS」 */
+.memories-subcat {
+    display: none;
+}
+
+html.memories-show-subcat .memories-subcat {
+    display: inline;
+}
+
+/* 折叠二级类别后内容很短，给个下限免得“游戏”被折成两行 */
+.memories-cat {
+    min-width: 4em;
+}
+
+/* 「原名字/备注」的每个分段自带前导分隔符，首个可见分段除外 */
+.memories-alt::before {
+    content: "；";
+}
+
+.memories-alt--lead::before {
+    content: "";
+}
+
+#memories-table tbody tr.memories-filtered {
+    display: none;
+}
+
+/* 主题给 .article__content table 设的是 display:block + overflow:auto，里面那张匿名表格
+   按内容收缩，筛掉大半行之后就只剩几行的宽度；改成真表格 + 外层容器滚动 */
+.memories-scroll {
+    margin: 1rem 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.article__content #memories-table {
+    display: table;
+    width: auto;
+    min-width: 100%;
+    margin: 0;
+    overflow: visible;
+}
+
+/* ---------- 筛选器 ---------- */
+
+.memories-controls {
+    display: none;
+    /* 没有 JS 就不显示，免得点了没反应 */
+}
+
+html.memories-js .memories-controls {
+    display: block;
+    /* 表格通常比屏幕宽，限制一下免得筛选器被挤出可视区域 */
+    box-sizing: border-box;
+    max-width: calc(100vw - 2rem);
+    margin-bottom: 1rem;
+    border: 1px solid var(--mem-line);
+    border-radius: 0.4rem;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* 行内不换行：标题和右侧按钮留在本行，放不下的是中间那堆胶囊自己折行 */
+.memories-row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.45em;
+    padding: 0.5em 0.7em;
+}
+
+.memories-row + .memories-row {
+    border-top: 1px solid var(--mem-line);
+}
+
+/* 左侧定宽标题栏，让三行的内容对齐成一条竖线 */
+.memories-row__title {
+    flex: 0 0 auto;
+    min-width: 4.5em;
+    margin: 0;
+    color: var(--mem-dim);
+    font-size: 0.9em;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    opacity: 0.85;
+}
+
+.memories-row__body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    min-width: 0;
+    gap: 0.45em;
+}
+
+.memories-row__aside {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.45em;
+    margin-left: auto;
+}
+
+/* 胶囊按钮：开关项和标签共用 */
+.memories-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15em 0.7em;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    line-height: 1.6;
+    transition: background 0.12s ease-out, border-color 0.12s ease-out, color 0.12s ease-out;
+    white-space: nowrap;
+}
+
+/* 生效中：强调色 */
+.memories-pill[aria-pressed="true"] {
+    border-color: var(--mem-accent);
+    background: var(--mem-fill);
+    background: color-mix(in srgb, var(--mem-accent) 12%, transparent);
+    color: var(--mem-accent);
+}
+
+/* 未生效：虚线框、无背景 */
+.memories-pill[aria-pressed="false"] {
+    border-color: var(--mem-line-strong);
+    border-style: dashed;
+    background: transparent;
+    opacity: 0.7;
+}
+
+.memories-pill[aria-pressed="true"]:hover {
+    background: var(--mem-fill-hover);
+    background: color-mix(in srgb, var(--mem-accent) 24%, transparent);
+}
+
+.memories-pill[aria-pressed="false"]:hover {
+    border-color: var(--mem-accent);
+    color: var(--mem-accent);
+    opacity: 1;
+}
+
+.memories-btn {
+    padding: 0.15em 0.7em;
+    border: 1px solid var(--mem-line-strong);
+    border-radius: 0.25em;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.9em;
+    line-height: 1.6;
+    opacity: 0.8;
+    transition: background 0.12s ease-out, opacity 0.12s ease-out;
+}
+
+.memories-btn:hover {
+    background: var(--mem-fill);
+    opacity: 1;
+}
+
+/* 已经处于「全部显示」/「全部隐藏」状态时，按钮自己带上背景色 */
+.memories-btn[aria-pressed="true"] {
+    background: var(--mem-fill);
+    opacity: 1;
+}
+
+.memories-btn[aria-pressed="true"]:hover {
+    background: var(--mem-fill-hover);
+}
+
+.memories-pill:focus-visible,
+.memories-btn:focus-visible {
+    outline: 2px solid var(--mem-accent);
+    outline-offset: 1px;
+}
+
+/* 搜索框：下划线而不是整个方框，免得框里再套框 */
+.memories-search-box {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    min-width: 0;
+}
+
+.memories-search {
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 0.2em 5em 0.2em 0.1em;
+    border: 0;
+    border-bottom: 1px solid var(--mem-line);
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: 1.6;
+    transition: border-color 0.12s ease-out;
+}
+
+/* 原生清除按钮会和框内计数叠在一起；要清空按 Esc */
+.memories-search::-webkit-search-cancel-button {
+    display: none;
+}
+
+.memories-search::placeholder {
+    color: inherit;
+    opacity: 0.45;
+}
+
+.memories-search:focus {
+    border-bottom-color: var(--mem-accent);
+    outline: 0;
+}
+
+/* 计数固定在框内右侧：绝对定位 + 等宽数字，搜索时输入框宽度不会跟着跳 */
+.memories-count {
+    position: absolute;
+    right: 0.2em;
+    font-size: 0.9em;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.6;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* 窄屏：标题栏改为整行，内容不再被挤成一列 */
+@media screen and (max-width: 480px) {
+    .memories-row {
+        flex-wrap: wrap;
+    }
+
+    .memories-row__title {
+        flex-basis: 100%;
+    }
+
+    .memories-row__aside {
+        margin-left: 0;
+    }
+}
