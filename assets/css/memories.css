@@ -2,13 +2,14 @@
 
 .memories-controls,
 spoiler {
-    /* 中性色，浅色/深色皮肤都适用；强调色见 _data/memories.yml 的 accent */
+    /* 中性色由正文色淡化而来，深浅皮肤都跟着走。
+       之前用固定的 rgba(127,127,127,·)，在浅色皮肤上比正文（#222）浅太多，看着发虚 */
     --mem-accent: #fc4d50;
-    --mem-line: rgba(127, 127, 127, 0.3);
-    --mem-line-strong: rgba(127, 127, 127, 0.55);
-    --mem-fill: rgba(127, 127, 127, 0.14);
-    --mem-fill-hover: rgba(127, 127, 127, 0.26);
-    --mem-dim: rgba(127, 127, 127, 1);
+    --mem-line: color-mix(in srgb, currentColor 35%, transparent);
+    --mem-line-strong: color-mix(in srgb, currentColor 55%, transparent);
+    --mem-fill: color-mix(in srgb, currentColor 10%, transparent);
+    --mem-fill-hover: color-mix(in srgb, currentColor 18%, transparent);
+    --mem-dim: color-mix(in srgb, currentColor 80%, transparent);
 }
 
 /* ---------- 作者侧标记 ---------- */
@@ -133,10 +134,9 @@ html.memories-js .memories-controls {
     min-width: 4.5em;
     margin: 0;
     color: var(--mem-dim);
-    font-size: 0.9em;
+    font-size: 1em;
     font-weight: normal;
     letter-spacing: 0.05em;
-    opacity: 0.85;
 }
 
 .memories-row__body {
@@ -153,7 +153,9 @@ html.memories-js .memories-controls {
     flex: 0 0 auto;
     align-items: center;
     gap: 0.45em;
+    /* auto 先吃满剩余空间，padding 再钉住一个最小间距，免得胶囊撑满时两个按钮贴上去 */
     margin-left: auto;
+    padding-left: 1.2em;
 }
 
 /* 胶囊按钮：开关项和标签共用 */
@@ -184,7 +186,7 @@ html.memories-js .memories-controls {
     border-color: var(--mem-line-strong);
     border-style: dashed;
     background: transparent;
-    opacity: 0.7;
+    opacity: 0.85;
 }
 
 .memories-pill[aria-pressed="true"]:hover {
@@ -208,7 +210,7 @@ html.memories-js .memories-controls {
     font: inherit;
     font-size: 0.9em;
     line-height: 1.6;
-    opacity: 0.8;
+    opacity: 1;
     transition: background 0.12s ease-out, opacity 0.12s ease-out;
 }
 
@@ -217,14 +219,18 @@ html.memories-js .memories-controls {
     opacity: 1;
 }
 
-/* 已经处于「全部显示」/「全部隐藏」状态时，按钮自己带上背景色 */
+/* 已经处于「全部显示」/「全部隐藏」状态时，和上面的胶囊用同一套强调色 */
 .memories-btn[aria-pressed="true"] {
+    border-color: var(--mem-accent);
     background: var(--mem-fill);
+    background: color-mix(in srgb, var(--mem-accent) 12%, transparent);
+    color: var(--mem-accent);
     opacity: 1;
 }
 
 .memories-btn[aria-pressed="true"]:hover {
     background: var(--mem-fill-hover);
+    background: color-mix(in srgb, var(--mem-accent) 24%, transparent);
 }
 
 .memories-pill:focus-visible,
@@ -262,11 +268,6 @@ html.memories-js .memories-controls {
     display: none;
 }
 
-.memories-search::placeholder {
-    color: inherit;
-    opacity: 0.45;
-}
-
 .memories-search:focus {
     border-bottom-color: var(--mem-accent);
     outline: 0;
@@ -278,7 +279,7 @@ html.memories-js .memories-controls {
     right: 0.2em;
     font-size: 0.9em;
     font-variant-numeric: tabular-nums;
-    opacity: 0.6;
+    opacity: 0.75;
     pointer-events: none;
     white-space: nowrap;
 }
@@ -295,5 +296,6 @@ html.memories-js .memories-controls {
 
     .memories-row__aside {
         margin-left: 0;
+        padding-left: 0;
     }
 }

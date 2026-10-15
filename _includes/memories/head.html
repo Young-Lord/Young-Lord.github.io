@@ -16,7 +16,7 @@
       classes.add('memories-js');
       if (!pref('hideSpoiler', defaults.hide_spoiler !== false)) { classes.add('memories-show-spoiler'); }
       if (pref('hideNsfw', defaults.hide_nsfw)) { classes.add('memories-hide-nsfw'); }
-      if (pref('showSubCategory', defaults.show_sub_category)) { classes.add('memories-show-subcat'); }
+      if (!pref('hideSubCategory', defaults.hide_sub_category !== false)) { classes.add('memories-show-subcat'); }
     } catch (e) { /* 没有 localStorage 就用默认值 */ }
   })();
 </script>

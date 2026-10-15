@@ -1,4 +1,4 @@
-/* memories.md 的筛选器：附加名字标签、二级类别、剧透、NSFW、名字搜索。
+/* memories.md 的筛选器：别名标签、二级类别、剧透、NSFW、名字搜索。
    配置来自 _data/memories.yml（由 _includes/memories/head.html 注入 window.MEMORIES_CONFIG）。 */
 (function () {
   'use strict';
@@ -21,7 +21,7 @@
 
   var prefs = {
     hiddenLabels: (defaults.hidden_labels || []).slice(),
-    showSubCategory: !!defaults.show_sub_category,
+    hideSubCategory: defaults.hide_sub_category !== false,
     hideSpoiler: defaults.hide_spoiler !== false,
     hideNsfw: !!defaults.hide_nsfw
   };
@@ -31,7 +31,7 @@
     if (Array.isArray(stored.hiddenLabels)) {
       prefs.hiddenLabels = stored.hiddenLabels.filter(function (l) { return knownLabels.indexOf(l) >= 0; });
     }
-    ['showSubCategory', 'hideSpoiler', 'hideNsfw'].forEach(function (key) {
+    ['hideSubCategory', 'hideSpoiler', 'hideNsfw'].forEach(function (key) {
       if (typeof stored[key] === 'boolean') { prefs[key] = stored[key]; }
     });
   } catch (e) { /* 读不出就用默认值 */ }
@@ -185,7 +185,9 @@
   function applyToggles() {
     root.classList.toggle('memories-show-spoiler', !prefs.hideSpoiler);
     root.classList.toggle('memories-hide-nsfw', prefs.hideNsfw);
-    root.classList.toggle('memories-show-subcat', prefs.showSubCategory);
+    // 「二级类别」的 CSS 默认是 display:none（和剧透一样，没 JS 也不漏内容），
+    // 所以这里是 show 类，语义为「不隐藏」
+    root.classList.toggle('memories-show-subcat', !prefs.hideSubCategory);
     if (prefs.hideSpoiler) {
       Array.prototype.forEach.call(document.querySelectorAll('spoiler.memories-revealed'), function (el) {
         el.classList.remove('memories-revealed');
@@ -301,7 +303,7 @@
       if (prefs.hideNsfw && row.nsfwRow) { return; }
       shown++;
     });
-    countBox.textContent = '显示 ' + shown + ' 条';
+    countBox.textContent = shown + ' 条';
   }
 
   function applySearch() {

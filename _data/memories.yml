@@ -28,6 +28,6 @@ accent: "#fc4d50"
 # 筛选器默认值
 defaults:
   hidden_labels: [] # 默认隐藏哪些标签；空 = 全部显示
-  show_sub_category: false # 显示「游戏.FPS」里的「.FPS」
+  hide_sub_category: true # 隐藏「游戏.FPS」里的「.FPS」
   hide_spoiler: true # 模糊 <spoiler>…</spoiler>
   hide_nsfw: false # 隐藏 <nsfw>…</nsfw> 及 NSFW 整行
