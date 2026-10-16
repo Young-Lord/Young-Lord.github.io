@@ -20,7 +20,10 @@
   // ---------- 偏好 ----------
 
   var prefs = {
-    hiddenLabels: (defaults.hidden_labels || []).slice(),
+    // hidden_labels 写 all = 一开始就隐藏全部标签（整列隐藏，见 applyLabels）
+    hiddenLabels: defaults.hidden_labels === 'all'
+      ? knownLabels.slice()
+      : (defaults.hidden_labels || []).slice(),
     hideSubCategory: defaults.hide_sub_category !== false,
     hideSpoiler: defaults.hide_spoiler !== false,
     hideNsfw: !!defaults.hide_nsfw
